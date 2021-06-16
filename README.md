@@ -1,2 +1,2 @@
 # Desenvolvimento
-Início do desenvolvimento com Pycharm, atualizado e publicado com Visual Studio Code.
+Início do desenvolvimento da aplicação foi utilizado Pycharm, atualmente está sendo atualizado e publicado com Visual Studio Code.
