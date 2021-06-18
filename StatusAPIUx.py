@@ -708,438 +708,438 @@ def nova_avaliacao():
     #     incidentes=0
     #     print("Não há Incidente:",incidentes)
 
-    qum = str(formulario_avaliacao.buttonGroup.checkedId())
-    if qum == "-2":
-        qum = 4
-        print(qum)
+    q1 = str(formulario_avaliacao.buttonGroup.checkedId())
+    if q1 == "-2":
+        q1 = 4
+        print(q1)
 
-    elif qum == "-3":
-        qum = 3
-        print(qum)
+    elif q1 == "-3":
+        q1 = 3
+        print(q1)
 
-    elif qum == "-4":
-        qum = 2
-        print(qum)
-    elif qum == "-5":
-        qum = 1
-        print(qum)
-    elif qum == "-6":
-        qum = 0
-        print(qum)
+    elif q1 == "-4":
+        q1 = 2
+        print(q1)
+    elif q1 == "-5":
+        q1 = 1
+        print(q1)
+    elif q1 == "-6":
+        q1 = 0
+        print(q1)
     # QRadioButton:checked{ background-color: red; } QRadioButton:unchecked{ background-color: black; }
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 1, corrigir ou continuar")
-    qdois = str(formulario_avaliacao.buttonGroup_2.checkedId())
-    if qdois == "-2":
-        qdois = 4
-        print(qdois)
-    elif qdois == "-3":
-        qdois = 3
-        print(qdois)
-    elif qdois == "-4":
-        qdois = 2
-        print(qdois)
-    elif qdois == "-5":
-        qdois = 1
-        print(qdois)
-    elif qdois == "-6":
-        qdois = 0
-        print(qdois)
+    q2 = str(formulario_avaliacao.buttonGroup_2.checkedId())
+    if q2 == "-2":
+        q2 = 4
+        print(q2)
+    elif q2 == "-3":
+        q2 = 3
+        print(q2)
+    elif q2 == "-4":
+        q2 = 2
+        print(q2)
+    elif q2 == "-5":
+        q2 = 1
+        print(q2)
+    elif q2 == "-6":
+        q2 = 0
+        print(q2)
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 2, corrigir ou continuar")
 
-    qtres = str(formulario_avaliacao.buttonGroup_3.checkedId())
-    if qtres == "-2":
-        qtres = 4
-        print(qtres)
-    elif qtres == "-3":
-        qtres = 3
-        print(qtres)
-    elif qtres == "-4":
-        qtres = 2
-        print(qtres)
-    elif qtres == "-5":
-        qtres = 1
-        print(qtres)
-    elif qtres == "-6":
-        qtres = 0
-        print(qtres)
+    q3 = str(formulario_avaliacao.buttonGroup_3.checkedId())
+    if q3 == "-2":
+        q3 = 4
+        print(q3)
+    elif q3 == "-3":
+        q3 = 3
+        print(q3)
+    elif q3 == "-4":
+        q3 = 2
+        print(q3)
+    elif q3 == "-5":
+        q3 = 1
+        print(q3)
+    elif q3 == "-6":
+        q3 = 0
+        print(q3)
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 3, corrigir ou continuar")
-    qquatro = str(formulario_avaliacao.buttonGroup_4.checkedId())
-    if qquatro == "-2":
-        qquatro = 4
-        print(qquatro)
-    elif qquatro == "-3":
-        qquatro = 3
-        print(qquatro)
-    elif qquatro == "-4":
-        qquatro = 2
-        print(qquatro)
-    elif qquatro == "-5":
-        qquatro = 1
-        print(qquatro)
-    elif qquatro == "-6":
-        qquatro = 0
-        print(qquatro)
+    q4 = str(formulario_avaliacao.buttonGroup_4.checkedId())
+    if q4 == "-2":
+        q4 = 4
+        print(q4)
+    elif q4 == "-3":
+        q4 = 3
+        print(q4)
+    elif q4 == "-4":
+        q4 = 2
+        print(q4)
+    elif q4 == "-5":
+        q4 = 1
+        print(q4)
+    elif q4 == "-6":
+        q4 = 0
+        print(q4)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 4, corrigir ou continuar")
-    qcinco = str(formulario_avaliacao.buttonGroup_5.checkedId())
-    if qcinco == "-2":
-        qcinco = 4
-        print(qcinco)
-    elif qcinco == "-3":
-        qcinco = 3
-        print(qcinco)
-    elif qcinco == "-4":
-        qcinco = 2
-        print(qcinco)
-    elif qcinco == "-5":
-        qcinco = 1
-        print(qcinco)
-    elif qcinco == "-6":
-        qcinco = 0
-        print(qcinco)
+    q5 = str(formulario_avaliacao.buttonGroup_5.checkedId())
+    if q5 == "-2":
+        q5 = 4
+        print(q5)
+    elif q5 == "-3":
+        q5 = 3
+        print(q5)
+    elif q5 == "-4":
+        q5 = 2
+        print(q5)
+    elif q5 == "-5":
+        q5 = 1
+        print(q5)
+    elif q5 == "-6":
+        q5 = 0
+        print(q5)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 5, corrigir ou continuar")
-    qseis = str(formulario_avaliacao.buttonGroup_6.checkedId())
-    if qseis == "-2":
-        qseis = 4
-        print(qseis)
-    elif qseis == "-3":
-        qseis = 3
-        print(qseis)
-    elif qseis == "-4":
-        qseis = 2
-        print(qseis)
-    elif qseis == "-5":
-        qseis = 1
-        print(qseis)
-    elif qseis == "-6":
-        qseis = 0
-        print(qseis)
+    q6 = str(formulario_avaliacao.buttonGroup_6.checkedId())
+    if q6 == "-2":
+        q6 = 4
+        print(q6)
+    elif q6 == "-3":
+        q6 = 3
+        print(q6)
+    elif q6 == "-4":
+        q6 = 2
+        print(q6)
+    elif q6 == "-5":
+        q6 = 1
+        print(q6)
+    elif q6 == "-6":
+        q6 = 0
+        print(q6)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 6, corrigir ou continuar")
-    qsete = str(formulario_avaliacao.buttonGroup_7.checkedId())
-    if qsete == "-2":
-        qsete = 4
-        print(qsete)
-    elif qsete == "-3":
-        qsete = 3
-        print(qsete)
-    elif qsete == "-4":
-        qsete = 2
-        print(qsete)
-    elif qsete == "-5":
-        qsete = 1
-        print(qsete)
-    elif qsete == "-6":
-        qsete = 0
-        print(qsete)
+    q7 = str(formulario_avaliacao.buttonGroup_7.checkedId())
+    if q7 == "-2":
+        q7 = 4
+        print(q7)
+    elif q7 == "-3":
+        q7 = 3
+        print(q7)
+    elif q7 == "-4":
+        q7 = 2
+        print(q7)
+    elif q7 == "-5":
+        q7 = 1
+        print(q7)
+    elif q7 == "-6":
+        q7 = 0
+        print(q7)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 7, corrigir ou continuar")
-    qoito = str(formulario_avaliacao.buttonGroup_8.checkedId())
-    if qoito == "-2":
-        qoito = 4
-        print(qoito)
-    elif qoito == "-3":
-        qoito = 3
-        print(qoito)
-    elif qoito == "-4":
-        qoito = 2
-        print(qoito)
-    elif qoito == "-5":
-        qoito = 1
-        print(qoito)
-    elif qoito == "-6":
-        qoito = 0
-        print(qoito)
+    q8 = str(formulario_avaliacao.buttonGroup_8.checkedId())
+    if q8 == "-2":
+        q8 = 4
+        print(q8)
+    elif q8 == "-3":
+        q8 = 3
+        print(q8)
+    elif q8 == "-4":
+        q8 = 2
+        print(q8)
+    elif q8 == "-5":
+        q8 = 1
+        print(q8)
+    elif q8 == "-6":
+        q8 = 0
+        print(q8)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 8, corrigir ou continuar")
-    qnove = str(formulario_avaliacao.buttonGroup_9.checkedId())
-    if qnove == "-2":
-        qnove = 4
-        print(qnove)
-    elif qnove == "-3":
-        qnove = 3
-        print(qnove)
-    elif qnove == "-4":
-        qnove = 2
-        print(qnove)
-    elif qnove == "-5":
-        qnove = 1
-        print(qnove)
-    elif qnove == "-6":
-        qnove = 0
-        print(qnove)
+    q9 = str(formulario_avaliacao.buttonGroup_9.checkedId())
+    if q9 == "-2":
+        q9 = 4
+        print(q9)
+    elif q9 == "-3":
+        q9 = 3
+        print(q9)
+    elif q9 == "-4":
+        q9 = 2
+        print(q9)
+    elif q9 == "-5":
+        q9 = 1
+        print(q9)
+    elif q9 == "-6":
+        q9 = 0
+        print(q9)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 9, corrigir ou continuar")
-    qdez = str(formulario_avaliacao.buttonGroup_10.checkedId())
-    if qdez == "-2":
-        qdez = 4
-        print(qdez)
-    elif qdez == "-3":
-        qdez = 3
-        print(qdez)
-    elif qdez == "-4":
-        qdez = 2
-        print(qdez)
-    elif qdez == "-5":
-        qdez = 1
-        print(qdez)
-    elif qdez == "-6":
-        qdez = 0
-        print(qdez)
+    q10 = str(formulario_avaliacao.buttonGroup_10.checkedId())
+    if q10 == "-2":
+        q10 = 4
+        print(q10)
+    elif q10 == "-3":
+        q10 = 3
+        print(q10)
+    elif q10 == "-4":
+        q10 = 2
+        print(q10)
+    elif q10 == "-5":
+        q10 = 1
+        print(q10)
+    elif q10 == "-6":
+        q10 = 0
+        print(q10)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 10, corrigir ou continuar")
-    qonze = str(formulario_avaliacao.buttonGroup_11.checkedId())
-    if qonze == "-2":
-        qonze = 4
-        print(qonze)
-    elif qonze == "-3":
-        qonze = 3
-        print(qonze)
-    elif qonze == "-4":
-        qonze = 2
-        print(qonze)
-    elif qonze == "-5":
-        qonze = 1
-        print(qonze)
-    elif qonze == "-6":
-        qonze = 0
-        print(qonze)
+    q11 = str(formulario_avaliacao.buttonGroup_11.checkedId())
+    if q11 == "-2":
+        q11 = 4
+        print(q11)
+    elif q11 == "-3":
+        q11 = 3
+        print(q11)
+    elif q11 == "-4":
+        q11 = 2
+        print(q11)
+    elif q11 == "-5":
+        q11 = 1
+        print(q11)
+    elif q11 == "-6":
+        q11 = 0
+        print(q11)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 11, corrigir ou continuar")
-    qdoze = str(formulario_avaliacao.buttonGroup_12.checkedId())
-    if qdoze == "-2":
-        qdoze = 4
-        print(qdoze)
-    elif qdoze == "-3":
-        qdoze = 3
-        print(qdoze)
-    elif qdoze == "-4":
-        qdoze = 2
-        print(qdoze)
-    elif qdoze == "-5":
-        qdoze = 1
-        print(qdoze)
-    elif qdoze == "-6":
-        qdoze = 0
-        print(qdoze)
+    q12 = str(formulario_avaliacao.buttonGroup_12.checkedId())
+    if q12 == "-2":
+        q12 = 4
+        print(q12)
+    elif q12 == "-3":
+        q12 = 3
+        print(q12)
+    elif q12 == "-4":
+        q12 = 2
+        print(q12)
+    elif q12 == "-5":
+        q12 = 1
+        print(q12)
+    elif q12 == "-6":
+        q12 = 0
+        print(q12)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 12, corrigir ou continuar")
-    qtreze = str(formulario_avaliacao.buttonGroup_13.checkedId())
-    if qtreze == "-2":
-        qtreze = 4
-        print(qtreze)
-    elif qtreze == "-3":
-        qtreze = 3
-        print(qtreze)
-    elif qtreze == "-4":
-        qtreze = 2
-        print(qtreze)
-    elif qtreze == "-5":
-        qtreze = 1
-        print(qtreze)
-    elif qtreze == "-6":
-        qtreze = 0
-        print(qtreze)
+    q13 = str(formulario_avaliacao.buttonGroup_13.checkedId())
+    if q13 == "-2":
+        q13 = 4
+        print(q13)
+    elif q13 == "-3":
+        q13 = 3
+        print(q13)
+    elif q13 == "-4":
+        q13 = 2
+        print(q13)
+    elif q13 == "-5":
+        q13 = 1
+        print(q13)
+    elif q13 == "-6":
+        q13 = 0
+        print(q13)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 13, corrigir ou continuar")
-    qquatorze = str(formulario_avaliacao.buttonGroup_14.checkedId())
-    if qquatorze == "-2":
-        qquatorze = 4
-        print(qquatorze)
-    elif qquatorze == "-3":
-        qquatorze = 3
-        print(qquatorze)
-    elif qquatorze == "-4":
-        qquatorze = 2
-        print(qquatorze)
-    elif qquatorze == "-5":
-        qquatorze = 1
-        print(qquatorze)
-    elif qquatorze == "-6":
-        qquatorze = 0
-        print(qquatorze)
+    q14 = str(formulario_avaliacao.buttonGroup_14.checkedId())
+    if q14 == "-2":
+        q14 = 4
+        print(q14)
+    elif q14 == "-3":
+        q14 = 3
+        print(q14)
+    elif q14 == "-4":
+        q14 = 2
+        print(q14)
+    elif q14 == "-5":
+        q14 = 1
+        print(q14)
+    elif q14 == "-6":
+        q14 = 0
+        print(q14)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 14, corrigir ou continuar")
-    qquinze = str(formulario_avaliacao.buttonGroup_15.checkedId())
-    if qquinze == "-2":
-        qquinze = 4
-        print(qquinze)
-    elif qquinze == "-3":
-        qquinze = 3
-        print(qquinze)
-    elif qquinze == "-4":
-        qquinze = 2
-        print(qquinze)
-    elif qquinze == "-5":
-        qquinze = 1
-        print(qquinze)
-    elif qquinze == "-6":
-        qquinze = 0
-        print(qquinze)
+    q15 = str(formulario_avaliacao.buttonGroup_15.checkedId())
+    if q15 == "-2":
+        q15 = 4
+        print(q15)
+    elif q15 == "-3":
+        q15 = 3
+        print(q15)
+    elif q15 == "-4":
+        q15 = 2
+        print(q15)
+    elif q15 == "-5":
+        q15 = 1
+        print(q15)
+    elif q15 == "-6":
+        q15 = 0
+        print(q15)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 15, corrigir ou continuar")
-    qdezesseis = str(formulario_avaliacao.buttonGroup_16.checkedId())
-    if qdezesseis == "-2":
-        qdezesseis = 4
-        print(qdezesseis)
-    elif qdezesseis == "-3":
-        qdezesseis = 3
-        print(qdezesseis)
-    elif qdezesseis == "-4":
-        qdezesseis = 2
-        print(qdezesseis)
-    elif qdezesseis == "-5":
-        qdezesseis = 1
-        print(qdezesseis)
-    elif qdezesseis == "-6":
-        qdezesseis = 0
-        print(qdezesseis)
+    q16 = str(formulario_avaliacao.buttonGroup_16.checkedId())
+    if q16 == "-2":
+        q16 = 4
+        print(q16)
+    elif q16 == "-3":
+        q16 = 3
+        print(q16)
+    elif q16 == "-4":
+        q16 = 2
+        print(q16)
+    elif q16 == "-5":
+        q16 = 1
+        print(q16)
+    elif q16 == "-6":
+        q16 = 0
+        print(q16)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 16, corrigir ou continuar")
-    qdezessete = str(formulario_avaliacao.buttonGroup_17.checkedId())
-    if qdezessete == "-2":
-        qdezessete = 4
-        print(qdezessete)
-    elif qdezessete == "-3":
-        qdezessete = 3
-        print(qdezessete)
-    elif qdezessete == "-4":
-        qdezessete = 2
-        print(qdezessete)
-    elif qdezessete == "-5":
-        qdezessete = 1
-        print(qdezessete)
-    elif qdezessete == "-6":
-        qdezessete = 0
-        print(qdezessete)
+    q17 = str(formulario_avaliacao.buttonGroup_17.checkedId())
+    if q17 == "-2":
+        q17 = 4
+        print(q17)
+    elif q17 == "-3":
+        q17 = 3
+        print(q17)
+    elif q17 == "-4":
+        q17 = 2
+        print(q17)
+    elif q17 == "-5":
+        q17 = 1
+        print(q17)
+    elif q17 == "-6":
+        q17 = 0
+        print(q17)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 17, corrigir ou continuar")
-    qdezoito = str(formulario_avaliacao.buttonGroup_18.checkedId())
-    if qdezoito == "-2":
-        qdezoito = 4
-        print(qdezoito)
-    elif qdezoito == "-3":
-        qdezoito = 3
-        print(qdezoito)
-    elif qdezoito == "-4":
-        qdezoito = 2
-        print(qdezoito)
-    elif qdezoito == "-5":
-        qdezoito = 1
-        print(qdezoito)
-    elif qdezoito == "-6":
-        qdezoito = 0
-        print(qdezoito)
+    q18 = str(formulario_avaliacao.buttonGroup_18.checkedId())
+    if q18 == "-2":
+        q18 = 4
+        print(q18)
+    elif q18 == "-3":
+        q18 = 3
+        print(q18)
+    elif q18 == "-4":
+        q18 = 2
+        print(q18)
+    elif q18 == "-5":
+        q18 = 1
+        print(q18)
+    elif q18 == "-6":
+        q18 = 0
+        print(q18)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 18, corrigir ou continuar")
-    qdezenove = str(formulario_avaliacao.buttonGroup_19.checkedId())
-    if qdezenove == "-2":
-        qdezenove = 4
-        print(qdezenove)
-    elif qdezenove == "-3":
-        qdezenove = 3
-        print(qdezenove)
-    elif qdezenove == "-4":
-        qdezenove = 2
-        print(qdezenove)
-    elif qdezenove == "-5":
-        qdezenove = 1
-        print(qdezenove)
-    elif qdezenove == "-6":
-        qdezenove = 0
-        print(qdezenove)
+    q19 = str(formulario_avaliacao.buttonGroup_19.checkedId())
+    if q19 == "-2":
+        q19 = 4
+        print(q19)
+    elif q19 == "-3":
+        q19 = 3
+        print(q19)
+    elif q19 == "-4":
+        q19 = 2
+        print(q19)
+    elif q19 == "-5":
+        q19 = 1
+        print(q19)
+    elif q19 == "-6":
+        q19 = 0
+        print(q19)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 19, corrigir ou continuar")
-    qvinte = str(formulario_avaliacao.buttonGroup_20.checkedId())
-    if qvinte == "-2":
-        qvinte = 4
-        print(qvinte)
-    elif qvinte == "-3":
-        qvinte = 3
-        print(qvinte)
-    elif qvinte == "-4":
-        qvinte = 2
-        print(qvinte)
-    elif qvinte == "-5":
-        qvinte = 1
-        print(qvinte)
-    elif qvinte == "-6":
-        qvinte = 0
-        print(qvinte)
+    q20 = str(formulario_avaliacao.buttonGroup_20.checkedId())
+    if q20 == "-2":
+        q20 = 4
+        print(q20)
+    elif q20 == "-3":
+        q20 = 3
+        print(q20)
+    elif q20 == "-4":
+        q20 = 2
+        print(q20)
+    elif q20 == "-5":
+        q20 = 1
+        print(q20)
+    elif q20 == "-6":
+        q20 = 0
+        print(q20)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 20, corrigir ou continuar")
-    qvinteum = str(formulario_avaliacao.buttonGroup_21.checkedId())
-    if qvinteum == "-2":
-        qvinteum = 4
-        print(qvinteum)
-    elif qvinteum == "-3":
-        qvinteum = 3
-        print(qvinteum)
-    elif qvinteum == "-4":
-        qvinteum = 2
-        print(qvinteum)
-    elif qvinteum == "-5":
-        qvinteum = 1
-        print(qvinteum)
-    elif qvinteum == "-6":
-        qvinteum = 0
-        print(qvinteum)
+    q21 = str(formulario_avaliacao.buttonGroup_21.checkedId())
+    if q21 == "-2":
+        q21 = 4
+        print(q21)
+    elif q21 == "-3":
+        q21 = 3
+        print(q21)
+    elif q21 == "-4":
+        q21 = 2
+        print(q21)
+    elif q21 == "-5":
+        q21 = 1
+        print(q21)
+    elif q21 == "-6":
+        q21 = 0
+        print(q21)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 21, corrigir ou continuar")
-    qvintedois = str(formulario_avaliacao.buttonGroup_22.checkedId())
-    if qvintedois == "-2":
-        qvintedois = 4
-        print(qvintedois)
-    elif qvintedois == "-3":
-        qvintedois = 3
-        print(qvintedois)
-    elif qvintedois == "-4":
-        qvintedois = 2
-        print(qvintedois)
-    elif qvintedois == "-5":
-        qvintedois = 1
-        print(qvintedois)
-    elif qvintedois == "-6":
-        qvintedois = 0
-        print(qvintedois)
+    q22 = str(formulario_avaliacao.buttonGroup_22.checkedId())
+    if q22 == "-2":
+        q22 = 4
+        print(q22)
+    elif q22 == "-3":
+        q22 = 3
+        print(q22)
+    elif q22 == "-4":
+        q22 = 2
+        print(q22)
+    elif q22 == "-5":
+        q22 = 1
+        print(q22)
+    elif q22 == "-6":
+        q22 = 0
+        print(q22)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 22, corrigir ou continuar")
-    qvintetres = str(formulario_avaliacao.buttonGroup_23.checkedId())
-    if qvintetres == "-2":
-        qvintetres = 4
-        print(qvintetres)
-    elif qvintetres == "-3":
-        qvintetres = 3
-        print(qvintetres)
-    elif qvintetres == "-4":
-        qvintetres = 2
-        print(qvintetres)
-    elif qvintetres == "-5":
-        qvintetres = 1
-        print(qvintetres)
-    elif qvintetres == "-6":
-        qvintetres = 0
-        print(qvintetres)
+    q23 = str(formulario_avaliacao.buttonGroup_23.checkedId())
+    if q23 == "-2":
+        q23 = 4
+        print(q23)
+    elif q23 == "-3":
+        q23 = 3
+        print(q23)
+    elif q23 == "-4":
+        q23 = 2
+        print(q23)
+    elif q23 == "-5":
+        q23 = 1
+        print(q23)
+    elif q23 == "-6":
+        q23 = 0
+        print(q23)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 23, corrigir ou continuar")
 
-    qvintequatro = str(formulario_avaliacao.buttonGroup_24.checkedId())
-    if qvintequatro == "-2":
-        qvintequatro = 4
-        print(qvintequatro)
-    elif qvintequatro == "-3":
-        qvintequatro = 3
-        print(qvintequatro)
-    elif qvintequatro == "-4":
-        qvintequatro = 2
-        print(qvintequatro)
-    elif qvintequatro == "-5":
-        qvintequatro = 1
-        print(qvintequatro)
-    elif qvintequatro == "-6":
-        qvintequatro = 0
-        print(qvintequatro)
+    q24 = str(formulario_avaliacao.buttonGroup_24.checkedId())
+    if q24 == "-2":
+        q24 = 4
+        print(q24)
+    elif q24 == "-3":
+        q24 = 3
+        print(q24)
+    elif q24 == "-4":
+        q24 = 2
+        print(q24)
+    elif q24 == "-5":
+        q24 = 1
+        print(q24)
+    elif q24 == "-6":
+        q24 = 0
+        print(q24)
         # QMessageBox.about(formulario_avaliacao, "ALERTA",
         # "Valor 0 inserido na Questão 24, corrigir ou continuar")
 
@@ -1202,7 +1202,7 @@ def nova_avaliacao():
     print("Tempo da avaliacao lida:", avaliacaotempo_lido)
 
     # return funcao_iniciar()
-    if qum or qdois or qtres or qquatro or qcinco or qseis or qsete or qoito or qnove or qdez or qonze or qdoze or qtreze or qquatorze or qquinze or qdezesseis or qdezessete or qdezoito or qdezenove or qvinte or qvinteum or qvintedois or qvintetres or qvintequatro == 0:
+    if q1 or q2 or q3 or q4 or q5 or q6 or q7 or q8 or q9 or q10 or q11 or q12 or q13 or q14 or q15 or q16 or q17 or q18 or q19 or q20 or q21 or q22 or q23 or q24 == 0:
         QMessageBox.about(formulario_avaliacao, "ALERTA",
                           "Valor 0 inserido numa ou mais respostas, corrigir ou continuar")
         resp = QMessageBox.question(
@@ -1233,8 +1233,8 @@ def nova_avaliacao():
                 cursor2 = banco.cursor()
 
                 cursor2.execute("UPDATE avaliacao_csp SET avaliador=('%s'),provedor=('%s'),mes=('%s'),ano=('%s'),incidentes=('%s'),q1=('%s'), q2=('%s'), q3=('%s'), q4=('%s'), q5=('%s'), q6=('%s'), q7=('%s'), q8=('%s'), q9=('%s'), q10=('%s'), q11=('%s'), q12=('%s'), q13=('%s'), q14=('%s'), q15=('%s'), q16=('%s'), q17=('%s'), q18=('%s'), q19=('%s'), q20=('%s'), q21=('%s'), q22=('%s'), q23=('%s'), q24=('%s') WHERE id=%s" % (
-                    (str(avaliador), str(provedor), int(mes), int(ano), int(incidentes), str(qum), str(qdois), str(qtres), str(qquatro), str(qcinco), str(qseis), str(qsete), str(qoito), str(qnove), str(qdez), str(
-                        qonze), str(qdoze), str(qtreze), str(qquatorze), str(qquinze), str(qdezesseis), str(qdezessete), str(qdezoito), str(qdezenove), str(qvinte), str(qvinteum), str(qvintedois), str(qvintetres), str(qvintequatro), avaliacaoid_lido)))
+                    (str(avaliador), str(provedor), int(mes), int(ano), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+                        q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24), avaliacaoid_lido)))
 
                 banco.commit()
                 formulario_avaliacao.close()
@@ -1244,14 +1244,21 @@ def nova_avaliacao():
             else:
                 return funcao_iniciar()
 
-    # avaliador joaquim o id tem que ser 2, #provedor aws o id tem que ser 2, #tempo 01/2021 o id tem que ser 3
-
-    # tempo = tempo.toString()
     cursor = banco.cursor(buffered=True)
+    # q1=1
+    # q2=2
+    # q3=3
+    # q4=4
 
+    for i in range(1, 24):
+        globals()["q%i" % i] = i
+    print(q1, q2, q3, q4)
+
+    gvj=(q1+q2+q3+q4+q5+q6+q7)/7
+    print("Indíce de Governança:", gvj)
     comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
-    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(qum), str(qdois), str(qtres), str(qquatro), str(qcinco), str(qseis), str(qsete), str(qoito), str(qnove), str(qdez), str(
-        qonze), str(qdoze), str(qtreze), str(qquatorze), str(qquinze), str(qdezesseis), str(qdezessete), str(qdezoito), str(qdezenove), str(qvinte), str(qvinteum), str(qvintedois), str(qvintetres), str(qvintequatro))
+    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+        q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
     cursor.execute(comando_SQL, dados)
 
     banco.commit()
@@ -2894,8 +2901,8 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
                 # banco.commit()
 
                 # comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s)"
-                # dados = (str(avaliador), str(provedor), int(mes), int(ano), str(qum), str(qdois), str(qtres), str(qquatro), str(qcinco), str(qseis), str(qsete), str(qoito), str(qnove), str(qdez), str(
-                #     q11), str(qdoze), str(qtreze), str(qquatorze), str(qquinze), str(qdezesseis), str(qdezessete), str(qdezoito), str(qdezenove), str(qvinte), str(qvinteum), str(qvintedois), str(qvintetres), str(qvintequatro))
+                # dados = (str(avaliador), str(provedor), int(mes), int(ano), str(qum), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+                #     q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
                 # cursor.execute(comando_SQL, dados)
                 # QMessageBox.about(formulario_avaliacao, "Concluído",
                 #                   "Avaliação substituída com sucesso!")
