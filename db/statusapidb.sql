@@ -103,7 +103,8 @@ select * from csp where avaliadorid not in (select distinct id from avaliadores)
 
 
 SET FOREIGN_KEY_CHECKS = 0;
-
+delete from avaliadores where avaliador = "";
+delete from provedores where provedor ="";
 drop table avaliadores;
 select * from avaliadores;
 select * from provedores;

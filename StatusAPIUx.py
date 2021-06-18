@@ -44,7 +44,7 @@ import string
 numero_id = 0
 
 banco = mysql.connector.connect(host='localhost',
-                                     user='hugo',
+                                     user='root',
                                      password='885522',
                                      database='statusapidb', buffered=True)
 
@@ -1254,8 +1254,9 @@ def nova_avaliacao():
         globals()["q%i" % i] = i
     print(q1, q2, q3, q4)
 
-    gvj=(q1+q2+q3+q4+q5+q6+q7)/7
+    gvj = (q1+q2+q3+q4+q5+q6+q7)/7
     print("Indíce de Governança:", gvj)
+
     comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
     dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
         q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
