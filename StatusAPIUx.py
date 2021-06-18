@@ -50,7 +50,7 @@ banco = mysql.connector.connect(host='localhost',
 
 
 def funcao_iniciar():
-    limpar_avaliacao()
+
     radioGroup()
     radioGroup_2()
     radioGroup_3()
@@ -1200,7 +1200,38 @@ def nova_avaliacao():
     avaliacaotempo_lido = cursor4.fetchone()
     # verificar se já foi feita alguma avaliação
     print("Tempo da avaliacao lida:", avaliacaotempo_lido)
+    # for i in range(1, 24):
+    #     globals()["q%i" % i] = i
+    # print(q1, q2, q3, q4)
 
+    RB = 1, 1
+    m = incidentes
+
+    GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
+    print("Indíce de Governança:", GVij)
+
+    TPij = (q8+q9+q10+q11+q12+q13+q14)/7
+    print("Indíce de Transparência:", TPij)
+
+    SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/7
+    print("Indíce de Segurança da Informação:", SIij)
+
+    IGVj1 = (GVij)*0.5  # primeira parcela
+    print("Parcela 1 da Governança:", IGVj1)
+
+    # PRÓXIMOS PASSOS, PUXAR DO BD A AVALIAÇÃO DO MÊS ANTERIOR, PRA FAZER A DIFERENÇA DA 2ª PARCELA, ETC
+    # IGVj2 = (0.25*(GVij-GVij[-1]))  # atual - média do mês anterior = tendência
+    # print("Parcela 2 da Governança:", IGVj2)
+
+    # # # atual - média dos últimos 12 meses = expectativa
+    # # IGVj3 = (0.25*(GVij-GVji[-12/12]))
+    # # print("Parcela 3 da Governança:", IGVj3)
+
+    # # IGVj3 = (gvj)
+
+    # # IGVj = ((IGVj1 + IGVj2 + IGVj3) * RB)/2*m
+
+    # # print(IGVj)
     # return funcao_iniciar()
     if q1 or q2 or q3 or q4 or q5 or q6 or q7 or q8 or q9 or q10 or q11 or q12 or q13 or q14 or q15 or q16 or q17 or q18 or q19 or q20 or q21 or q22 or q23 or q24 == 0:
         QMessageBox.about(formulario_avaliacao, "ALERTA",
@@ -1213,8 +1244,10 @@ def nova_avaliacao():
             # QMessageBox.about(formulario_avaliacao, "Concluído",
             #                   "Avaliação armazenada com sucesso!")
         else:
-
+            print("Aguardando avaliação ser realizada!")
             return funcao_iniciar()
+
+            # return funcao_iniciar()
     cursor4.close()
     if avaliacaotempo_lido is not None:
         avaliacaotempo_lido = avaliacaotempo_lido[0]
@@ -1232,17 +1265,22 @@ def nova_avaliacao():
                 # formulario_avaliacao.close()
                 cursor2 = banco.cursor()
 
-                cursor2.execute("UPDATE avaliacao_csp SET avaliador=('%s'),provedor=('%s'),mes=('%s'),ano=('%s'),incidentes=('%s'),q1=('%s'), q2=('%s'), q3=('%s'), q4=('%s'), q5=('%s'), q6=('%s'), q7=('%s'), q8=('%s'), q9=('%s'), q10=('%s'), q11=('%s'), q12=('%s'), q13=('%s'), q14=('%s'), q15=('%s'), q16=('%s'), q17=('%s'), q18=('%s'), q19=('%s'), q20=('%s'), q21=('%s'), q22=('%s'), q23=('%s'), q24=('%s') WHERE id=%s" % (
-                    (str(avaliador), str(provedor), int(mes), int(ano), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+                cursor2.execute("UPDATE avaliacao_csp SET avaliador=('%s'),provedor=('%s'),mes=('%s'),ano=('%s'),incidentes=('%s'),GVij=('%s'),TPij=('%s'),SIij=('%s'),q1=('%s'), q2=('%s'), q3=('%s'), q4=('%s'), q5=('%s'), q6=('%s'), q7=('%s'), q8=('%s'), q9=('%s'), q10=('%s'), q11=('%s'), q12=('%s'), q13=('%s'), q14=('%s'), q15=('%s'), q16=('%s'), q17=('%s'), q18=('%s'), q19=('%s'), q20=('%s'), q21=('%s'), q22=('%s'), q23=('%s'), q24=('%s') WHERE id=%s" % (
+                    (str(avaliador), str(provedor), int(mes), int(ano), int(incidentes), float(GVij), float(TPij), float(SIij), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
                         q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24), avaliacaoid_lido)))
 
                 banco.commit()
                 formulario_avaliacao.close()
                 # formulario_avaliacao.destroy()
+                limpar_avaliacao()
                 return tela_login_dados_avaliador()
 
             else:
+                print("Aguardando avaliação pode ser substituída!")
                 return funcao_iniciar()
+        # else:
+        #     print("Aguardando avaliação ser realizada!")
+        #     # return funcao_iniciar()            # return funcao_iniciar()
 
     cursor = banco.cursor(buffered=True)
     # q1=1
@@ -1250,15 +1288,8 @@ def nova_avaliacao():
     # q3=3
     # q4=4
 
-    for i in range(1, 24):
-        globals()["q%i" % i] = i
-    print(q1, q2, q3, q4)
-
-    gvj = (q1+q2+q3+q4+q5+q6+q7)/7
-    print("Indíce de Governança:", gvj)
-
-    comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
-    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+    comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,GVij, TPij, SIij, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
+    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), float(GVij), float(TPij), float(SIij), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
         q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
     cursor.execute(comando_SQL, dados)
 
@@ -1266,6 +1297,7 @@ def nova_avaliacao():
 
     formulario_avaliacao.close()
     # tela_login_sql()
+    limpar_avaliacao()
     tela_login_dados_avaliador()
 
 
@@ -1755,30 +1787,33 @@ def detalhes_avaliador():
         ano = avaliacao[0][4]
         atividade = avaliacao[0][5]
         incidentes = avaliacao[0][6]
-        q1 = avaliacao[0][7]
-        q2 = avaliacao[0][8]
-        q3 = avaliacao[0][9]
-        q4 = avaliacao[0][10]
-        q5 = avaliacao[0][11]
-        q6 = avaliacao[0][12]
-        q7 = avaliacao[0][13]
-        q8 = avaliacao[0][14]
-        q9 = avaliacao[0][15]
-        q10 = avaliacao[0][16]
-        q11 = avaliacao[0][17]
-        q12 = avaliacao[0][18]
-        q13 = avaliacao[0][19]
-        q14 = avaliacao[0][20]
-        q15 = avaliacao[0][21]
-        q16 = avaliacao[0][22]
-        q17 = avaliacao[0][23]
-        q18 = avaliacao[0][24]
-        q19 = avaliacao[0][25]
-        q20 = avaliacao[0][26]
-        q21 = avaliacao[0][27]
-        q22 = avaliacao[0][28]
-        q23 = avaliacao[0][29]
-        q24 = avaliacao[0][30]
+        GVij = avaliacao[0][7]
+        TPij = avaliacao[0][8]
+        SIij = avaliacao[0][9]
+        q1 = avaliacao[0][10]
+        q2 = avaliacao[0][11]
+        q3 = avaliacao[0][12]
+        q4 = avaliacao[0][13]
+        q5 = avaliacao[0][14]
+        q6 = avaliacao[0][15]
+        q7 = avaliacao[0][16]
+        q8 = avaliacao[0][17]
+        q9 = avaliacao[0][18]
+        q10 = avaliacao[0][19]
+        q11 = avaliacao[0][20]
+        q12 = avaliacao[0][21]
+        q13 = avaliacao[0][22]
+        q14 = avaliacao[0][23]
+        q15 = avaliacao[0][24]
+        q16 = avaliacao[0][25]
+        q17 = avaliacao[0][26]
+        q18 = avaliacao[0][27]
+        q19 = avaliacao[0][28]
+        q20 = avaliacao[0][29]
+        q21 = avaliacao[0][30]
+        q22 = avaliacao[0][31]
+        q23 = avaliacao[0][32]
+        q24 = avaliacao[0][33]
         lista_avaliacao_avaliador.label.setText(avaliador)
         lista_avaliacao_avaliador.label_2.setText(id)
         if atividade == 1:
@@ -2873,9 +2908,9 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
             # QMessageBox.about(lista_avaliacao_avaliador, "Concluído",
             #                   "Avaliação armazenada com sucesso!")
         else:
+            print("aguardando enviar avaliação")
+            # return detalhes_avaliador()
 
-            return detalhes_avaliador()
-            # return funcao_iniciar()
     cursor4.close()
     if avaliacaotempo_lido is not None:
         avaliacaotempo_lido = avaliacaotempo_lido[0]
@@ -2988,30 +3023,33 @@ def detalhes():
         ano = avaliacao[0][4]
         atividade = avaliacao[0][5]
         incidentes = avaliacao[0][6]
-        q1 = avaliacao[0][7]
-        q2 = avaliacao[0][8]
-        q3 = avaliacao[0][9]
-        q4 = avaliacao[0][10]
-        q5 = avaliacao[0][11]
-        q6 = avaliacao[0][12]
-        q7 = avaliacao[0][13]
-        q8 = avaliacao[0][14]
-        q9 = avaliacao[0][15]
-        q10 = avaliacao[0][16]
-        q11 = avaliacao[0][17]
-        q12 = avaliacao[0][18]
-        q13 = avaliacao[0][19]
-        q14 = avaliacao[0][20]
-        q15 = avaliacao[0][21]
-        q16 = avaliacao[0][22]
-        q17 = avaliacao[0][23]
-        q18 = avaliacao[0][24]
-        q19 = avaliacao[0][25]
-        q20 = avaliacao[0][26]
-        q21 = avaliacao[0][27]
-        q22 = avaliacao[0][28]
-        q23 = avaliacao[0][29]
-        q24 = avaliacao[0][30]
+        GVij = avaliacao[0][7]
+        TPij = avaliacao[0][8]
+        SIij = avaliacao[0][9]
+        q1 = avaliacao[0][10]
+        q2 = avaliacao[0][11]
+        q3 = avaliacao[0][12]
+        q4 = avaliacao[0][13]
+        q5 = avaliacao[0][14]
+        q6 = avaliacao[0][15]
+        q7 = avaliacao[0][16]
+        q8 = avaliacao[0][17]
+        q9 = avaliacao[0][18]
+        q10 = avaliacao[0][19]
+        q11 = avaliacao[0][20]
+        q12 = avaliacao[0][21]
+        q13 = avaliacao[0][22]
+        q14 = avaliacao[0][23]
+        q15 = avaliacao[0][24]
+        q16 = avaliacao[0][25]
+        q17 = avaliacao[0][26]
+        q18 = avaliacao[0][27]
+        q19 = avaliacao[0][28]
+        q20 = avaliacao[0][29]
+        q21 = avaliacao[0][30]
+        q22 = avaliacao[0][31]
+        q23 = avaliacao[0][32]
+        q24 = avaliacao[0][33]
         lista_avaliacao.label.setText(avaliador)
         lista_avaliacao.label_2.setText(id)
         if atividade == 1:
