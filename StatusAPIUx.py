@@ -50,7 +50,6 @@ banco = mysql.connector.connect(host='localhost',
 
 
 def funcao_iniciar():
-
     radioGroup()
     radioGroup_2()
     radioGroup_3()
@@ -1155,9 +1154,9 @@ def nova_avaliacao():
         provedor = formulario_avaliacao.comboBox_2.currentText()
 
         mes = formulario_avaliacao.comboBox_3.currentText()
-
+        mes = int(mes)
         ano = formulario_avaliacao.comboBox_4.currentText()
-
+        ano = int(ano)
     print("nome do avaliador:", avaliador)
     print("nome do provedor:", provedor)
     print("mês:", mes)
@@ -1204,7 +1203,7 @@ def nova_avaliacao():
     #     globals()["q%i" % i] = i
     # print(q1, q2, q3, q4)
 
-    RB = 1, 1
+    RB = 1.1
     m = incidentes
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
@@ -1213,14 +1212,14 @@ def nova_avaliacao():
     TPij = (q8+q9+q10+q11+q12+q13+q14)/7
     print("Indíce de Transparência:", TPij)
 
-    SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/7
+    SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/10
     print("Indíce de Segurança da Informação:", SIij)
 
-    IGVj1 = (GVij)*0.5  # primeira parcela
-    print("Parcela 1 da Governança:", IGVj1)
+    # dados_lidos = cursor2.fetchone()
+    # avaliacaoid_lido = dados_lidos
 
     # PRÓXIMOS PASSOS, PUXAR DO BD A AVALIAÇÃO DO MÊS ANTERIOR, PRA FAZER A DIFERENÇA DA 2ª PARCELA, ETC
-    # IGVj2 = (0.25*(GVij-GVij[-1]))  # atual - média do mês anterior = tendência
+    # IGVj2 = (0.25*(GVij-GVij2))  # atual - média do mês anterior = tendência #where GVij2=mesatual-1
     # print("Parcela 2 da Governança:", IGVj2)
 
     # # # atual - média dos últimos 12 meses = expectativa
@@ -1299,6 +1298,100 @@ def nova_avaliacao():
     # tela_login_sql()
     limpar_avaliacao()
     tela_login_dados_avaliador()
+    # for i in range(1, 24):
+    #     globals()["q%i" % i] = i
+    # print(q1, q2, q3, q4)
+    ###para fazer 2 parcela será necessário acesso ao banco dos indices obre O único mês anterior##
+    cursor2 = banco.cursor()
+    mes_anterior = mes - 1
+    ano2p = ano
+    # indicar os valores das variáveis
+    # cadastrar as variáveis no BD
+    k1 = 0.5
+    k2 = 0.25
+    k3 = 0.25
+    # 4,3,2,1,2,2,2
+    print("Mês anterior:", mes_anterior)  # GVj-1
+    if mes_anterior == 0:
+        mes_anterior = 12
+        ano2p = ano2p-1
+
+    else:
+        "Não há valor mensal"
+    try:
+        Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+            avaliador, provedor, mes_anterior, ano2p))
+        cursor2.execute(Comando_SQL2)
+        dados_lidos = cursor2.fetchall()
+        avaliacao = dados_lidos
+        print("A avaliação anterior deste avaliador com este provedor:", avaliacao)
+        GVij2 = avaliacao[0][7]
+        print("Indice de Governança do mês anterior:", GVij2)
+        TPij2 = avaliacao[0][8]
+        SIij2 = avaliacao[0][9]
+    except IndexError:  # quando não há mês anterior
+        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+        avaliacao = "null"
+        print("Não há avaliação feita no mês anterior:", mes_anterior)
+
+    # floatao = 2.151212112
+    # print("Floatao é:%.2f" % (floatao))
+    IGVj1 = (GVij)*k1  # primeira parcela
+    print("Parcela 1 da Governança: %.3f" % IGVj1)
+
+    IGVj2 = (k2*(GVij-GVij2))
+    print("A 2ª parcela da governança é: %.3f" % IGVj2)
+
+    ###Terceira parcela precisa da média dos últimos 12 indices###
+    #O limite do mês é o mês atual, o ínicio são 11 meses atras#
+    #GVij12 = (GVij + GVij2 + GVij3 + GVij4 + GVij4 + GVij5 + GVij6 + GVij7 + GVij8 + GVij9 + GVij10 + GVij11 + GVij12) / 12
+    # # # atual - média dos últimos 12 meses = expectativa
+    mes_ano = 12
+    #comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (avaliador, provedor, mes_atual, ano))
+    mes_atual = mes
+    mes_anterior12 = mes_atual-12
+    ano_atual = ano
+    print("Ano atual é:", ano_atual)
+    if mes_anterior12 <= 0:
+        mes_anterior12 = mes_anterior12*-1  # deixar positivo
+        mes_anterior12 = mes_ano-mes_anterior12
+        print("Mês do ano passado:", mes_anterior12)
+        ano_anterior = ano - 1
+    # comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano<=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano>=('%s')" %
+    #                (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
+    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
+                   (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
+
+    cursor.execute(comando_SQL)
+    dados_listados = cursor.fetchall()
+    print("Abaixo avaliações feitas nos 12 meses da 3ª parcela:")
+    print(dados_listados)
+    counter = 0
+    GVij12_soma = 0
+    # vai rodando de 1 em 1 pela quantidade de avaliações
+    for s in range(len(dados_listados,)):
+        # if dados_lidos[s][0] != dados_lidos[s][0]:
+        # print(dados_lidos[s])
+
+        GVij12 = dados_listados[s][7]  # vai pegando o GVij de cada avaliação
+        print("Instâncias de Indices:", GVij12)
+        GVij12_soma = GVij12_soma+GVij12  # soma o GVij de cada avaliação
+        print("Instâncias de Indices para fazer a média...:", GVij12_soma)
+
+        counter = counter+1
+        print(counter)
+    # fazendo as avaliações que já teve, ele divide por quantas teve
+    #     scount=s+1
+    # GVij12=GVij12/scount
+    GVij12 = GVij12_soma/12
+    print("A média das instâncias de Indices:", GVij12)
+
+    IGVj3 = (0.25*(GVij-GVij12))
+    print("Parcela 3 da Governança:", IGVj3)
+
+    IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
+    print(IGVj)
+    print("teste de potencia", 2**4)
 
 
 def tela_login_sql():
@@ -1477,9 +1570,10 @@ def tela_login_dados_avaliador():
         avaliador = dados_lidos[s][0]
         # 17/05 avaliadorid = dados_lidos[s][1]
         formulario_avaliacao.label.setText(avaliador)
+        StatusAPIUX.tableWidget.setSortingEnabled(False)
 
         comando_SQL = (
-            "SELECT * FROM avaliacao_csp where avaliador=('%s')" % (avaliador,))
+            "SELECT * FROM avaliacao_csp where avaliador=('%s') order by provedor,ano,mes" % (avaliador,))
         cursor.execute(comando_SQL)
         dados_listados = cursor.fetchall()
         print(dados_listados)
@@ -1760,13 +1854,14 @@ def detalhes_avaliador():
     # print("Encontrando as avaliações deste avaliador:" % dados_lidos)
 
     ######DETALHES##########
+    # para fazer a ordenação, sort, tanto na alimentação quanto no acesso fiz order pela chamada no banco e então populado
     cursor = banco.cursor()
     cursor.execute("SELECT * FROM avaliacao_csp")
     dados_lidos = cursor.fetchall()
     linha = StatusAPIUX_avaliador.tableWidget.currentRow()
     try:
         comando_SQL2 = (
-            "SELECT * FROM avaliacao_csp where avaliador=('%s')" % (avaliador,))
+            "SELECT * FROM avaliacao_csp where avaliador=('%s') order by provedor,ano,mes" % (avaliador,))
         cursor2.execute(comando_SQL2)
         dados_lidos = cursor2.fetchall()
         print("Encontrando as avaliações deste avaliador:", dados_lidos)
