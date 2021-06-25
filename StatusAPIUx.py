@@ -1383,15 +1383,15 @@ def nova_avaliacao():
     # fazendo as avaliações que já teve, ele divide por quantas teve
     #     scount=s+1
     # GVij12=GVij12/scount
+    # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
     GVij12 = GVij12_soma/12
-    print("A média das instâncias de Indices:", GVij12)
+    print("A média das instâncias de Indices dos 12 meses:", GVij12)
 
-    IGVj3 = (0.25*(GVij-GVij12))
+    IGVj3 = (k3*(GVij-GVij12))
     print("Parcela 3 da Governança:", IGVj3)
 
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
     print(IGVj)
-    print("teste de potencia", 2**4)
 
 
 def tela_login_sql():
@@ -1506,7 +1506,7 @@ def tela_login_dados():
     # cursor2 = banco.cursor()
     username = tela_login.lineEdit.text()
     print(username)
-    comando_SQL = "SELECT * FROM avaliacao_csp"
+    comando_SQL = "SELECT * FROM avaliacao_csp order by provedor, ano, mes"
     cursor.execute(comando_SQL)
     dados_lidos2 = cursor.fetchall()
     print(dados_lidos2)
@@ -3095,7 +3095,7 @@ def detalhes():
 
     ######DETALHES##########
     cursor = banco.cursor()
-    cursor.execute("SELECT * FROM avaliacao_csp")
+    cursor.execute("SELECT * FROM avaliacao_csp order by provedor,ano,mes")
     dados_lidos = cursor.fetchall()
     linha = StatusAPIUX.tableWidget.currentRow()
     try:
