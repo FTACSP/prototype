@@ -1282,13 +1282,11 @@ def nova_avaliacao():
         #     # return funcao_iniciar()            # return funcao_iniciar()
 
     cursor = banco.cursor(buffered=True)
-    # q1=1
-    # q2=2
-    # q3=3
-    # q4=4
-
-    comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,GVij, TPij, SIij, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
-    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), float(GVij), float(TPij), float(SIij), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+    IGVj = 0
+    ITPj = 0
+    ISIj = 0
+    comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,GVij, TPij, SIij,IGVj,ITPj,ISIj, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
+    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), float(GVij), float(TPij), float(SIij), IGVj, ITPj, ISIj, str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
         q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
     cursor.execute(comando_SQL, dados)
 
@@ -1306,10 +1304,19 @@ def nova_avaliacao():
     mes_anterior = mes - 1
     ano2p = ano
     # indicar os valores das variáveis
-    # cadastrar as variáveis no BD
-    k1 = 0.5
-    k2 = 0.25
-    k3 = 0.25
+    # cadastrar as variáveis no BD (provedor)
+
+    cursor.execute(
+        "select k1,k2,k3 from provedores where provedor=('%s')" % provedor)
+    kn = cursor.fetchall()
+    print("kn é:", kn)
+    k1 = kn[0][0]
+    print("k1 é:", k1)
+    k2 = kn[0][1]
+    print("k2 é:", k2)
+    k3 = kn[0][2]
+    print("k3 é:", k3)
+
     # 4,3,2,1,2,2,2
     print("Mês anterior:", mes_anterior)  # GVj-1
     if mes_anterior == 0:
@@ -1324,11 +1331,25 @@ def nova_avaliacao():
         cursor2.execute(Comando_SQL2)
         dados_lidos = cursor2.fetchall()
         avaliacao = dados_lidos
-        print("A avaliação anterior deste avaliador com este provedor:", avaliacao)
+        print("A avaliação anterior com o ano passado deste avaliador com este provedor:", avaliacao)
+        GVij2 = avaliacao[0][7]
+        print("Indice de Governança com o ano passado do mês anterior:", GVij2)
+        TPij2 = avaliacao[0][8]
+        print("Indice de Transparência com o ano passado do mês anterior:", GVij2)
+        SIij2 = avaliacao[0][9]
+        print("Indice de Segurança da informação com o ano passado do mês anterior:", GVij2)
+
+    except IndexError:  # quando não há mês anterior
+        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+        avaliacao = "null"
+        print("Não há avaliação feita no mês anterior do ano passado:", mes_anterior)
+    try:
         GVij2 = avaliacao[0][7]
         print("Indice de Governança do mês anterior:", GVij2)
         TPij2 = avaliacao[0][8]
+        print("Indice de Transparência do mês anterior:", GVij2)
         SIij2 = avaliacao[0][9]
+        print("Indice de Segurança da informação do mês anterior:", GVij2)
     except IndexError:  # quando não há mês anterior
         # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
         avaliacao = "null"
@@ -1340,7 +1361,19 @@ def nova_avaliacao():
     print("Parcela 1 da Governança: %.3f" % IGVj1)
 
     IGVj2 = (k2*(GVij-GVij2))
-    print("A 2ª parcela da governança é: %.3f" % IGVj2)
+    print("A 2ª parcela da Governança é: %.3f" % IGVj2)
+
+    ITPj1 = (TPij)*k1  # primeira parcela
+    print("Parcela 1 da Transparência: %.3f" % ITPj1)
+
+    ITPj2 = (k2*(TPij-TPij2))
+    print("A 2ª parcela da Transparência é: %.3f" % ITPj2)
+
+    ISIj1 = (SIij)*k1  # primeira parcela
+    print("Parcela 1 da Segurança da Informação: %.3f" % ISIj1)
+
+    ISIj2 = (k2*(SIij-SIij2))
+    print("A 2ª parcela da Segurança da Informação é: %.3f" % ISIj2)
 
     ###Terceira parcela precisa da média dos últimos 12 indices###
     #O limite do mês é o mês atual, o ínicio são 11 meses atras#
@@ -1368,15 +1401,27 @@ def nova_avaliacao():
     print(dados_listados)
     counter = 0
     GVij12_soma = 0
+    TPij12_soma = 0
+    SIij12_soma = 0
     # vai rodando de 1 em 1 pela quantidade de avaliações
     for s in range(len(dados_listados,)):
         # if dados_lidos[s][0] != dados_lidos[s][0]:
         # print(dados_lidos[s])
 
         GVij12 = dados_listados[s][7]  # vai pegando o GVij de cada avaliação
-        print("Instâncias de Indices:", GVij12)
+        print("Instâncias de Indices Governança:", GVij12)
         GVij12_soma = GVij12_soma+GVij12  # soma o GVij de cada avaliação
-        print("Instâncias de Indices para fazer a média...:", GVij12_soma)
+        print("Instâncias de Indices Governança para fazer a média...:", GVij12_soma)
+
+        TPij12 = dados_listados[s][8]
+        print("Instâncias de Indices Transparência:", TPij12)
+        TPij12_soma = TPij12_soma+TPij12
+        print("Instâncias de Indices Transparência para fazer a média...:", TPij12_soma)
+
+        SIij12 = dados_listados[s][9]
+        print("Instâncias de Indices Segurança da Informação:", SIij12)
+        SIij12_soma = SIij12_soma+SIij12
+        print("Instâncias de Indices Segurança da Informação para fazer a média...:", SIij12_soma)
 
         counter = counter+1
         print(counter)
@@ -1391,7 +1436,28 @@ def nova_avaliacao():
     print("Parcela 3 da Governança:", IGVj3)
 
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
-    print(IGVj)
+    print("Indicador de confiança Governança:", IGVj)
+
+    TPij12 = TPij12_soma/12
+    print("A média das instâncias de Indices dos 12 meses:", TPij12)
+
+    ITPj3 = (k3*(TPij-TPij12))
+    print("Parcela 3 da Transparência:", ITPj3)
+
+    ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
+    print("Indicador de confiança Transparência:", ITPj)
+
+    SIij12 = SIij12_soma/12
+    print("A média das instâncias de Indices dos 12 meses:", TPij12)
+
+    ISIj3 = (k3*(SIij-SIij12))
+    print("Parcela 3 da Segurança da Informação:", ISIj3)
+
+    ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
+    print("Indicador de confiança Segurança da Informação:", ISIj)
+
+    cursor2.execute("UPDATE avaliacao_csp SET IGVj=%s, ITPj=%s,ISIj=%s WHERE avaliador=('%s') and provedor=('%s') and mes=%s and ano=%s" % (
+        float(IGVj), float(ITPj), float(ISIj), str(avaliador), str(provedor), int(mes), int(ano)))
 
 
 def tela_login_sql():
@@ -1885,30 +1951,33 @@ def detalhes_avaliador():
         GVij = avaliacao[0][7]
         TPij = avaliacao[0][8]
         SIij = avaliacao[0][9]
-        q1 = avaliacao[0][10]
-        q2 = avaliacao[0][11]
-        q3 = avaliacao[0][12]
-        q4 = avaliacao[0][13]
-        q5 = avaliacao[0][14]
-        q6 = avaliacao[0][15]
-        q7 = avaliacao[0][16]
-        q8 = avaliacao[0][17]
-        q9 = avaliacao[0][18]
-        q10 = avaliacao[0][19]
-        q11 = avaliacao[0][20]
-        q12 = avaliacao[0][21]
-        q13 = avaliacao[0][22]
-        q14 = avaliacao[0][23]
-        q15 = avaliacao[0][24]
-        q16 = avaliacao[0][25]
-        q17 = avaliacao[0][26]
-        q18 = avaliacao[0][27]
-        q19 = avaliacao[0][28]
-        q20 = avaliacao[0][29]
-        q21 = avaliacao[0][30]
-        q22 = avaliacao[0][31]
-        q23 = avaliacao[0][32]
-        q24 = avaliacao[0][33]
+        IGVj = avaliacao[0][10]
+        ITPj = avaliacao[0][11]
+        ISIj = avaliacao[0][12]
+        q1 = avaliacao[0][13]
+        q2 = avaliacao[0][14]
+        q3 = avaliacao[0][15]
+        q4 = avaliacao[0][16]
+        q5 = avaliacao[0][17]
+        q6 = avaliacao[0][18]
+        q7 = avaliacao[0][19]
+        q8 = avaliacao[0][20]
+        q9 = avaliacao[0][21]
+        q10 = avaliacao[0][22]
+        q11 = avaliacao[0][23]
+        q12 = avaliacao[0][24]
+        q13 = avaliacao[0][25]
+        q14 = avaliacao[0][26]
+        q15 = avaliacao[0][27]
+        q16 = avaliacao[0][28]
+        q17 = avaliacao[0][29]
+        q18 = avaliacao[0][30]
+        q19 = avaliacao[0][31]
+        q20 = avaliacao[0][32]
+        q21 = avaliacao[0][33]
+        q22 = avaliacao[0][34]
+        q23 = avaliacao[0][35]
+        q24 = avaliacao[0][36]
         lista_avaliacao_avaliador.label.setText(avaliador)
         lista_avaliacao_avaliador.label_2.setText(id)
         if atividade == 1:
@@ -3121,30 +3190,33 @@ def detalhes():
         GVij = avaliacao[0][7]
         TPij = avaliacao[0][8]
         SIij = avaliacao[0][9]
-        q1 = avaliacao[0][10]
-        q2 = avaliacao[0][11]
-        q3 = avaliacao[0][12]
-        q4 = avaliacao[0][13]
-        q5 = avaliacao[0][14]
-        q6 = avaliacao[0][15]
-        q7 = avaliacao[0][16]
-        q8 = avaliacao[0][17]
-        q9 = avaliacao[0][18]
-        q10 = avaliacao[0][19]
-        q11 = avaliacao[0][20]
-        q12 = avaliacao[0][21]
-        q13 = avaliacao[0][22]
-        q14 = avaliacao[0][23]
-        q15 = avaliacao[0][24]
-        q16 = avaliacao[0][25]
-        q17 = avaliacao[0][26]
-        q18 = avaliacao[0][27]
-        q19 = avaliacao[0][28]
-        q20 = avaliacao[0][29]
-        q21 = avaliacao[0][30]
-        q22 = avaliacao[0][31]
-        q23 = avaliacao[0][32]
-        q24 = avaliacao[0][33]
+        IGVj = avaliacao[0][10]
+        ITPj = avaliacao[0][11]
+        ISIj = avaliacao[0][12]
+        q1 = avaliacao[0][13]
+        q2 = avaliacao[0][14]
+        q3 = avaliacao[0][15]
+        q4 = avaliacao[0][16]
+        q5 = avaliacao[0][17]
+        q6 = avaliacao[0][18]
+        q7 = avaliacao[0][19]
+        q8 = avaliacao[0][20]
+        q9 = avaliacao[0][21]
+        q10 = avaliacao[0][22]
+        q11 = avaliacao[0][23]
+        q12 = avaliacao[0][24]
+        q13 = avaliacao[0][25]
+        q14 = avaliacao[0][26]
+        q15 = avaliacao[0][27]
+        q16 = avaliacao[0][28]
+        q17 = avaliacao[0][29]
+        q18 = avaliacao[0][30]
+        q19 = avaliacao[0][31]
+        q20 = avaliacao[0][32]
+        q21 = avaliacao[0][33]
+        q22 = avaliacao[0][34]
+        q23 = avaliacao[0][35]
+        q24 = avaliacao[0][36]
         lista_avaliacao.label.setText(avaliador)
         lista_avaliacao.label_2.setText(id)
         if atividade == 1:
