@@ -1388,11 +1388,13 @@ def nova_avaliacao():
     if mes_anterior12 <= 0:
         mes_anterior12 = mes_anterior12*-1  # deixar positivo
         mes_anterior12 = mes_ano-mes_anterior12
-        print("Mês do ano passado:", mes_anterior12)
+        print("12 meses atrás é:", mes_anterior12)
         ano_anterior = ano - 1
-    # comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano<=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano>=('%s')" %
+    ####buscando as avaliações dentre 1 ano####
+    # Antes estava pegando o mês atual, o que dava 13 resultados pra fazer a média, sendo que pra 3ª parcela, preciso da média dos últimos 12 pra subtrair do atual
+    # comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
     #                (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
-    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
+    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
                    (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
 
     cursor.execute(comando_SQL)
