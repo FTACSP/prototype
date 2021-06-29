@@ -123,7 +123,8 @@ select * from avaliacao_csp where provedor="AWS" and mes>=1 and mes<=12 ;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=12 and mes<=6 and ano<=2020 and select * from avaliacao_csp where ano>=2019;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=12 and mes<=6 and ano<=2020 and select * from avaliacao_csp where ano>=2019;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=06 and ano<=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "aws" and mes>=06 and ano>=2020 order by ano,mes;
-select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=06 and ano=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "aws" and mes>=06 and ano=2020 order by ano,mes;
+
+select * from avaliacao_csp where avaliador="joaquim" and provedor="locaweb" and mes<02 and ano=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "locaweb" and mes>=02 and ano=2020 order by ano,mes;
 delete from avaliacao_csp where avaliador="joaquim" and provedor ="aws" and mes=06 and ano=2021;
 delete from avaliacao_csp where avaliador="joaquim" and provedor ="aws" and mes=01 and ano=2020;
 select * from avaliacao_csp where avaliador="joaquim" order by provedor, ano,mes;
