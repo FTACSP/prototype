@@ -655,6 +655,7 @@ def limpar_avaliacao():
     formulario_avaliacao.radioButton110.setChecked(True)
     formulario_avaliacao.radioButton115.setChecked(True)
     formulario_avaliacao.radioButton120.setChecked(True)
+    formulario_avaliacao.radioButton122.setChecked(True)
     formulario_avaliacao.comboBox_2.setCurrentIndex(0)
     formulario_avaliacao.comboBox_3.setCurrentIndex(0)
     formulario_avaliacao.comboBox_4.setCurrentIndex(0)
@@ -1282,7 +1283,7 @@ def nova_avaliacao():
         #     # return funcao_iniciar()            # return funcao_iniciar()
 
     cursor = banco.cursor(buffered=True)
-    IGVj = 0
+    IGVj = 0  # indicadores que serão resultados das operações feitas nas parcelas
     ITPj = 0
     ISIj = 0
     comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,GVij, TPij, SIij,IGVj,ITPj,ISIj, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
@@ -1343,6 +1344,10 @@ def nova_avaliacao():
         # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
         avaliacao = "null"
         print("Não há avaliação feita no mês anterior do ano passado:", mes_anterior)
+        GVij2 = 0
+        TPij2 = 0
+        SIij2 = 0
+
     try:
         GVij2 = avaliacao[0][7]
         print("Indice de Governança do mês anterior:", GVij2)
@@ -1354,6 +1359,9 @@ def nova_avaliacao():
         # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
         avaliacao = "null"
         print("Não há avaliação feita no mês anterior:", mes_anterior)
+        GVij2 = 0
+        TPij2 = 0
+        SIij2 = 0
 
     # floatao = 2.151212112
     # print("Floatao é:%.2f" % (floatao))
@@ -1432,34 +1440,40 @@ def nova_avaliacao():
     # GVij12=GVij12/scount
     # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
     GVij12 = GVij12_soma/12
-    print("A média das instâncias de Indices dos 12 meses:", GVij12)
+    print("A média das instâncias de Indices sobre a Governança nos 12 meses:", GVij12)
 
-    IGVj3 = (k3*(GVij-GVij12))
+    IGVj3 = (k3*(GVij12))
     print("Parcela 3 da Governança:", IGVj3)
 
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
     print("Indicador de confiança Governança:", IGVj)
 
     TPij12 = TPij12_soma/12
-    print("A média das instâncias de Indices dos 12 meses:", TPij12)
+    print("A média das instâncias de Indices sobre a Transparência nos dos 12 meses:", TPij12)
 
-    ITPj3 = (k3*(TPij-TPij12))
+    ITPj3 = (k3*(TPij12))
     print("Parcela 3 da Transparência:", ITPj3)
 
     ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
     print("Indicador de confiança Transparência:", ITPj)
 
     SIij12 = SIij12_soma/12
-    print("A média das instâncias de Indices dos 12 meses:", TPij12)
+    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses:", TPij12)
 
-    ISIj3 = (k3*(SIij-SIij12))
+    ISIj3 = (k3*(SIij12))
     print("Parcela 3 da Segurança da Informação:", ISIj3)
 
     ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
     print("Indicador de confiança Segurança da Informação:", ISIj)
 
-    cursor2.execute("UPDATE avaliacao_csp SET IGVj=%s, ITPj=%s,ISIj=%s WHERE avaliador=('%s') and provedor=('%s') and mes=%s and ano=%s" % (
+    cursor.execute("UPDATE avaliacao_csp SET IGVj=('%s'), ITPj=('%s'),ISIj=('%s') WHERE avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
         float(IGVj), float(ITPj), float(ISIj), str(avaliador), str(provedor), int(mes), int(ano)))
+    banco.commit()
+# 4321222
+# 1234333
+# 4321123411
+# Mês ímpares tem incidentes
+# De um mês para o outro inverte a repetição
 
 
 def tela_login_sql():

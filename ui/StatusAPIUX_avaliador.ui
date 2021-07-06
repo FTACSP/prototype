@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>773</width>
-    <height>502</height>
+    <height>497</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
    <widget class="QPushButton" name="botao_1">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>120</x>
       <y>390</y>
       <width>141</width>
       <height>31</height>
@@ -40,7 +40,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Nova avaliação</string>
+     <string>New Assessment</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botao_3">
@@ -63,14 +63,14 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Detalhes</string>
+     <string>Details</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>0</y>
+      <x>280</x>
+      <y>10</y>
       <width>241</width>
       <height>71</height>
      </rect>
@@ -84,7 +84,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Avaliação de CSPs</string>
+     <string>CSP assesments</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_title_2">
@@ -188,22 +188,22 @@
     </column>
     <column>
      <property name="text">
-      <string>Avaliador</string>
+      <string>Evaluator</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Provedor</string>
+      <string>Provider</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Mês</string>
+      <string>Month</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Ano</string>
+      <string>Year</string>
      </property>
     </column>
    </widget>
@@ -211,9 +211,9 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>430</y>
+      <y>420</y>
       <width>81</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -227,7 +227,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Voltar</string>
+     <string>Back</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -253,9 +253,9 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>430</y>
+      <y>420</y>
       <width>81</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -269,7 +269,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Sair</string>
+     <string>Quit</string>
     </property>
    </widget>
   </widget>

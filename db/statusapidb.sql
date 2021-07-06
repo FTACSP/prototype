@@ -79,7 +79,7 @@ select * from avaliadores;
 select * from provedores;
 select * from tempos;
 select * from avaliacao_csp;
-select * from avaliacao_csp where avaliadorusr=joaquim;
+select * from avaliacao_csp where avaliador="joaquim";
 show create table avaliadores;
 show create table csp;
 
