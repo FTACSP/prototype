@@ -4459,20 +4459,7 @@ if __name__ == "__main__":
         cadastro_provedor_salvar)
     # 1
     tela_login.show()
-    ####MAIN#####
-    # StatusAPIUX.show()
 
-    # Form.show()
-    # formulario_avaliacao.show()# 1
     app.exec()  # 1
-    # app2.exec()
-    # sys.exit(app.exec_())
-    # ui = Ui_Form()
-    # ui.setupUi(Form)
-    # Form.show()
 
-    # MainWindow = QtWidgets.QMainWindow() #Originais do pyuic5 -x StatusAPIUX.ui -o StatusAPIUx.py
-    # ui = Ui_MainWindow()
-    # ui.setupUi(MainWindow)
-    # MainWindow.show()
     sys.exit(app.exec_())
