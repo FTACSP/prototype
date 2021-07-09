@@ -119,7 +119,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Sair</string>
+    <string>Quit</string>
    </property>
   </widget>
  </widget>

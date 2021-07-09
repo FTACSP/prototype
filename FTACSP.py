@@ -25,6 +25,15 @@
 # RB = 1,1
 # M= nº incidentes
 
+# FTACSP V1.00 *
+#Avaliador: Joaquim
+# Traduzindo
+
+# Incluir as 3 colunas do GVJ,TPJ, SIJ
+
+# traduzir o git
+# traduzir o formulario de avaliacao
+# tirar a foto
 
 # from _typeshed import NoneType
 from msilib.schema import RadioButton
@@ -50,6 +59,12 @@ banco = mysql.connector.connect(host='localhost',
 
 
 def funcao_iniciar():
+    formulario_avaliacao.show()
+    # radioGroups()
+    print("Função iniciar começada")
+
+
+def radioGroups():
     radioGroup()
     radioGroup_2()
     radioGroup_3()
@@ -62,9 +77,7 @@ def funcao_iniciar():
     radioGroup_10()
     radioGroup_11()
     radioGroup_12()
-    print("Função iniciar começada")
-
-    formulario_avaliacao.show()
+    radioGroup_13()
 
 
 def radioGroup():
@@ -104,6 +117,7 @@ def radioGroup():
         if formulario_avaliacao.radioButton5.isChecked():
             formulario_avaliacao.radioButton5.setStyleSheet(
                 "background-color: yellow")
+
     return
     # radioButton1_Reset=radioButton1()
     # radioGroup=
@@ -620,6 +634,46 @@ def radioGroup_12():
             "background-color: ")
         if formulario_avaliacao.radioButton60.isChecked():
             formulario_avaliacao.radioButton60.setStyleSheet(
+                "background-color: yellow")
+    return
+
+
+def radioGroup_13():
+
+    if formulario_avaliacao.radioButton61.toggled.connect(radioGroup_13):
+
+        formulario_avaliacao.radioButton61.setStyleSheet("background-color: ")
+        if formulario_avaliacao.radioButton61.isChecked():
+            formulario_avaliacao.radioButton61.setStyleSheet(
+                "background-color: yellow")
+
+    if formulario_avaliacao.radioButton62.toggled.connect(radioGroup_13):
+
+        formulario_avaliacao.radioButton62.setStyleSheet(
+            "background-color: ")
+        if formulario_avaliacao.radioButton62.isChecked():
+            formulario_avaliacao.radioButton62.setStyleSheet(
+                "background-color: yellow")
+    if formulario_avaliacao.radioButton63.toggled.connect(radioGroup_13):
+
+        formulario_avaliacao.radioButton63.setStyleSheet(
+            "background-color: ")
+        if formulario_avaliacao.radioButton63.isChecked():
+            formulario_avaliacao.radioButton63.setStyleSheet(
+                "background-color: yellow")
+    if formulario_avaliacao.radioButton64.toggled.connect(radioGroup_13):
+
+        formulario_avaliacao.radioButton64.setStyleSheet(
+            "background-color: ")
+        if formulario_avaliacao.radioButton64.isChecked():
+            formulario_avaliacao.radioButton64.setStyleSheet(
+                "background-color: yellow")
+    if formulario_avaliacao.radioButton65.toggled.connect(radioGroup_13):
+
+        formulario_avaliacao.radioButton65.setStyleSheet(
+            "background-color: ")
+        if formulario_avaliacao.radioButton65.isChecked():
+            formulario_avaliacao.radioButton65.setStyleSheet(
                 "background-color: yellow")
     return
 # limpar() #vai pra proxima tela nao precisa limpar
@@ -1148,7 +1202,7 @@ def nova_avaliacao():
 
     tipo_avaliador = StatusAPIUX_avaliador.label_4.text()
 
-    if tipo_avaliador == "Avaliador":
+    if tipo_avaliador == "Evaluator:":
         # avaliador = StatusAPIUX_avaliador.label_5.text()
         avaliador = formulario_avaliacao.label.text()
 
@@ -1209,12 +1263,15 @@ def nova_avaliacao():
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
     print("Indíce de Governança:", GVij)
+    GVij = format(GVij, '.2f')
 
     TPij = (q8+q9+q10+q11+q12+q13+q14)/7
     print("Indíce de Transparência:", TPij)
+    TPij = format(TPij, '.2f')
 
     SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/10
     print("Indíce de Segurança da Informação:", SIij)
+    SIij = format(SIij, '.2f')
 
     # dados_lidos = cursor2.fetchone()
     # avaliacaoid_lido = dados_lidos
@@ -1292,11 +1349,13 @@ def nova_avaliacao():
     cursor.execute(comando_SQL, dados)
 
     banco.commit()
+    # Teste 08/07
+    # formulario_avaliacao.close()
+    # # tela_login_sql()
+    # limpar_avaliacao()
+    # tela_login_dados_avaliador()
+    # Fim #Teste 08/07
 
-    formulario_avaliacao.close()
-    # tela_login_sql()
-    limpar_avaliacao()
-    tela_login_dados_avaliador()
     # for i in range(1, 24):
     #     globals()["q%i" % i] = i
     # print(q1, q2, q3, q4)
@@ -1318,6 +1377,7 @@ def nova_avaliacao():
     k3 = kn[0][2]
     print("k3 é:", k3)
 
+    mes_primario = 0
     # 4,3,2,1,2,2,2
     print("Mês anterior:", mes_anterior)  # GVj-1
     if mes_anterior == 0:
@@ -1325,7 +1385,7 @@ def nova_avaliacao():
         ano2p = ano2p-1
 
     else:
-        "Não há valor mensal"
+        print("Não há valor mensal")
     try:
         Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
             avaliador, provedor, mes_anterior, ano2p))
@@ -1347,6 +1407,8 @@ def nova_avaliacao():
         GVij2 = 0
         TPij2 = 0
         SIij2 = 0
+        # ou
+        mes_primario = 1
 
     try:
         GVij2 = avaliacao[0][7]
@@ -1362,6 +1424,7 @@ def nova_avaliacao():
         GVij2 = 0
         TPij2 = 0
         SIij2 = 0
+        mes_primario = 1
 
     # floatao = 2.151212112
     # print("Floatao é:%.2f" % (floatao))
@@ -1466,12 +1529,37 @@ def nova_avaliacao():
     ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
     print("Indicador de confiança Segurança da Informação:", ISIj)
 
+    IGVj = format(IGVj, '.2f')
+    ITPj = format(ITPj, '.2f')
+    ISIj = format(ISIj, '.2f')
+    if mes_primario == 1:
+        IGVj = 0
+        ITPj = 0
+        ISIj = 0
+        print("É mês primário, valores dos indicadores zerados")
+    else:
+        print("Não é mês primário")
+
     cursor.execute("UPDATE avaliacao_csp SET IGVj=('%s'), ITPj=('%s'),ISIj=('%s') WHERE avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
         float(IGVj), float(ITPj), float(ISIj), str(avaliador), str(provedor), int(mes), int(ano)))
     banco.commit()
-# 4321222
-# 1234333
-# 4321123411
+
+    formulario_avaliacao.close()
+    # tela_login_sql()
+    limpar_avaliacao()
+    tela_login_dados_avaliador()
+
+#Mês: 1
+# 4321222 = 16
+# 1234333 = 19
+# 4321123411 = 22
+# incidentes=1
+#Mês: 2
+# 2221234 = 16
+# 3334321 = 19
+# 1143211234 = 22
+# incidentes=0
+# ...
 # Mês ímpares tem incidentes
 # De um mês para o outro inverte a repetição
 
@@ -1532,7 +1620,7 @@ def tela_login_sql():
         # StatusAPIUX.comboBox_2.clear()
         # StatusAPIUX.comboBox_3.clear()
         # StatusAPIUX.comboBox_4.clear()
-        StatusAPIUX.label_4.setText("Gestor:")
+        StatusAPIUX.label_4.setText("Manager:")
         # StatusAPIUX.label_2.setText(dados_lidos)
         # listar_dados()
         tela_login_dados()
@@ -1655,21 +1743,21 @@ def tela_login_dados_avaliador():
         StatusAPIUX.tableWidget.setSortingEnabled(False)
 
         comando_SQL = (
-            "SELECT * FROM avaliacao_csp where avaliador=('%s') order by provedor,ano,mes" % (avaliador,))
+            "SELECT id,avaliador,provedor,mes,ano,IGVj,ITPj,ISIj FROM avaliacao_csp where avaliador=('%s') order by provedor,ano,mes" % (avaliador,))
         cursor.execute(comando_SQL)
         dados_listados = cursor.fetchall()
         print(dados_listados)
         StatusAPIUX_avaliador.tableWidget.setRowCount(len(dados_listados))
-        StatusAPIUX_avaliador.tableWidget.setColumnCount(5)
+        StatusAPIUX_avaliador.tableWidget.setColumnCount(8)
         for i in range(0, len(dados_listados)):
-            for j in range(0, 5):
+            for j in range(0, 8):
                 StatusAPIUX_avaliador.tableWidget.setItem(
                     i, j, QtWidgets.QTableWidgetItem(str(dados_listados[i][j])))
     # tela_login_cadastro.comboBox.
         banco.commit()
     # cursor.close()
 
-        StatusAPIUX_avaliador.label_4.setText("Avaliador")
+        StatusAPIUX_avaliador.label_4.setText("Evaluator:")
         StatusAPIUX_avaliador.show()
 
 
@@ -3047,7 +3135,7 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     if lista_avaliacao_avaliador.radioButton121.isChecked():
         print("Teve incidente neste mês")
         incidentes = 1
-    if lista_avaliacao_avaliador.radioButton122.isChecked():
+    elif lista_avaliacao_avaliador.radioButton122.isChecked():
         print("Não teve incidentes neste mês")
         incidentes = 0
 
@@ -3056,6 +3144,8 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     provedor = lista_avaliacao_avaliador.comboBox_2.currentText()
     mes = lista_avaliacao_avaliador.comboBox_3.currentText()
     ano = lista_avaliacao_avaliador.comboBox_4.currentText()
+    mes = int(mes)
+    ano = int(ano)
     Comando_SQL2 = ("select id from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano =('%s')" % (
         avaliador, provedor, mes, ano))
     cursor2.execute(Comando_SQL2)
@@ -3077,19 +3167,31 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     # verificar se já foi feita alguma avaliação
     print("Tempo da avaliacao lida:", avaliacaotempo_lido)
 
+    # 08/07 FAZENDO A NOVA AVALIAÇÃO DA LISTA DE DETALHES, TAMBÉM CONTAR NOVOS INDICES
+    RB = 1.1
+    m = incidentes
+
+    GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
+    print("Indíce de Governança do Detalhes:", GVij)
+
+    TPij = (q8+q9+q10+q11+q12+q13+q14)/7
+    print("Indíce de Transparência do Detalhes:", TPij)
+
+    SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/10
+    print("Indíce de Segurança da Informação do Detalhes:", SIij)
     if q1 or q2 or q3 or q4 or q5 or q6 or q7 or q8 or q9 or q10 or q11 or q12 or q13 or q14 or q15 or q16 or q17 or q18 or q19 or q20 or q21 or q22 or q23 or q24 == 0:
         QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
                           "Valor 0 inserido numa ou mais respostas, corrigir ou continuar")
         resp = QMessageBox.question(
             lista_avaliacao_avaliador, 'Continuar?', 'Envie a avaliação.', QMessageBox.Yes | QMessageBox.No)
         if resp == QMessageBox.Yes:
-            print("continuando")
+            print("continuando do Detalhes")
             # lista_avaliacao_avaliador.close()
             # QMessageBox.about(lista_avaliacao_avaliador, "Concluído",
             #                   "Avaliação armazenada com sucesso!")
         else:
-            print("aguardando enviar avaliação")
-            # return detalhes_avaliador()
+            print("aguardando enviar avaliação do Detalhes")
+            return detalhes_avaliador()
 
     cursor4.close()
     if avaliacaotempo_lido is not None:
@@ -3101,46 +3203,206 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
             resp = QMessageBox.question(
                 lista_avaliacao_avaliador, 'Continuar?', 'Substituir a avaliação.', QMessageBox.Yes | QMessageBox.No)
             if resp == QMessageBox.Yes:
-                print("Substituindo a avaliação realizada.")
+                print("Substituindo a avaliação realizada do Detalhes.")
                 avaliacaoid_lido = avaliacaoid_lido[0]
                 print(
-                    "Id da avaliacao que sera caso necessite substituir sem virgula", avaliacaoid_lido)
+                    "Id da avaliacao que sera caso necessite substituir sem virgula do Detalhes", avaliacaoid_lido)
                 # formulario_avaliacao.close()
                 cursor2 = banco.cursor()
 
-                cursor2.execute("UPDATE avaliacao_csp SET avaliador=('%s'),provedor=('%s'),mes=('%s'),ano=('%s'),atividade=('%s'),incidentes=('%s'),q1=('%s'), q2=('%s'), q3=('%s'), q4=('%s'), q5=('%s'), q6=('%s'), q7=('%s'), q8=('%s'), q9=('%s'), q10=('%s'), q11=('%s'), q12=('%s'), q13=('%s'), q14=('%s'), q15=('%s'), q16=('%s'), q17=('%s'), q18=('%s'), q19=('%s'), q20=('%s'), q21=('%s'), q22=('%s'), q23=('%s'), q24=('%s') WHERE id=%s" % (
-                    (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+                cursor2.execute("UPDATE avaliacao_csp SET avaliador=('%s'),provedor=('%s'),mes=('%s'),ano=('%s'),incidentes=('%s'),GVij=('%s'),TPij=('%s'),SIij=('%s'),q1=('%s'), q2=('%s'), q3=('%s'), q4=('%s'), q5=('%s'), q6=('%s'), q7=('%s'), q8=('%s'), q9=('%s'), q10=('%s'), q11=('%s'), q12=('%s'), q13=('%s'), q14=('%s'), q15=('%s'), q16=('%s'), q17=('%s'), q18=('%s'), q19=('%s'), q20=('%s'), q21=('%s'), q22=('%s'), q23=('%s'), q24=('%s') WHERE id=%s" % (
+                    (str(avaliador), str(provedor), int(mes), int(ano), int(incidentes), float(GVij), float(TPij), float(SIij), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
                         q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24), avaliacaoid_lido)))
-                # cursor.execute("delete from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')""" % (
-                #     avaliador, provedor, mes, ano))
-                # print("Deletado")
-                # banco.commit()
-
-                # comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s)"
-                # dados = (str(avaliador), str(provedor), int(mes), int(ano), str(qum), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
-                #     q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
-                # cursor.execute(comando_SQL, dados)
-                # QMessageBox.about(formulario_avaliacao, "Concluído",
-                #                   "Avaliação substituída com sucesso!")
 
                 banco.commit()
                 lista_avaliacao_avaliador.close()
-                return tela_login_dados_avaliador()
+                # 08/07 \/
+                limpar_avaliacao_detalhes()
+                # return tela_login_dados_avaliador()
+                # return
 
             else:
+                print("Aguardando avaliação para ser substituída do Detalhes!")
                 return detalhes_avaliador()
 
     cursor = banco.cursor(buffered=True)
 
-    comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
-    dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
-        q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
-    cursor.execute(comando_SQL, dados)
+    IGVj = 0  # indicadores que serão resultados das operações feitas nas parcelas
+    ITPj = 0
+    ISIj = 0
+    # comando_SQL = "INSERT INTO avaliacao_csp (avaliador,provedor,mes,ano,atividade,incidentes,GVij, TPij, SIij,IGVj,ITPj,ISIj, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
+    # dados = (str(avaliador), str(provedor), int(mes), int(ano), int(1), int(incidentes), float(GVij), float(TPij), float(SIij), IGVj, ITPj, ISIj, str(q1), str(q2), str(q3), str(q4), str(q5), str(q6), str(q7), str(q8), str(q9), str(q10), str(
+    #     q11), str(q12), str(q13), str(q14), str(q15), str(q16), str(q17), str(q18), str(q19), str(q20), str(q21), str(q22), str(q23), str(q24))
+    # cursor.execute(comando_SQL, dados)
 
+    # banco.commit()
+
+    # lista_avaliacao_avaliador.close()
+    # # tela_login_sql()
+    # limpar_avaliacao_detalhes()
+    # tela_login_dados_avaliador()
+    cursor2 = banco.cursor()
+    mes_anterior = mes - 1
+    ano2p = ano
+    # indicar os valores das variáveis
+    # cadastrar as variáveis no BD (provedor)
+
+    cursor.execute(
+        "select k1,k2,k3 from provedores where provedor=('%s')" % provedor)
+    kn = cursor.fetchall()
+    print("kn é:", kn)
+    k1 = kn[0][0]
+    print("k1 é:", k1)
+    k2 = kn[0][1]
+    print("k2 é:", k2)
+    k3 = kn[0][2]
+    print("k3 é:", k3)
+
+    # 4,3,2,1,2,2,2
+    print("Mês anterior:", mes_anterior)  # GVj-1
+    if mes_anterior == 0:
+        mes_anterior = 12
+        ano2p = ano2p-1
+
+    else:
+        "Não há valor mensal"
+    try:
+        Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+            avaliador, provedor, mes_anterior, ano2p))
+        cursor2.execute(Comando_SQL2)
+        dados_lidos = cursor2.fetchall()
+        avaliacao = dados_lidos
+        print("A avaliação anterior com o ano passado deste avaliador com este provedor do Detalhes:", avaliacao)
+        GVij2 = avaliacao[0][7]
+        print("Indice de Governança com o ano passado do mês anterior do Detalhes:", GVij2)
+        TPij2 = avaliacao[0][8]
+        print(
+            "Indice de Transparência com o ano passado do mês anterior do Detalhes:", GVij2)
+        SIij2 = avaliacao[0][9]
+        print("Indice de Segurança da informação com o ano passado do mês anterior do Detalhes:", GVij2)
+
+    except IndexError:  # quando não há mês anterior
+        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+        avaliacao = "null"
+        print("Não há avaliação feita no mês anterior do ano passado do Detalhes:", mes_anterior)
+        GVij2 = 0
+        TPij2 = 0
+        SIij2 = 0
+
+    try:
+        GVij2 = avaliacao[0][7]
+        print("Indice de Governança do mês anterior do Detalhes:", GVij2)
+        TPij2 = avaliacao[0][8]
+        print("Indice de Transparência do mês anterior do Detalhes:", GVij2)
+        SIij2 = avaliacao[0][9]
+        print("Indice de Segurança da informação do mês anterior do Detalhes:", GVij2)
+    except IndexError:  # quando não há mês anterior
+        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+        avaliacao = "null"
+        print("Não há avaliação feita no mês anterior do Detalhes:", mes_anterior)
+        GVij2 = 0
+        TPij2 = 0
+        SIij2 = 0
+
+    # floatao = 2.151212112
+    # print("Floatao é:%.2f" % (floatao))
+    IGVj1 = (GVij)*k1  # primeira parcela
+    print("Parcela 1 da Governança do Detalhes: %.3f" % IGVj1)
+
+    IGVj2 = (k2*(GVij-GVij2))
+    print("A 2ª parcela da Governança do Detalhes é: %.3f" % IGVj2)
+
+    ITPj1 = (TPij)*k1  # primeira parcela
+    print("Parcela 1 da Transparência do Detalhes: %.3f" % ITPj1)
+
+    ITPj2 = (k2*(TPij-TPij2))
+    print("A 2ª parcela da Transparência do Detalhes é: %.3f" % ITPj2)
+
+    ISIj1 = (SIij)*k1  # primeira parcela
+    print("Parcela 1 da Segurança da Informação do Detalhes: %.3f" % ISIj1)
+
+    ISIj2 = (k2*(SIij-SIij2))
+    print("A 2ª parcela da Segurança da Informação do Detalhes é: %.3f" % ISIj2)
+
+    #
+    mes_ano = 12
+    mes_atual = mes
+    mes_anterior12 = mes_atual-12
+    ano_atual = ano
+    print("Ano atual é:", ano_atual)
+    if mes_anterior12 <= 0:
+        mes_anterior12 = mes_anterior12*-1  # deixar positivo
+        mes_anterior12 = mes_ano-mes_anterior12
+        print("12 meses atrás é do Detalhes:", mes_anterior12)
+        ano_anterior = ano - 1
+
+    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
+                   (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
+
+    cursor.execute(comando_SQL)
+    dados_listados = cursor.fetchall()
+    print("Abaixo avaliações feitas nos 12 meses da 3ª parcela do Detalhes:")
+    print(dados_listados)
+    counter = 0
+    GVij12_soma = 0
+    TPij12_soma = 0
+    SIij12_soma = 0
+    for s in range(len(dados_listados,)):
+
+        GVij12 = dados_listados[s][7]  # vai pegando o GVij de cada avaliação
+        print("Instâncias de Indices Governança do Detalhes:", GVij12)
+        GVij12_soma = GVij12_soma+GVij12  # soma o GVij de cada avaliação
+        print("Instâncias de Indices Governança para fazer a média do Detalhes...:", GVij12_soma)
+
+        TPij12 = dados_listados[s][8]
+        print("Instâncias de Indices Transparência do Detalhes:", TPij12)
+        TPij12_soma = TPij12_soma+TPij12
+        print("Instâncias de Indices Transparência para fazer a média do Detalhes...:", TPij12_soma)
+
+        SIij12 = dados_listados[s][9]
+        print("Instâncias de Indices Segurança da Informação do Detalhes:", SIij12)
+        SIij12_soma = SIij12_soma+SIij12
+        print("Instâncias de Indices Segurança da Informação para fazer a média do Detalhes...:", SIij12_soma)
+
+        counter = counter+1
+        print(counter)
+    # fazendo as avaliações que já teve, ele divide por quantas teve
+    #     scount=s+1
+    # GVij12=GVij12/scount
+    # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
+    GVij12 = GVij12_soma/12
+    print("A média das instâncias de Indices sobre a Governança nos 12 meses do Detalhes:", GVij12)
+
+    IGVj3 = (k3*(GVij12))
+    print("Parcela 3 da Governança do Detalhes:", IGVj3)
+
+    IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
+    print("Indicador de confiança Governança do Detalhes:", IGVj)
+
+    TPij12 = TPij12_soma/12
+    print("A média das instâncias de Indices sobre a Transparência nos dos 12 meses do Detalhes:", TPij12)
+
+    ITPj3 = (k3*(TPij12))
+    print("Parcela 3 da Transparência do Detalhes:", ITPj3)
+
+    ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
+    print("Indicador de confiança Transparência do Detalhes:", ITPj)
+
+    SIij12 = SIij12_soma/12
+    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses do Detalhes:", TPij12)
+
+    ISIj3 = (k3*(SIij12))
+    print("Parcela 3 da Segurança da Informação do Detalhes:", ISIj3)
+
+    ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
+    print("Indicador de confiança Segurança da Informação do Detalhes:", ISIj)
+
+    cursor.execute("UPDATE avaliacao_csp SET IGVj=('%s'), ITPj=('%s'),ISIj=('%s') WHERE avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+        float(IGVj), float(ITPj), float(ISIj), str(avaliador), str(provedor), int(mes), int(ano)))
     banco.commit()
-
     lista_avaliacao_avaliador.close()
     # tela_login_sql()
+    limpar_avaliacao_detalhes()
     tela_login_dados_avaliador()
 
 
@@ -4402,7 +4664,6 @@ if __name__ == "__main__":
 
     lista_avaliacao = uic.loadUi("ui/lista_avaliacao.ui")
 
-    tela_login_cadastro = uic.loadUi("ui/tela_login_cadastro.ui")
     tela_login = uic.loadUi("ui/tela_login.ui")
     tela_cadastro_avaliador = uic.loadUi("ui/tela_cadastro_avaliador.ui")
     tela_cadastro_provedor = uic.loadUi("ui/tela_cadastro_provedor.ui")
@@ -4459,7 +4720,20 @@ if __name__ == "__main__":
         cadastro_provedor_salvar)
     # 1
     tela_login.show()
+    ####MAIN#####
+    # StatusAPIUX.show()
 
+    # Form.show()
+    # formulario_avaliacao.show()# 1
     app.exec()  # 1
+    # app2.exec()
+    # sys.exit(app.exec_())
+    # ui = Ui_Form()
+    # ui.setupUi(Form)
+    # Form.show()
 
+    # MainWindow = QtWidgets.QMainWindow() #Originais do pyuic5 -x StatusAPIUX.ui -o StatusAPIUx.py
+    # ui = Ui_MainWindow()
+    # ui.setupUi(MainWindow)
+    # MainWindow.show()
     sys.exit(app.exec_())

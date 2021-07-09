@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>863</width>
-    <height>437</height>
+    <width>543</width>
+    <height>419</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="botao_1">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>310</y>
+      <x>300</x>
+      <y>300</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -55,9 +55,9 @@
    <widget class="QPushButton" name="botao_3">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>310</y>
-      <width>71</width>
+      <x>450</x>
+      <y>300</y>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
@@ -78,8 +78,8 @@
    <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>0</y>
+      <x>180</x>
+      <y>-10</y>
       <width>231</width>
       <height>51</height>
      </rect>
@@ -96,32 +96,11 @@
      <string>CSP Assesments</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_title_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>60</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_1">
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>60</y>
+      <y>40</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -145,7 +124,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>40</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -164,14 +143,14 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>80</y>
-      <width>811</width>
+      <x>20</x>
+      <y>60</y>
+      <width>501</width>
       <height>231</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
       <horstretch>50</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -179,7 +158,7 @@
     <property name="minimumSize">
      <size>
       <width>500</width>
-      <height>0</height>
+      <height>6</height>
      </size>
     </property>
     <property name="maximumSize">
@@ -212,52 +191,106 @@
     <property name="sortingEnabled">
      <bool>false</bool>
     </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>60</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>35</number>
+    </attribute>
     <column>
      <property name="text">
       <string>ID (Auto)</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Evaluator</string>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Provider</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Month</string>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Year</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
     <column>
      <property name="text">
       <string>IGV</string>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>ITP</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
     <column>
      <property name="text">
       <string>ISI</string>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </column>
    </widget>
    <widget class="QPushButton" name="botao_4">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>380</y>
+      <x>360</x>
+      <y>360</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -279,8 +312,8 @@
    <widget class="QPushButton" name="botao_5">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>380</y>
+      <x>450</x>
+      <y>360</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -305,7 +338,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>863</width>
+     <width>543</width>
      <height>21</height>
     </rect>
    </property>

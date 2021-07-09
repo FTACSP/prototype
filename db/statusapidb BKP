@@ -68,8 +68,10 @@ drop table csp;
 select * from csp;
 select * from avaliacao_csp;
 
-select * from csp where avaliadorid not in (select distinct id from avaliadores);
+select * , format(GVij,2) from avaliacao_csp where avaliador="joaquim";
 
+update avaliacao_csp set format(GVij,2) where avaliador="joaquim";
+alter table avaliacao_csp modify column GVij decimal(20,2) , modify column TPij decimal(20,2) , modify column SIij decimal(20,2), modify column IGVj decimal (20,2), modify column ITPj decimal (20,2), modify column ISIj decimal (20,2);
 
 SET FOREIGN_KEY_CHECKS = 0;
 delete from avaliadores where avaliador = "";
@@ -79,7 +81,8 @@ select * from avaliadores;
 select * from provedores;
 select * from tempos;
 select * from avaliacao_csp;
-select * from avaliacao_csp where avaliadorusr=joaquim;
+select * from avaliacao_csp where avaliador="joaquim";
+delete from avaliacao_csp where avaliador="joaquim";
 show create table avaliadores;
 show create table csp;
 
@@ -123,7 +126,8 @@ select * from avaliacao_csp where provedor="AWS" and mes>=1 and mes<=12 ;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=12 and mes<=6 and ano<=2020 and select * from avaliacao_csp where ano>=2019;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=12 and mes<=6 and ano<=2020 and select * from avaliacao_csp where ano>=2019;
 select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=06 and ano<=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "aws" and mes>=06 and ano>=2020 order by ano,mes;
-select * from avaliacao_csp where avaliador="joaquim" and provedor="aws" and mes<=06 and ano=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "aws" and mes>=06 and ano=2020 order by ano,mes;
+
+select * from avaliacao_csp where avaliador="joaquim" and provedor="locaweb" and mes<02 and ano=2021 UNION select * from avaliacao_csp where avaliador = "joaquim" and provedor = "locaweb" and mes>=02 and ano=2020 order by ano,mes;
 delete from avaliacao_csp where avaliador="joaquim" and provedor ="aws" and mes=06 and ano=2021;
 delete from avaliacao_csp where avaliador="joaquim" and provedor ="aws" and mes=01 and ano=2020;
 select * from avaliacao_csp where avaliador="joaquim" order by provedor, ano,mes;

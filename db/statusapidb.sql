@@ -68,8 +68,10 @@ drop table csp;
 select * from csp;
 select * from avaliacao_csp;
 
-select * from csp where avaliadorid not in (select distinct id from avaliadores);
+select * , format(GVij,2) from avaliacao_csp where avaliador="joaquim";
 
+update avaliacao_csp set format(GVij,2) where avaliador="joaquim";
+alter table avaliacao_csp modify column GVij decimal(20,2) , modify column TPij decimal(20,2) , modify column SIij decimal(20,2), modify column IGVj decimal (20,2), modify column ITPj decimal (20,2), modify column ISIj decimal (20,2);
 
 SET FOREIGN_KEY_CHECKS = 0;
 delete from avaliadores where avaliador = "";
@@ -80,6 +82,7 @@ select * from provedores;
 select * from tempos;
 select * from avaliacao_csp;
 select * from avaliacao_csp where avaliador="joaquim";
+delete from avaliacao_csp where avaliador="joaquim";
 show create table avaliadores;
 show create table csp;
 
