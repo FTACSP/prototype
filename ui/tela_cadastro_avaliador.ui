@@ -17,7 +17,7 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Cadastrar Avaliador</string>
+   <string>Register Evaluator</string>
   </property>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
@@ -29,7 +29,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Lista de avaliadores</string>
+    <string>Evaluators list</string>
    </property>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
@@ -64,22 +64,22 @@
     </column>
     <column>
      <property name="text">
-      <string>Avaliador</string>
+      <string>Evalutor</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Usuario</string>
+      <string>User</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Senha</string>
+      <string>Password</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Atividade</string>
+      <string>Active</string>
      </property>
     </column>
     <item row="0" column="3">
@@ -103,7 +103,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Excluir Avaliador</string>
+     <string>Erase evaluator</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
@@ -116,7 +116,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Salvar avaliador</string>
+     <string>Save evauator</string>
     </property>
    </widget>
   </widget>
@@ -130,7 +130,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Cadastro de avaliadores</string>
+    <string>Register evaluators</string>
    </property>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
@@ -142,7 +142,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Inserir avaliador</string>
+     <string>Insert Evaluator</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget_2">
@@ -168,27 +168,27 @@
     </property>
     <row>
      <property name="text">
-      <string>Novo avaliador</string>
+      <string>New evaluator</string>
      </property>
     </row>
     <column>
      <property name="text">
-      <string>Avaliador</string>
+      <string>Evaluator</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Usuario</string>
+      <string>User</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Senha</string>
+      <string>Password</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Atividade</string>
+      <string>Active</string>
      </property>
     </column>
     <item row="0" column="3">
@@ -208,7 +208,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Voltar</string>
+    <string>Back</string>
    </property>
   </widget>
  </widget>

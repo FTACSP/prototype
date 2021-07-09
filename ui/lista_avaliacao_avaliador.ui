@@ -9,40 +9,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>799</height>
+    <width>972</width>
+    <height>869</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Detalhes do avaliador</string>
+   <string>Form</string>
   </property>
-  <widget class="QLabel" name="label1000">
+  <widget class="QLabel" name="label_34">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>20</y>
-     <width>251</width>
-     <height>51</height>
+     <x>300</x>
+     <y>10</y>
+     <width>321</width>
+     <height>50</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>500</width>
+     <height>50</height>
+    </size>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Formulário da avaliação</string>
+    <string>Assessment Questionnaire</string>
    </property>
   </widget>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>340</y>
-     <width>901</width>
-     <height>401</height>
+     <x>10</x>
+     <y>280</y>
+     <width>911</width>
+     <height>551</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -64,12 +76,38 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
-      <width>1018</width>
-      <height>4302</height>
+      <y>-3947</y>
+      <width>901</width>
+      <height>4479</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_38">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Governance</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QLabel" name="label_8">
        <property name="minimumSize">
@@ -93,8 +131,8 @@
        </property>
        <property name="text">
         <string>Q1 Security Infrastructure
-Obs: Qual sua percepção sobre a infraestrutura de segurança do provedor.
-Como você avalia a infraestrutura de segurança do provedor?</string>
+How do you assess the provider’s security infrastructure?
+Note: What is your perception of the provider’s security infrastructure.</string>
        </property>
       </widget>
      </item>
@@ -113,7 +151,7 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - A infraestrutura de segurança é completa.</string>
+        <string>4 - The security infrastructure is complete.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -135,7 +173,7 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - A infraestrutura de segurança é adequada.</string>
+        <string>3 - The security infrastructure is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -157,7 +195,7 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - A infraestrutura de segurança é deficiente.</string>
+        <string>2 - The security infrastructure is deficient.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -179,7 +217,7 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar.</string>
+        <string>1 - The information provided is insufficient to evaluate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -201,7 +239,7 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre a infraestrutura de segurança.</string>
+        <string>0 - There is no information about the security infrastructure.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -234,8 +272,8 @@ Como você avalia a infraestrutura de segurança do provedor?</string>
        </property>
        <property name="text">
         <string>Q2 Counter Measures Installed
-Quais são os controles ou contramedidas de segurança instalados?
-Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</string>
+What security controls or countermeasures are installed?
+Note: What is your perception about the countermeasures installed by the provider</string>
        </property>
       </widget>
      </item>
@@ -254,8 +292,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
         </size>
        </property>
        <property name="text">
-        <string>4 - Os controles ou contramedidas de segurança instalados são completos.
-</string>
+        <string>4 - The installed security controls or countermeasures are complete</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_2</string>
@@ -277,8 +314,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
         </size>
        </property>
        <property name="text">
-        <string>3 - Os controles ou contramedidas de segurança instalados são adequados.
-</string>
+        <string>3 - The installed security controls or countermeasures are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_2</string>
@@ -300,8 +336,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
         </size>
        </property>
        <property name="text">
-        <string>2 - Os controles ou contramedidas de segurança instalados são deficientes.
-</string>
+        <string>2 - The installed security controls or countermeasures are deficient.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_2</string>
@@ -323,8 +358,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar.
-</string>
+        <string>1 - The information provided is insufficient to evaluate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_2</string>
@@ -346,8 +380,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre os controles ou contramedidas de segurança instalados.
-</string>
+        <string>0 - There is no information about the installed security controls or countermeasures.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -380,7 +413,7 @@ Obs: Qual sua percepção sobre as contramedidas instaladas pelo provedor.</stri
        </property>
        <property name="text">
         <string>Q3 Third party auditing (TPA)
-O provedor possui auditorias de terceira parte (TPA)?</string>
+ Does the provider have third party audits (TPA)?</string>
        </property>
       </widget>
      </item>
@@ -399,8 +432,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - As informações fornecidas por TPA não revelam deficiências.
-</string>
+        <string>4 - The information provided by TPA does not reveal deficiencies.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_3</string>
@@ -422,8 +454,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - As informações fornecidas por TPA revelam poucas deficiências.
-</string>
+        <string>3 - The information provided by TPA reveals few deficiencies.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_3</string>
@@ -445,8 +476,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - As informações fornecidas por TPA revelam muitas deficiências.
-</string>
+        <string>2 - The information provided by TPA reveals many deficiencies.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_3</string>
@@ -468,8 +498,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas por TPA são insuficientes para avaliar.
-</string>
+        <string>1 - The information provided by TPA is insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_3</string>
@@ -491,8 +520,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre auditorias de terceira parte (TPA).
-</string>
+        <string>0 - There is no information on third party audits (TPA)</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -525,8 +553,7 @@ O provedor possui auditorias de terceira parte (TPA)?</string>
        </property>
        <property name="text">
         <string>Q4 Experts recommendation
-Existem recomendações dos serviços desse provedor, realizadas por especialistas?
-</string>
+ Are there any recommendations from this provider’s services made by experts?</string>
        </property>
       </widget>
      </item>
@@ -545,8 +572,7 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
         </size>
        </property>
        <property name="text">
-        <string>4 - As informações disponíveis sobre recomendações de especialistas recomendam fortemente os serviços.
-</string>
+        <string>4 - The information available on expert recommendations strongly recommend the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_4</string>
@@ -568,7 +594,7 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
         </size>
        </property>
        <property name="text">
-        <string>3 - As informações disponíveis sobre recomendações de especialistas recomendam os serviços.
+        <string>3 - Information available on expert recommendations recommend the services.
 </string>
        </property>
        <attribute name="buttonGroup">
@@ -586,13 +612,12 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
        </property>
        <property name="maximumSize">
         <size>
-         <width>500</width>
+         <width>600</width>
          <height>20</height>
         </size>
        </property>
        <property name="text">
-        <string>2 - As informações disponíveis sobre recomendações de especialistas são neutras na recomendação dos serviços.
-</string>
+        <string>2 - The information available on expert recommendations is neutral in the recommendation of the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_4</string>
@@ -614,7 +639,7 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações disponíveis sobre recomendações de especialistas não recomendam os serviços.</string>
+        <string>1 - Information available on expert recommendations does not recommend the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_4</string>
@@ -636,7 +661,8 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre recomendações de especialistas.</string>
+        <string>0 - There is no information about expert recommendations.
+</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -669,7 +695,7 @@ Existem recomendações dos serviços desse provedor, realizadas por especialist
        </property>
        <property name="text">
         <string>Q5 Average users assessment
-Existem avaliações dos serviços desse provedor, realizadas por usuários desses serviços?</string>
+ Are there reviews of the services of that provider carried out by users of those services?</string>
        </property>
       </widget>
      </item>
@@ -688,7 +714,7 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
         </size>
        </property>
        <property name="text">
-        <string>4 - Os usuários estão muito satisfeitos com os serviços.</string>
+        <string>4 - Users are very satisfied with the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_5</string>
@@ -710,7 +736,7 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
         </size>
        </property>
        <property name="text">
-        <string>3 - Os usuários estão satisfeitos com os serviços</string>
+        <string>3 - Users are satisfied with the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_5</string>
@@ -732,7 +758,7 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
         </size>
        </property>
        <property name="text">
-        <string>2 - Os usuários estão insatisfeitos com os serviços.</string>
+        <string>2 - Users are dissatisfied with the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_5</string>
@@ -754,7 +780,7 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações disponíveis sobre avaliações por usuários são insuficientes para formar opinião.</string>
+        <string>1 - The information available on user reviews is insufficient to form an opinion.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_5</string>
@@ -776,7 +802,7 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre avaliações por usuários.</string>
+        <string>0 - There is no information about user reviews.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -809,14 +835,8 @@ Existem avaliações dos serviços desse provedor, realizadas por usuários dess
        </property>
        <property name="text">
         <string>Q6 Privacy impact assessment
-Obs. Avalie as informações do impacto de privacidade dos serviços oferecidos.
-O provedor realiza avaliação de impacto de privacidade?
-4 - As avaliações de impacto de privacidade são muito satisfatórias.
-3 - As avaliações de impacto de privacidade são adequadas.
-2 - As avaliações de impacto de privacidade apontam deficiências.
-1 - As informações disponíveis sobre avaliações de impacto de privacidade são insuficientes para formar opinião.
-0 - Não há informações sobre avaliações de impacto de privacidade.
-</string>
+Does the provider conduct a privacy impact assessment?
+Note: Evaluate the information about the impact on the privacy of the services offered</string>
        </property>
       </widget>
      </item>
@@ -835,7 +855,7 @@ O provedor realiza avaliação de impacto de privacidade?
         </size>
        </property>
        <property name="text">
-        <string>4 - As avaliações de impacto de privacidade são muito satisfatórias.</string>
+        <string>4 - The privacy impact assessment is very satisfactory.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_6</string>
@@ -857,7 +877,7 @@ O provedor realiza avaliação de impacto de privacidade?
         </size>
        </property>
        <property name="text">
-        <string>3 - As avaliações de impacto de privacidade são adequadas</string>
+        <string>3 - The privacy impact assessment is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_6</string>
@@ -879,7 +899,7 @@ O provedor realiza avaliação de impacto de privacidade?
         </size>
        </property>
        <property name="text">
-        <string>2 - As avaliações de impacto de privacidade apontam deficiências.</string>
+        <string>2 - The privacy impact assessment points out deficiencies.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_6</string>
@@ -901,7 +921,7 @@ O provedor realiza avaliação de impacto de privacidade?
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações disponíveis sobre avaliações de impacto de privacidade são insuficientes para formar opinião.</string>
+        <string>1 - The information available on privacy impact assessments is insufficient to form an opinion.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_6</string>
@@ -923,7 +943,7 @@ O provedor realiza avaliação de impacto de privacidade?
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre avaliações de impacto de privacidade.</string>
+        <string>0 - There is no information about privacy impact assessments.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -956,7 +976,7 @@ O provedor realiza avaliação de impacto de privacidade?
        </property>
        <property name="text">
         <string>Q7 Anonymization Techniques
-O provedor informa quais técnicas de anonimização são utilizadas?</string>
+Does the provider inform what anonymization techniques are used?</string>
        </property>
       </widget>
      </item>
@@ -975,7 +995,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - As técnicas de anonimização utilizadas são bastante satisfatórias.</string>
+        <string>4 - The anonymization techniques used are quite satisfactory.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_7</string>
@@ -997,7 +1017,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - As técnicas de anonimização utilizadas são adequadas.</string>
+        <string>3 - The anonymization techniques used are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_7</string>
@@ -1019,7 +1039,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - As técnicas de anonimização utilizadas são insuficientes.</string>
+        <string>2 - The anonymization techniques used are insufficient.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_7</string>
@@ -1041,7 +1061,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações disponíveis sobre as técnicas de anonimização utilizadas são insuficientes para formar opinião.</string>
+        <string>1 - The information available on the anonymization techniques used is insufficient to form an opinion.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_7</string>
@@ -1063,7 +1083,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre quais técnicas de anonimização são utilizadas.</string>
+        <string>0 - There is no information on which anonymization techniques are used</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1071,6 +1091,32 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_7</string>
        </attribute>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_37">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>TRANSPARENCY</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -1096,8 +1142,7 @@ O provedor informa quais técnicas de anonimização são utilizadas?</string>
        </property>
        <property name="text">
         <string>Q8 Security Information disclosure
-Obs. Como você avalia, de modo geral, a transparência da segurança da informação do provedor.
-Como você avalia as informações sobre informações de segurança divulgadas pelo provedor?</string>
+How do you evaluate the information about security information released by the provider?</string>
        </property>
       </widget>
      </item>
@@ -1116,7 +1161,7 @@ Como você avalia as informações sobre informações de segurança divulgadas 
         </size>
        </property>
        <property name="text">
-        <string>4 - As informações de segurança divulgadas pelo provedor são abrangentes.</string>
+        <string>4 - The security information released by the provider is comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_8</string>
@@ -1138,7 +1183,7 @@ Como você avalia as informações sobre informações de segurança divulgadas 
         </size>
        </property>
        <property name="text">
-        <string>3 - As informações de segurança divulgadas pelo provedor são adequados.</string>
+        <string>3 - The security information released by the provider is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_8</string>
@@ -1160,7 +1205,7 @@ Como você avalia as informações sobre informações de segurança divulgadas 
         </size>
        </property>
        <property name="text">
-        <string>2 - As informações de segurança divulgadas pelo provedor são bastante limitadas.</string>
+        <string>2 - The security information released by the provider is quite limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_8</string>
@@ -1182,7 +1227,7 @@ Como você avalia as informações sobre informações de segurança divulgadas 
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações de segurança divulgadas pelo provedor são insuficientes para avaliar.</string>
+        <string>1 - The security information released by the provider is insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_8</string>
@@ -1204,7 +1249,7 @@ Como você avalia as informações sobre informações de segurança divulgadas 
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações de segurança divulgadas pelo provedor.</string>
+        <string>0 - There is no security information released by the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1237,8 +1282,8 @@ Como você avalia as informações sobre informações de segurança divulgadas 
        </property>
        <property name="text">
         <string>Q9 Mandatory Disclosure
-Obs. Avalie a política de divulgação obrigatória sobre vazamento de dados e roubo de identidade.
-Como você avalia as políticas de divulgação obrigatória do provedor?</string>
+ How do you evaluate the provider’s mandatory disclosure policies?
+Note: Evaluate the mandatory disclosure policy on data leakage and identity theft</string>
        </property>
       </widget>
      </item>
@@ -1257,7 +1302,7 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
         </size>
        </property>
        <property name="text">
-        <string>4 - As políticas de divulgação obrigatória do provedor são abrangentes.</string>
+        <string>4 - The provider’s mandatory disclosure policies are comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_9</string>
@@ -1279,7 +1324,7 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
         </size>
        </property>
        <property name="text">
-        <string>3 - As políticas de divulgação obrigatória do provedor são adequadas.</string>
+        <string>3 - The provider’s mandatory disclosure policies are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_9</string>
@@ -1301,7 +1346,7 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
         </size>
        </property>
        <property name="text">
-        <string>2 - As políticas de divulgação obrigatória do provedor são bastante limitadas.\</string>
+        <string>2 - The provider’s mandatory disclosure policies are quite limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_9</string>
@@ -1323,7 +1368,7 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações sobre as políticas de divulgação obrigatória do provedor são insuficientes para avaliar.</string>
+        <string>1 - Information about the provider’s mandatory disclosure policies is insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_9</string>
@@ -1345,7 +1390,7 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre as políticas de divulgação obrigatória do provedor.</string>
+        <string>0 - There is no information about the provider’s mandatory disclosure policies.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1378,9 +1423,9 @@ Como você avalia as políticas de divulgação obrigatória do provedor?</strin
        </property>
        <property name="text">
         <string>Q10 Regulatory requirements
-Obs. Avalie o atendimento aos requisitos regulatórios, como: aprovações, licenças, registros, autorizações e outros requisitos
- aplicáveis em relação aos serviços contratados.
-Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</string>
+ How do you assess the provider’s compliance with regulatory requirements?
+Note: Evaluate compliance with regulatory requirements, such as: approvals, licenses,
+registrations, authorizations and other requirements applicable in relation to the contracted services.</string>
        </property>
       </widget>
      </item>
@@ -1399,7 +1444,7 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
         </size>
        </property>
        <property name="text">
-        <string>4 - O atendimento pelo provedor aos requisitos regulatórios são abrangentes.</string>
+        <string>4 - The provider’s compliance with regulatory requirements is comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_10</string>
@@ -1421,7 +1466,7 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
         </size>
        </property>
        <property name="text">
-        <string>3 - O atendimento pelo provedor aos requisitos regulatórios são adequados.</string>
+        <string>3 - Provider compliance with regulatory requirements is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_10</string>
@@ -1443,7 +1488,7 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
         </size>
        </property>
        <property name="text">
-        <string>2 - O atendimento pelo provedor aos requisitos regulatórios são bastante limitados.</string>
+        <string>2 - Provider compliance with regulatory requirements is very limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_10</string>
@@ -1465,7 +1510,7 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações sobre o atendimento pelo provedor aos requisitos regulatórios são insuficientes para avaliar.</string>
+        <string>1 - Information on the provider’s compliance with regulatory requirements is insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_10</string>
@@ -1487,7 +1532,7 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre o atendimento pelo provedor aos requisitos regulatórios.</string>
+        <string>0 - There is no information about the provider’s compliance with regulatory requirements.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1520,9 +1565,9 @@ Como você avalia o atendimento pelo provedor aos requisitos regulatórios?</str
        </property>
        <property name="text">
         <string>Q11 Security Incidents
-Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob suspeita, relacionado à segurança
- de sistemas de informação, vinculados aos serviços contratados pelo consumidor.Como você avalia as informações sobre incidentes 
- de segurança divulgadas pelo provedor?</string>
+ How do you evaluate the information about security incidents released by the provider?
+Note: Evaluate the information about any adverse event, confirmed or under suspicion,
+related to the security of information systems, linked to the services contracted bythe consumer.</string>
        </property>
       </widget>
      </item>
@@ -1541,7 +1586,7 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
         </size>
        </property>
        <property name="text">
-        <string>4 - As informações sobre incidentes de segurança divulgadas pelo provedor são abrangentes.</string>
+        <string>4 - Information about security incidents released by the provider is comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_11</string>
@@ -1563,7 +1608,7 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
         </size>
        </property>
        <property name="text">
-        <string>3 - As informações sobre incidentes de segurança divulgadas pelo provedor são adequadas.</string>
+        <string>3 - The information about security incidents disclosed by the provider is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_11</string>
@@ -1585,7 +1630,7 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
         </size>
        </property>
        <property name="text">
-        <string>2 - As informações sobre incidentes de segurança divulgadas pelo provedor são bastante limitadas.</string>
+        <string>2 - Information about security incidents released by the provider is quite limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_11</string>
@@ -1607,7 +1652,7 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações sobre incidentes de segurança divulgadas pelo provedor são insuficientes para avaliar.</string>
+        <string>1 - The information about security incidents released by the provider is insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_11</string>
@@ -1629,7 +1674,7 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre incidentes de segurança divulgadas pelo provedor.</string>
+        <string>0 - There is no information about security incidents released by the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1662,8 +1707,8 @@ Obs. Avalie as informações sobre qualquer evento adverso, confirmado ou sob su
        </property>
        <property name="text">
         <string>Q12 Customer Service
-Obs. Avalie o atendimento e a prestação de serviços aos clientes.
-Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
+ How do you evaluate the customer service provided by the provider?
+Note: Rate care and the provision of services to customers.</string>
        </property>
       </widget>
      </item>
@@ -1682,7 +1727,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - O atendimento ao cliente supera as expectativas.</string>
+        <string>4 - Customer service exceeds expectations.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_12</string>
@@ -1704,7 +1749,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - O atendimento ao cliente é adequado.</string>
+        <string>3 - Customer service is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_12</string>
@@ -1726,7 +1771,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - O atendimento ao cliente é pouco eficiente.</string>
+        <string>2 - Customer service is not very efficient.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_12</string>
@@ -1748,7 +1793,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - O atendimento ao cliente é totalmente inadequado.</string>
+        <string>1 - Customer service is totally inadequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_12</string>
@@ -1770,7 +1815,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre o atendimento ao cliente prestado pelo provedor</string>
+        <string>0 - There is no information about the customer service provided by the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1791,7 +1836,7 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
        <property name="maximumSize">
         <size>
          <width>1000</width>
-         <height>55</height>
+         <height>70</height>
         </size>
        </property>
        <property name="font">
@@ -1803,31 +1848,10 @@ Como você avalia o atendimento ao cliente prestado pelo provedor?</string>
        </property>
        <property name="text">
         <string>Q13 Reports
-Obs. Os relatórios de segurança devem incluir análises das tendências das ameaças, quais são os elementos mais frágeis,previsões de ameaças à segurança, recomendações de como se proteger.
-Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
+ How do you evaluate the security reports issued by the provider?
+Note: Security reports should include analysis of threat trends, what are the most fragile elements, 
+predictions of security threats, recommendations on how to protect the services</string>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton61">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>500</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>4 - Os relatórios de segurança emitidos pelos provedor são abrangentes</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup_13</string>
-       </attribute>
       </widget>
      </item>
      <item>
@@ -1845,7 +1869,29 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - Os relatórios de segurança emitidos pelos provedor são adequados.</string>
+        <string>4 - The security reports issued by the provider are comprehensive.</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup_13</string>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton61">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>3 - The security reports issued by the provider are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_13</string>
@@ -1867,7 +1913,7 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - Os relatórios de segurança emitidos pelos provedor são bastante limitados.</string>
+        <string>2 - The security reports issued by the provider are quite limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_13</string>
@@ -1889,7 +1935,7 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - Os relatórios de segurança emitidos pelos provedor são insuficientes para avaliar.</string>
+        <string>1 - The security reports issued by the provider are insufficient to assess.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_13</string>
@@ -1911,7 +1957,7 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre relatórios de segurança emitidos pelos provedor</string>
+        <string>0 - There is no information about security reports issued by the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -1932,7 +1978,7 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
        <property name="maximumSize">
         <size>
          <width>1000</width>
-         <height>55</height>
+         <height>70</height>
         </size>
        </property>
        <property name="font">
@@ -1944,8 +1990,9 @@ Como você avalia os relatórios de segurança emitidos pelo provedor?</string>
        </property>
        <property name="text">
         <string>Q14 Warnings
-Obs. Os avisos de segurança devem incluir alertas sobre ameaças aos serviços contratados, ataques em andamento e medidas emergenciais a serem tomadas pelo consumidor.
-Como você avalia os avisos de segurança emitidos pelo provedor?</string>
+ How do you evaluate the security warnings issued by the provider?
+Note: Security notices must include alerts about threats to the contracted services, attacks in progress and emergency 
+measures to be taken by the consumer.</string>
        </property>
       </widget>
      </item>
@@ -1964,7 +2011,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - Os avisos de segurança emitidos pelo provedor são abrangentes</string>
+        <string>4 - The security warnings issued by the provider are comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_14</string>
@@ -1986,7 +2033,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - Os avisos de segurança emitidos pelo provedor são adequados</string>
+        <string>3 - The security warnings issued by the provider are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_14</string>
@@ -2008,7 +2055,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - Os avisos de segurança emitidos pelo provedor são limitados.</string>
+        <string>2 - The security warnings issued by the provider are limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_14</string>
@@ -2030,7 +2077,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - Os avisos de segurança emitidos pelo provedor são pró-forma.</string>
+        <string>1 - The security warnings issued by the provider are pro forma.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_14</string>
@@ -2052,7 +2099,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre avisos de segurança emitidos pelo provedor</string>
+        <string>0 - There is no information about security warnings issued by the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2060,6 +2107,32 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_14</string>
        </attribute>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_39">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Security</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -2073,7 +2146,7 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
        <property name="maximumSize">
         <size>
          <width>1000</width>
-         <height>55</height>
+         <height>75</height>
         </size>
        </property>
        <property name="font">
@@ -2085,8 +2158,9 @@ Como você avalia os avisos de segurança emitidos pelo provedor?</string>
        </property>
        <property name="text">
         <string>Q15 Human Resources
-Obs. Avalie quesitos como: o RH é qualificado, têm certificações, têm muitos anos de experiência na área de segurança?
-Como você avalia as informações sobre a experiência dos recursos humanos envolvidos na segurança da informação?</string>
+ How do you evaluate information about the experience of human resources involved in
+information security?
+Note: Rate issues such as:. HR is qualified, have certifications, how many years of experience in the security field?</string>
        </property>
       </widget>
      </item>
@@ -2105,7 +2179,7 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
         </size>
        </property>
        <property name="text">
-        <string>4 - Os recursos humanos envolvidos têm bastante experiência.</string>
+        <string>4 - The human resources involved have a lot of experience.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_15</string>
@@ -2127,7 +2201,7 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
         </size>
        </property>
        <property name="text">
-        <string>3 - Os recursos humanos envolvidos têm boa experiência.</string>
+        <string>3 - The human resources involved have good experience.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_15</string>
@@ -2149,7 +2223,7 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
         </size>
        </property>
        <property name="text">
-        <string>2 - Os recursos humanos envolvidos têm pouca experiência.</string>
+        <string>2 - The human resources involved have little experience.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_15</string>
@@ -2171,7 +2245,7 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar os recursos humanos envolvidos.</string>
+        <string>1 - The information provided is insufficient to assess the human resources involved.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_15</string>
@@ -2193,7 +2267,7 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre os recursos humanos envolvidos.</string>
+        <string>0 - There is no information on the human resources involved.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2226,7 +2300,8 @@ Como você avalia as informações sobre a experiência dos recursos humanos env
        </property>
        <property name="text">
         <string>Q16 Security Operation Center
-Como você avalia a plataforma de prestação de serviços de prevenção, detecção e reação a incidentes de segurança (SOC)?</string>
+How do you evaluate the security incident prevention, detection and reaction service
+delivery platform (SOC)?</string>
        </property>
       </widget>
      </item>
@@ -2245,7 +2320,7 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
         </size>
        </property>
        <property name="text">
-        <string>4 - O SOC presta serviços completos.</string>
+        <string>4 - SOC provides complete services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_16</string>
@@ -2267,7 +2342,7 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
         </size>
        </property>
        <property name="text">
-        <string>3 - O SOC presta serviços adequados.</string>
+        <string>3 - SOC provides adequate services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_16</string>
@@ -2289,7 +2364,7 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
         </size>
        </property>
        <property name="text">
-        <string>2 - O SOC presta serviços insuficientes.</string>
+        <string>2 - SOC provides insufficient services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_16</string>
@@ -2311,7 +2386,7 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar SOC.</string>
+        <string>1 - The information provided is insufficient to assess SOC.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_16</string>
@@ -2333,7 +2408,7 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre SOC.</string>
+        <string>0 - There is no information about SOC.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2366,8 +2441,9 @@ Como você avalia a plataforma de prestação de serviços de prevenção, detec
        </property>
        <property name="text">
         <string>Q17 Governance Structure
-Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, gestor de segurança, existe plano de contingência e de
- recuperação de desastre? Como você avalia a estrutura de governança de TI do provedor?</string>
+ How do you assess the provider’s IT governance structure?
+Note: Assess issues such as: there are established policies and procedures, security manager, there is contingency
+ planning and disaster recovery?</string>
        </property>
       </widget>
      </item>
@@ -2386,7 +2462,7 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
         </size>
        </property>
        <property name="text">
-        <string>4 - A estrutura governança de TI é completa.</string>
+        <string>4 - The IT governance structure is complete.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_17</string>
@@ -2408,7 +2484,7 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
         </size>
        </property>
        <property name="text">
-        <string>3 - A estrutura governança de TI é adequada.</string>
+        <string>3 - The IT governance structure is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_17</string>
@@ -2430,7 +2506,7 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
         </size>
        </property>
        <property name="text">
-        <string>2 - A estrutura de governança de TI é deficiente.</string>
+        <string>2 - The IT governance structure is deficient.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_17</string>
@@ -2452,7 +2528,7 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar.</string>
+        <string>1 - The information provided is insufficient to evaluate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_17</string>
@@ -2474,7 +2550,7 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre a estrutura de governança de TI.</string>
+        <string>0 - There is no information about the IT governance structure.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2507,9 +2583,9 @@ Obs. Avalie quesitos como: existem políticas e procedimentos estabelecidas, ges
        </property>
        <property name="text">
         <string>Q18 Technological Resources
-Obs. Avalie quesitos como: Firewall, antivírus, varredura de vulnerabilidades, atualização dos sistemas, isolamento declientes,
- SSO com vários fatores, ferramentas anti DOS?
-Como você avalia as informações sobre os recursos tecnológicos de segurança utilizados pelo provedor?</string>
+ How do you evaluate the information about the technological security features used by the provider?
+Note: Assess issues such as: Firewall, antivirus, vulnerability scanning, updating systems,
+client isolation, SSO with several factors, anti DOS tools?</string>
        </property>
       </widget>
      </item>
@@ -2528,7 +2604,7 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
         </size>
        </property>
        <property name="text">
-        <string>4 - Os recursos de segurança envolvidos são abrangentes.</string>
+        <string>4 - The security features involved are comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_18</string>
@@ -2550,7 +2626,7 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
         </size>
        </property>
        <property name="text">
-        <string>3 - Os recursos de segurança envolvidos são adequados.</string>
+        <string>3 - The security features involved are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_18</string>
@@ -2572,7 +2648,7 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
         </size>
        </property>
        <property name="text">
-        <string>2 - Os recursos de segurança envolvidos são bastante limitados.</string>
+        <string>2 - The security features involved are quite limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_18</string>
@@ -2594,7 +2670,7 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar os recursos de segurança envolvidos.</string>
+        <string>1 - The information provided is insufficient to assess the security features involved.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_18</string>
@@ -2616,7 +2692,7 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre os recursos tecnológicos de segurança envolvidos</string>
+        <string>0 - There is no information on the technological security resources involved.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2649,8 +2725,8 @@ Como você avalia as informações sobre os recursos tecnológicos de segurança
        </property>
        <property name="text">
         <string>Q19 ISO27001, GDPR, STAR CSA, ISO27018, ITIL
-Obs. Avalie se o provedor possui certificações, p. ex: ISO-27001, GDPR, STAR-CSA, ISO-27018, ITIL.
-Como você avalia as informações sobre as certificações do provedor?</string>
+ How do you evaluate the information about the provider’s certifications?
+Note: Assess whether the provider has certifications, p. ex: ISO-27001, GDPR, STAR-CSA, ISO-27018, ITIL.</string>
        </property>
       </widget>
      </item>
@@ -2669,7 +2745,7 @@ Como você avalia as informações sobre as certificações do provedor?</string
         </size>
        </property>
        <property name="text">
-        <string>4 - As certificações de segurança do provedor são abrangentes.</string>
+        <string>4 - The provider’s security certifications are comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_19</string>
@@ -2691,7 +2767,7 @@ Como você avalia as informações sobre as certificações do provedor?</string
         </size>
        </property>
        <property name="text">
-        <string>3 - As certificações de segurança do provedor são adequadas.</string>
+        <string>3 - The provider’s security certifications are adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_19</string>
@@ -2713,7 +2789,7 @@ Como você avalia as informações sobre as certificações do provedor?</string
         </size>
        </property>
        <property name="text">
-        <string>2 - As certificações de segurança do provedor são incompletas.</string>
+        <string>2 - The provider’s security certifications are incomplete.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_19</string>
@@ -2735,7 +2811,7 @@ Como você avalia as informações sobre as certificações do provedor?</string
         </size>
        </property>
        <property name="text">
-        <string>1 - As informações fornecidas são insuficientes para avaliar as certificações de segurança do provedor.</string>
+        <string>1 - The information provided is insufficient to assess the provider’s security certifications.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_19</string>
@@ -2757,7 +2833,7 @@ Como você avalia as informações sobre as certificações do provedor?</string
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há informações sobre as certificações de segurança do provedor.</string>
+        <string>0 - There is no information about the security certifications of the provider.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2790,8 +2866,8 @@ Como você avalia as informações sobre as certificações do provedor?</string
        </property>
        <property name="text">
         <string>Q20 Insurance
-Obs. Avalie quesitos como: o contrato especifica parâmetros e valores?
-Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
+ How do you evaluate the insurance clauses of the services contract?
+Note: Assess issues such as: the contract specifies parameters and values?</string>
        </property>
       </widget>
      </item>
@@ -2810,7 +2886,7 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - O valor é adequado.</string>
+        <string>4 - The value is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_20</string>
@@ -2832,7 +2908,7 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - O valor é razoável.</string>
+        <string>3 - The value is reasonable.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_20</string>
@@ -2854,7 +2930,7 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - O valor é baixo.</string>
+        <string>2 - The value is low</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_20</string>
@@ -2876,7 +2952,7 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - O valor é irrisório.</string>
+        <string>1 - The value is negligible.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_20</string>
@@ -2898,7 +2974,7 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - não há cláusulas de seguro estabelecida</string>
+        <string>0 - There are no established insurance clauses.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -2931,8 +3007,8 @@ Como você avalia as cláusulas de seguro do contrato dos serviços?</string>
        </property>
        <property name="text">
         <string>Q21 Penalty
-Obs. Avalie quesitos como: o contrato especifica parâmetros e valores?
-Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA?</string>
+How do you evaluate the penalty clauses for breaching SLA parameters?
+Note: Assess issues such as: the contract specifies parameters and values?</string>
        </property>
       </widget>
      </item>
@@ -2951,7 +3027,7 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
         </size>
        </property>
        <property name="text">
-        <string>4 - Multa &gt;= a 20% do valor do serviço.</string>
+        <string>4 - Fine&gt; = 20% of the service fee.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_21</string>
@@ -2973,7 +3049,7 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
         </size>
        </property>
        <property name="text">
-        <string>3 - Multa de &gt;= a 15% e &lt; 20% do valor do serviço.</string>
+        <string>3 - Fine of&gt; = 15% and &lt;20% of the service fee.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_21</string>
@@ -2995,7 +3071,7 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
         </size>
        </property>
        <property name="text">
-        <string>2 - Multa de &gt;= a 10% e &lt; 15% do valor do serviço.</string>
+        <string>2 - Fine of&gt; = 10% and &lt;15% of the service fee.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_21</string>
@@ -3017,7 +3093,7 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
         </size>
        </property>
        <property name="text">
-        <string>1 - Multa de &gt;= a 5% e &lt; 10% do valor do serviço.</string>
+        <string>1 - Fine of&gt; = 5% and &lt;10% of the service fee.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_21</string>
@@ -3039,7 +3115,7 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
         </size>
        </property>
        <property name="text">
-        <string>0 - não há cláusulas de penalidade estabelecida</string>
+        <string>0 - There are no established penalty clauses.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -3072,8 +3148,8 @@ Como você avalia as cláusulas de penalidades por descumprir parâmetros do SLA
        </property>
        <property name="text">
         <string>Q22 Reparation
-Obs. Avalie quesitos como: o contrato especifica parâmetros e valores?
-Como você avalia as cláusulas de reparação aos incidentes que causaram prejuízo?</string>
+How do you assess the clauses for redressing incidents that caused injury?
+Note: Assess issues such as: the contract specifies parameters and values?</string>
        </property>
       </widget>
      </item>
@@ -3092,7 +3168,7 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
         </size>
        </property>
        <property name="text">
-        <string>4 - O valor é adequado.</string>
+        <string>4 - The value is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_22</string>
@@ -3114,7 +3190,7 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
         </size>
        </property>
        <property name="text">
-        <string>3 - O valor é razoável</string>
+        <string>3 - The value is reasonable.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_22</string>
@@ -3136,7 +3212,7 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
         </size>
        </property>
        <property name="text">
-        <string>2 - O valor é baixo</string>
+        <string>2 - The value is low</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_22</string>
@@ -3158,7 +3234,7 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
         </size>
        </property>
        <property name="text">
-        <string>1 - O valor é irrisório.</string>
+        <string>1 - The value is negligible.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_22</string>
@@ -3180,7 +3256,7 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
         </size>
        </property>
        <property name="text">
-        <string>0 - não há cláusulas de reparação estabelecida</string>
+        <string>0 - There are no established repair clauses.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -3213,8 +3289,8 @@ Como você avalia as cláusulas de reparação aos incidentes que causaram preju
        </property>
        <property name="text">
         <string>Q23 Performance (QoS, SLA)
-Obs. Avalie se o SLA/QoS são atendidos.
-Como você avalia o nível de serviço (disponibilidade/uptime)</string>
+How do you assess the service level (availability / uptime) ?
+Note: Assess whether the SLA / QoS are met</string>
        </property>
       </widget>
      </item>
@@ -3233,7 +3309,7 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
         </size>
        </property>
        <property name="text">
-        <string>4 - Cumpriu 100% com o uptime estabelecido</string>
+        <string>4 - Complied 100% with the established uptime.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_23</string>
@@ -3255,7 +3331,7 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
         </size>
        </property>
        <property name="text">
-        <string>3 - Cumpriu 90% com o uptime estabelecido</string>
+        <string>3 - Complied 90% with the established uptime.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_23</string>
@@ -3277,7 +3353,7 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
         </size>
        </property>
        <property name="text">
-        <string>2 - Cumpriu 80% com o uptime estabelecido</string>
+        <string>2 - Complied 80% with the established uptime.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_23</string>
@@ -3299,7 +3375,7 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
         </size>
        </property>
        <property name="text">
-        <string>1 - Cumpriu 70% com o uptime estabelecido</string>
+        <string>1 - Complied 70% with the established uptime.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_23</string>
@@ -3321,7 +3397,7 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
         </size>
        </property>
        <property name="text">
-        <string>0 - não há uptime estabelecido</string>
+        <string>0 - There is no established uptime.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -3354,8 +3430,8 @@ Como você avalia o nível de serviço (disponibilidade/uptime)</string>
        </property>
        <property name="text">
         <string>Q24 Green Clause
-Obs. Avalie se existe cláusula de TI eficiente em energia e como ela é atendida.
-Como você avalia as cláusulas de TI eficiente em energia do serviço contratado?</string>
+ How do you evaluate the energy efficient IT clauses of the contracted service?
+Note: Assess whether there is an energy efficient IT clause and how it is met</string>
        </property>
       </widget>
      </item>
@@ -3374,7 +3450,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>4 - A green-clause é abrangente.</string>
+        <string>4 - Green-clause is comprehensive.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_24</string>
@@ -3396,7 +3472,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>3 - A green-clause é adequada.</string>
+        <string>3 - Green clause is adequate.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_24</string>
@@ -3418,7 +3494,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>2 - A green-clause é limitada.</string>
+        <string>2 - Green-clause is limited.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_24</string>
@@ -3440,7 +3516,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>1 - A green-clause é pró-forma.</string>
+        <string>1 - Green-clause is pro forma.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_24</string>
@@ -3462,7 +3538,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>0 - Não há green-clause estabelecida</string>
+        <string>0 - There is no established green-clause.</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -3473,7 +3549,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_32">
+      <widget class="QLabel" name="label_36">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -3494,7 +3570,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </font>
        </property>
        <property name="text">
-        <string>INCIDENTES?</string>
+        <string>INCIDENTS?</string>
        </property>
       </widget>
      </item>
@@ -3513,7 +3589,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>1 -Sim</string>
+        <string>1 -Yes</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_25</string>
@@ -3535,7 +3611,7 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
         </size>
        </property>
        <property name="text">
-        <string>0 - Não</string>
+        <string>0 - No</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -3545,26 +3621,79 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
        </attribute>
       </widget>
      </item>
+     <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+      <widget class="QLabel" name="label_32">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string> 
+
+Enviar a avaliação</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="botao2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>830</y>
+     <width>100</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Voltar</string>
+   </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
-     <width>891</width>
-     <height>231</height>
+     <x>10</x>
+     <y>50</y>
+     <width>911</width>
+     <height>221</height>
     </rect>
    </property>
    <property name="title">
-    <string>Identificação da avaliação:</string>
+    <string>Evaluation:</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>40</y>
+      <y>30</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -3584,12 +3713,12 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label50">
+   <widget class="QLabel" name="label_35">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
-      <width>121</width>
+      <y>110</y>
+      <width>91</width>
       <height>51</height>
      </rect>
     </property>
@@ -3599,28 +3728,15 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
       <kerning>true</kerning>
      </font>
     </property>
-    <property name="styleSheet">
-     <string/>
-    </property>
     <property name="text">
-     <string>Avaliador:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_2">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>80</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
+     <string>Month:</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>130</y>
+      <x>110</x>
+      <y>120</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -3686,12 +3802,12 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>40</y>
-      <width>31</width>
+      <x>140</x>
+      <y>30</y>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -3710,12 +3826,12 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="label_33">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>170</y>
-      <width>61</width>
+      <y>60</y>
+      <width>151</width>
       <height>51</height>
      </rect>
     </property>
@@ -3726,14 +3842,46 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      </font>
     </property>
     <property name="text">
-     <string>Ano:</string>
+     <string>Providers:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label50">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Evaluator:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>70</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_4">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>180</y>
+      <x>110</x>
+      <y>170</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -3794,30 +3942,11 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="label_33">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="text">
-     <string>Provedores:</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_51">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>30</y>
+      <y>20</y>
       <width>41</width>
       <height>51</height>
      </rect>
@@ -3835,54 +3964,11 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      <string>ID:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_35">
+   <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
-      <width>61</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="text">
-     <string>Mês:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_34">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>140</y>
+      <y>160</y>
       <width>71</width>
       <height>51</height>
      </rect>
@@ -3894,14 +3980,14 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      </font>
     </property>
     <property name="text">
-     <string>Ativa:</string>
+     <string>Year:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>150</y>
+      <x>680</x>
+      <y>170</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -3910,64 +3996,33 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
      <string/>
     </property>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="botao2">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>760</y>
-     <width>120</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>120</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>70</width>
-     <height>200</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>Voltar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botao1">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>760</y>
-     <width>120</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>120</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>70</width>
-     <height>200</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>Enviar a avaliação</string>
-   </property>
+   <widget class="QLabel" name="label_40">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>160</y>
+      <width>81</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>Active:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="botao3">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>760</y>
+     <x>530</x>
+     <y>830</y>
      <width>120</width>
-     <height>23</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -3986,34 +4041,63 @@ Como você avalia as cláusulas de TI eficiente em energia do serviço contratad
     <string>Cancelar a avaliação</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="botao1">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>830</y>
+     <width>120</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>120</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>70</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enviar a avaliação</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_15"/>
-  <buttongroup name="buttonGroup_14"/>
-  <buttongroup name="buttonGroup_24"/>
-  <buttongroup name="buttonGroup_21"/>
-  <buttongroup name="buttonGroup_23"/>
-  <buttongroup name="buttonGroup_22"/>
-  <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_12"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_9"/>
-  <buttongroup name="buttonGroup_18"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_11"/>
-  <buttongroup name="buttonGroup_20"/>
-  <buttongroup name="buttonGroup_19"/>
-  <buttongroup name="buttonGroup_10"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup_16"/>
   <buttongroup name="buttonGroup_25"/>
   <buttongroup name="buttonGroup_13"/>
-  <buttongroup name="buttonGroup_7"/>
-  <buttongroup name="buttonGroup_8"/>
-  <buttongroup name="buttonGroup_6"/>
   <buttongroup name="buttonGroup_17"/>
+  <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_9"/>
+  <buttongroup name="buttonGroup_18"/>
+  <buttongroup name="buttonGroup_15"/>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup_19"/>
+  <buttongroup name="buttonGroup_10"/>
+  <buttongroup name="buttonGroup_12"/>
+  <buttongroup name="buttonGroup_16"/>
+  <buttongroup name="buttonGroup">
+   <property name="exclusive">
+    <bool>true</bool>
+   </property>
+  </buttongroup>
+  <buttongroup name="buttonGroup_14"/>
+  <buttongroup name="buttonGroup_6"/>
+  <buttongroup name="buttonGroup_11"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_8"/>
+  <buttongroup name="buttonGroup_20"/>
+  <buttongroup name="buttonGroup_21"/>
+  <buttongroup name="buttonGroup_23"/>
+  <buttongroup name="buttonGroup_24"/>
+  <buttongroup name="buttonGroup_22"/>
+  <buttongroup name="buttonGroup_7"/>
  </buttongroups>
 </ui>

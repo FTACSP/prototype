@@ -9,24 +9,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>773</width>
-    <height>497</height>
+    <width>863</width>
+    <height>437</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Tela principal do avaliador</string>
+   <string>FTACSP V1.0</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="botao_1">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>390</y>
+      <x>620</x>
+      <y>310</y>
       <width>141</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -46,8 +55,8 @@
    <widget class="QPushButton" name="botao_3">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>360</y>
+      <x>780</x>
+      <y>310</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -69,10 +78,10 @@
    <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>10</y>
-      <width>241</width>
-      <height>71</height>
+      <x>330</x>
+      <y>0</y>
+      <width>231</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -84,16 +93,16 @@
      </font>
     </property>
     <property name="text">
-     <string>CSP assesments</string>
+     <string>CSP Assesments</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_title_2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>70</y>
+      <x>150</x>
+      <y>60</y>
       <width>91</width>
-      <height>41</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -111,11 +120,16 @@
    <widget class="QLabel" name="label_1">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
+      <x>130</x>
+      <y>60</y>
       <width>141</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -127,31 +141,18 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Logado como:</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>80</y>
+      <x>20</x>
+      <y>60</y>
       <width>121</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>11</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -163,11 +164,41 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>100</y>
-      <width>511</width>
-      <height>261</height>
+      <x>40</x>
+      <y>80</y>
+      <width>811</width>
+      <height>231</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+      <horstretch>50</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>500</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>2000</width>
+      <height>2000</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
     </property>
     <property name="editTriggers">
      <set>QAbstractItemView::NoEditTriggers</set>
@@ -206,12 +237,27 @@
       <string>Year</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string>IGV</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ITP</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ISI</string>
+     </property>
+    </column>
    </widget>
    <widget class="QPushButton" name="botao_4">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>420</y>
+      <x>700</x>
+      <y>380</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -230,30 +276,11 @@
      <string>Back</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="botao_5">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>420</y>
+      <x>780</x>
+      <y>380</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -278,12 +305,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>773</width>
+     <width>863</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

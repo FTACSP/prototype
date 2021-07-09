@@ -9,27 +9,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
-    <height>419</height>
+    <width>354</width>
+    <height>412</height>
    </rect>
   </property>
   <property name="focusPolicy">
    <enum>Qt::NoFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Cadastro de Provedor</string>
+   <string>Register Provider</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>411</width>
+     <width>331</width>
      <height>251</height>
     </rect>
    </property>
    <property name="title">
-    <string>Lista de cadastro de provedores</string>
+    <string>Provider Registration List</string>
    </property>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
@@ -53,12 +53,12 @@
     </column>
     <column>
      <property name="text">
-      <string>Provedor</string>
+      <string>Provider</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Atividade</string>
+      <string>Active</string>
      </property>
     </column>
    </widget>
@@ -72,7 +72,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Excluir provedor</string>
+     <string>Erase Provider</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -85,7 +85,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Salvar alterações</string>
+     <string>Save Changes</string>
     </property>
    </widget>
   </widget>
@@ -94,7 +94,7 @@
     <rect>
      <x>0</x>
      <y>270</y>
-     <width>421</width>
+     <width>341</width>
      <height>121</height>
     </rect>
    </property>
@@ -111,7 +111,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Inserir provedor</string>
+     <string>New Provider</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget_2">
@@ -131,17 +131,17 @@
     </property>
     <row>
      <property name="text">
-      <string>Novo provedor:</string>
+      <string>New provider:</string>
      </property>
     </row>
     <column>
      <property name="text">
-      <string>Provedor</string>
+      <string>Provider</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Atividade</string>
+      <string>Active</string>
      </property>
     </column>
     <item row="0" column="1">
@@ -154,14 +154,14 @@
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>250</x>
      <y>390</y>
      <width>91</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Voltar</string>
+    <string>Back</string>
    </property>
   </widget>
  </widget>
