@@ -1263,15 +1263,15 @@ def nova_avaliacao():
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
     print("Indíce de Governança:", GVij)
-    GVij = format(GVij, '.2f')
+    #GVij = format(GVij, '.2f')
 
     TPij = (q8+q9+q10+q11+q12+q13+q14)/7
     print("Indíce de Transparência:", TPij)
-    TPij = format(TPij, '.2f')
+    #TPij = format(TPij, '.2f')
 
     SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/10
     print("Indíce de Segurança da Informação:", SIij)
-    SIij = format(SIij, '.2f')
+    #SIij = format(SIij, '.2f')
 
     # dados_lidos = cursor2.fetchone()
     # avaliacaoid_lido = dados_lidos
@@ -1371,10 +1371,15 @@ def nova_avaliacao():
     kn = cursor.fetchall()
     print("kn é:", kn)
     k1 = kn[0][0]
+    format(k1, '.2f')
     print("k1 é:", k1)
+
     k2 = kn[0][1]
+    format(k2, '.2f')
     print("k2 é:", k2)
+
     k3 = kn[0][2]
+    format(k3, '.2f')
     print("k3 é:", k3)
 
     mes_primario = 0
@@ -1383,52 +1388,64 @@ def nova_avaliacao():
     if mes_anterior == 0:
         mes_anterior = 12
         ano2p = ano2p-1
+        print("Mês passado está no ano anterior ou é mês primário")
+
+        try:
+            Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+                avaliador, provedor, mes_anterior, ano2p))
+            cursor2.execute(Comando_SQL2)
+            dados_lidos = cursor2.fetchall()
+            avaliacao = dados_lidos
+            print(
+                "A avaliação anterior como ano passado deste avaliador com este provedor:", avaliacao)
+            GVij2 = avaliacao[0][7]
+            print("Indice de Governança como ano passado do mês anterior:", GVij2)
+            TPij2 = avaliacao[0][8]
+            print("Indice de Transparência como ano passado do mês anterior:", GVij2)
+            SIij2 = avaliacao[0][9]
+            print(
+                "Indice de Segurança da informação como ano passado do mês anterior:", GVij2)
+
+        except IndexError:  # quando não há mês anterior
+            # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+            avaliacao = "null"
+            print(
+                "Não há avaliação feita no mês anterior do ano passado:", mes_anterior)
+            GVij2 = 0
+            TPij2 = 0
+            SIij2 = 0
+            # ou
+            mes_primario = 1
 
     else:
-        print("Não há valor mensal")
-    try:
-        Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
-            avaliador, provedor, mes_anterior, ano2p))
-        cursor2.execute(Comando_SQL2)
-        dados_lidos = cursor2.fetchall()
-        avaliacao = dados_lidos
-        print("A avaliação anterior com o ano passado deste avaliador com este provedor:", avaliacao)
-        GVij2 = avaliacao[0][7]
-        print("Indice de Governança com o ano passado do mês anterior:", GVij2)
-        TPij2 = avaliacao[0][8]
-        print("Indice de Transparência com o ano passado do mês anterior:", GVij2)
-        SIij2 = avaliacao[0][9]
-        print("Indice de Segurança da informação com o ano passado do mês anterior:", GVij2)
+        print("Não está no ano passado")
+        try:
+            Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+                avaliador, provedor, mes_anterior, ano2p))
+            cursor2.execute(Comando_SQL2)
+            dados_lidos = cursor2.fetchall()
+            avaliacao = dados_lidos
+            GVij2 = avaliacao[0][7]
+            print("Indice de Governança do mês anterior:", GVij2)
+            TPij2 = avaliacao[0][8]
+            print("Indice de Transparência do mês anterior:", GVij2)
+            SIij2 = avaliacao[0][9]
+            print("Indice de Segurança da informação do mês anterior:", GVij2)
+        except IndexError:  # quando não há mês anterior
+            # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+            avaliacao = "null"
+            print("Não há avaliação feita no mês anterior:", mes_anterior)
+            GVij2 = 0
+            TPij2 = 0
+            SIij2 = 0
+            mes_primario = 1
 
-    except IndexError:  # quando não há mês anterior
-        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
-        avaliacao = "null"
-        print("Não há avaliação feita no mês anterior do ano passado:", mes_anterior)
-        GVij2 = 0
-        TPij2 = 0
-        SIij2 = 0
-        # ou
-        mes_primario = 1
-
-    try:
-        GVij2 = avaliacao[0][7]
-        print("Indice de Governança do mês anterior:", GVij2)
-        TPij2 = avaliacao[0][8]
-        print("Indice de Transparência do mês anterior:", GVij2)
-        SIij2 = avaliacao[0][9]
-        print("Indice de Segurança da informação do mês anterior:", GVij2)
-    except IndexError:  # quando não há mês anterior
-        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
-        avaliacao = "null"
-        print("Não há avaliação feita no mês anterior:", mes_anterior)
-        GVij2 = 0
-        TPij2 = 0
-        SIij2 = 0
-        mes_primario = 1
+    # if mes_anterior != 0:
 
     # floatao = 2.151212112
     # print("Floatao é:%.2f" % (floatao))
-    IGVj1 = (GVij)*k1  # primeira parcela
+
+    IGVj1 = GVij*k1  # primeira parcela
     print("Parcela 1 da Governança: %.3f" % IGVj1)
 
     IGVj2 = (k2*(GVij-GVij2))
@@ -1465,7 +1482,7 @@ def nova_avaliacao():
     # Antes estava pegando o mês atual, o que dava 13 resultados pra fazer a média, sendo que pra 3ª parcela, preciso da média dos últimos 12 pra subtrair do atual
     # comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
     #                (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
-    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
+    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>('%s') and ano=('%s')" %
                    (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
 
     cursor.execute(comando_SQL)
@@ -1477,6 +1494,7 @@ def nova_avaliacao():
     TPij12_soma = 0
     SIij12_soma = 0
     # vai rodando de 1 em 1 pela quantidade de avaliações
+
     for s in range(len(dados_listados,)):
         # if dados_lidos[s][0] != dados_lidos[s][0]:
         # print(dados_lidos[s])
@@ -1495,23 +1513,35 @@ def nova_avaliacao():
         print("Instâncias de Indices Segurança da Informação:", SIij12)
         SIij12_soma = SIij12_soma+SIij12
         print("Instâncias de Indices Segurança da Informação para fazer a média...:", SIij12_soma)
-
+        print("")
         counter = counter+1
-        print(counter)
+        print("Houve", counter, "avaliações nos últimos 12 meses")
     # fazendo as avaliações que já teve, ele divide por quantas teve
-    #     scount=s+1
-    # GVij12=GVij12/scount
+
+    try:
+        GVij12 = GVij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        GVij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", GVij12)
     # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
-    GVij12 = GVij12_soma/12
+    #GVij12 = GVij12_soma/12
+    # GVij12 = format(GVij12, '.2f')  # 12/07
     print("A média das instâncias de Indices sobre a Governança nos 12 meses:", GVij12)
 
+    #IGVj3 = float(k3*(GVij12))
     IGVj3 = (k3*(GVij12))
     print("Parcela 3 da Governança:", IGVj3)
 
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
     print("Indicador de confiança Governança:", IGVj)
 
-    TPij12 = TPij12_soma/12
+    #TPij12 = TPij12_soma/12
+    try:
+        TPij12 = TPij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        TPij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", TPij12)
+
     print("A média das instâncias de Indices sobre a Transparência nos dos 12 meses:", TPij12)
 
     ITPj3 = (k3*(TPij12))
@@ -1520,8 +1550,14 @@ def nova_avaliacao():
     ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
     print("Indicador de confiança Transparência:", ITPj)
 
-    SIij12 = SIij12_soma/12
-    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses:", TPij12)
+    #SIij12 = SIij12_soma/12
+    try:
+        SIij12 = SIij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        SIij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", SIij12)
+
+    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses:", SIij12)
 
     ISIj3 = (k3*(SIij12))
     print("Parcela 3 da Segurança da Informação:", ISIj3)
@@ -1533,10 +1569,11 @@ def nova_avaliacao():
     ITPj = format(ITPj, '.2f')
     ISIj = format(ISIj, '.2f')
     if mes_primario == 1:
-        IGVj = 0
-        ITPj = 0
-        ISIj = 0
-        print("É mês primário, valores dos indicadores zerados")
+        # IGVj = 0
+        # ITPj = 0
+        # ISIj = 0
+        #print("É mês primário, valores dos indicadores zerados")
+        print("É mês primário")
     else:
         print("Não é mês primário")
 
