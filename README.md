@@ -16,7 +16,7 @@ The app start to be developed with Pycharm, nowadays it is been updated and publ
 
 ## Initialize
 
-- Initialize database named of b> statusapidb </b> with these configurations: <b>hostname:</b> 127.0.0.1 <b>user:</b> root <b>password:</b> 885522
+- Initialize database named of <b> statusapidb </b> with these configurations: <b>hostname:</b> 127.0.0.1 <b>user:</b> root <b>password:</b> 885522
 - Open the file FTACSP.py with needed dependencies and RUN the app.
 
 # Working
