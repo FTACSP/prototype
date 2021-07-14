@@ -9,9 +9,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>543</width>
-    <height>419</height>
+    <width>558</width>
+    <height>415</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>558</width>
+    <height>415</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>FTACSP V1.0</string>
@@ -145,7 +157,7 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>501</width>
+      <width>521</width>
       <height>231</height>
      </rect>
     </property>
@@ -192,33 +204,11 @@
      <bool>false</bool>
     </property>
     <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>60</number>
+     <number>84</number>
     </attribute>
     <attribute name="verticalHeaderDefaultSectionSize">
      <number>35</number>
     </attribute>
-    <column>
-     <property name="text">
-      <string>ID (Auto)</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Evaluator</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
     <column>
      <property name="text">
       <string>Provider</string>
@@ -338,7 +328,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>543</width>
+     <width>558</width>
      <height>21</height>
     </rect>
    </property>
