@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>558</width>
-    <height>415</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,7 +22,7 @@
   <property name="maximumSize">
    <size>
     <width>558</width>
-    <height>415</height>
+    <height>400</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,8 +44,8 @@
    <widget class="QPushButton" name="botao_1">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>300</y>
+      <x>310</x>
+      <y>310</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -67,8 +67,8 @@
    <widget class="QPushButton" name="botao_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>300</y>
+      <x>460</x>
+      <y>310</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -158,7 +158,7 @@
       <x>20</x>
       <y>60</y>
       <width>521</width>
-      <height>231</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -279,7 +279,7 @@
    <widget class="QPushButton" name="botao_4">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>370</x>
       <y>360</y>
       <width>81</width>
       <height>31</height>
@@ -302,7 +302,7 @@
    <widget class="QPushButton" name="botao_5">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>460</x>
       <y>360</y>
       <width>81</width>
       <height>31</height>

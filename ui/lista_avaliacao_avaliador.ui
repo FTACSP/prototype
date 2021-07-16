@@ -76,9 +76,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-3947</y>
+      <y>-3888</y>
       <width>901</width>
-      <height>4479</height>
+      <height>4420</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -594,8 +594,7 @@ Note: What is your perception about the countermeasures installed by the provide
         </size>
        </property>
        <property name="text">
-        <string>3 - Information available on expert recommendations recommend the services.
-</string>
+        <string>3 - Information available on expert recommendations recommend the services.</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_4</string>
@@ -1855,7 +1854,7 @@ predictions of security threats, recommendations on how to protect the services<
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton62">
+      <widget class="QRadioButton" name="radioButton61">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -1869,7 +1868,7 @@ predictions of security threats, recommendations on how to protect the services<
         </size>
        </property>
        <property name="text">
-        <string>4 - The security reports issued by the provider are comprehensive.</string>
+        <string>4 - The security reports issued by the provider are comprehensive. </string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup_13</string>
@@ -1877,7 +1876,7 @@ predictions of security threats, recommendations on how to protect the services<
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton61">
+      <widget class="QRadioButton" name="radioButton62">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -3621,34 +3620,6 @@ Note: Assess whether there is an energy efficient IT clause and how it is met</s
        </attribute>
       </widget>
      </item>
-     <item alignment="Qt::AlignHCenter|Qt::AlignTop">
-      <widget class="QLabel" name="label_32">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>500</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>18</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string> 
-
-Enviar a avaliação</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
@@ -4070,34 +4041,34 @@ Enviar a avaliação</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_25"/>
-  <buttongroup name="buttonGroup_13"/>
-  <buttongroup name="buttonGroup_17"/>
-  <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup_21"/>
+  <buttongroup name="buttonGroup_22"/>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_9"/>
+  <buttongroup name="buttonGroup_13"/>
+  <buttongroup name="buttonGroup_24"/>
   <buttongroup name="buttonGroup_18"/>
-  <buttongroup name="buttonGroup_15"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_19"/>
-  <buttongroup name="buttonGroup_10"/>
   <buttongroup name="buttonGroup_12"/>
-  <buttongroup name="buttonGroup_16"/>
+  <buttongroup name="buttonGroup_20"/>
+  <buttongroup name="buttonGroup_15"/>
+  <buttongroup name="buttonGroup_17"/>
+  <buttongroup name="buttonGroup_6"/>
+  <buttongroup name="buttonGroup_25"/>
+  <buttongroup name="buttonGroup_5"/>
   <buttongroup name="buttonGroup">
    <property name="exclusive">
     <bool>true</bool>
    </property>
   </buttongroup>
-  <buttongroup name="buttonGroup_14"/>
-  <buttongroup name="buttonGroup_6"/>
-  <buttongroup name="buttonGroup_11"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_8"/>
-  <buttongroup name="buttonGroup_20"/>
-  <buttongroup name="buttonGroup_21"/>
   <buttongroup name="buttonGroup_23"/>
-  <buttongroup name="buttonGroup_24"/>
-  <buttongroup name="buttonGroup_22"/>
+  <buttongroup name="buttonGroup_8"/>
   <buttongroup name="buttonGroup_7"/>
+  <buttongroup name="buttonGroup_14"/>
+  <buttongroup name="buttonGroup_10"/>
+  <buttongroup name="buttonGroup_11"/>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup_16"/>
+  <buttongroup name="buttonGroup_9"/>
+  <buttongroup name="buttonGroup_19"/>
  </buttongroups>
 </ui>
