@@ -1224,9 +1224,11 @@ def nova_avaliacao():
     if formulario_avaliacao.radioButton121.isChecked():
         print("Teve incidente neste mês")
         incidentes = 1
+        RB = 1
     elif formulario_avaliacao.radioButton122.isChecked():
         print("Não teve incidentes neste mês")
         incidentes = 0
+        RB = 1.1
     # data_avaliacao = StatusAPIUX_avaliador.label_3.text()
     # fazer inserçao do tempo no banco de dados por no comboBox puxando do banco depois puxar combobox pra ca
     # tempo2 = StatusAPIUX.label_6.text()
@@ -1263,7 +1265,7 @@ def nova_avaliacao():
     #     globals()["q%i" % i] = i
     # print(q1, q2, q3, q4)
 
-    RB = 1.1
+    #RB = 1.1
     m = incidentes
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
@@ -1376,15 +1378,15 @@ def nova_avaliacao():
     kn = cursor.fetchall()
     print("kn é:", kn)
     k1 = kn[0][0]
-    format(k1, '.2f')
+    format(k1, '.3f')
     print("k1 é:", k1)
 
     k2 = kn[0][1]
-    format(k2, '.2f')
+    format(k2, '.3f')
     print("k2 é:", k2)
 
     k3 = kn[0][2]
-    format(k3, '.2f')
+    format(k3, '.3f')
     print("k3 é:", k3)
 
     mes_primario = 0
@@ -1570,9 +1572,9 @@ def nova_avaliacao():
     ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
     print("Indicador de confiança Segurança da Informação:", ISIj)
 
-    IGVj = format(IGVj, '.2f')
-    ITPj = format(ITPj, '.2f')
-    ISIj = format(ISIj, '.2f')
+    IGVj = format(IGVj, '.3f')
+    ITPj = format(ITPj, '.3f')
+    ISIj = format(ISIj, '.3f')
     if mes_primario == 1:
         # IGVj = 0
         # ITPj = 0
@@ -1604,6 +1606,90 @@ def nova_avaliacao():
 # ...
 # Mês ímpares tem incidentes
 # De um mês para o outro inverte a repetição
+
+#Mês: 1
+# 4321222 = 16
+# 1234333 = 19
+# 4321123411 = 22
+# incidentes=0
+# #Mês:2
+# 4321322 = 17
+# 1224332 = 17
+# 4322223411 = 24
+# incidentes=0
+# #Mês:3
+# 4321323 = 18
+# 1224334 = 19
+# 4332223411 = 24
+# incidentes=0
+# #Mês:4
+# 4321323 = 18
+# 1224334 = 19
+# 4331113411 = 21
+# incidentes=1
+# A cada 4 meses incidentes
+# #Mês:5
+# 4322323 = 19
+# 3224334 = 20
+# 4332223411 = 21
+# incidentes=0
+# #Mês:6
+# 4322324 = 20
+# 3224334 = 20
+# 4332223411 = 21
+# #Mês:7
+# 2122324 = 16
+# 3122334 = 17
+# 4332223411 = 21
+# incidentes=0
+# #Mês:8
+# 2122322 = 14
+# 3122332 = 15
+# 2332223211 = 17
+# incidentes=1
+# A cada 4 meses incidentes
+# #Mês:9
+# 3122323 = 16
+# 4122332 = 16
+# 2332223222 = 19
+# incidentes=0
+# #Mês:10
+# 3222323 = 17
+# 4022332 = 15
+# 2332223222 = 19
+# incidentes=0
+# #Mês:11
+# 3222324 = 18
+# 4022333 = 16
+# 2332223223 = 20
+# incidentes=0
+# #Mês:12
+# 1222324 = 16
+# 2022333 = 14
+# 2331113223 = 17
+# incidentes=1
+# A cada 4 meses incidentes
+# #Mês:01/2021
+# 2322324 = 18
+# 2222333 = 16
+# 2332213223 = 19
+# incidentes=0
+# #Mês:02/2021
+# 2322324 = 18
+# 2222333 = 16
+# 2332223223 = 20
+# incidentes=0
+# #Mês:03/2021
+# 2312324 = 17
+# 1222333 = 15
+# 1332223223 = 19
+# incidentes=0
+# #Mês:04/2021
+# 2312324 = 17
+# 1212333 = 14
+# 1331113223 = 16
+# incidentes=1
+# A cada 4 meses incidentes
 
 
 def tela_login_sql():
@@ -2749,442 +2835,444 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     q1 = str(lista_avaliacao_avaliador.buttonGroup.checkedId())
     if q1 == "-2":
         q1 = 4
-        print(q1)
+        print("Q1:", q1)
 
     elif q1 == "-3":
         q1 = 3
-        print(q1)
+        print("Q1:", q1)
 
     elif q1 == "-4":
         q1 = 2
-        print(q1)
+        print("Q1:", q1)
     elif q1 == "-5":
         q1 = 1
-        print(q1)
+        print("Q1:", q1)
     elif q1 == "-6":
         q1 = 0
-        print(q1)
+        print("Q1:", q1)
     # QRadioButton:checked{ background-color: red; } QRadioButton:unchecked{ background-color: black; }
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 1, corrigir ou continuar")
     q2 = str(lista_avaliacao_avaliador.buttonGroup_2.checkedId())
     if q2 == "-2":
         q2 = 4
-        print(q2)
+        print("Q2:", q2)
     elif q2 == "-3":
         q2 = 3
-        print(q2)
+        print("Q2:", q2)
     elif q2 == "-4":
         q2 = 2
-        print(q2)
+        print("Q2:", q2)
     elif q2 == "-5":
         q2 = 1
-        print(q2)
+        print("Q2:", q2)
     elif q2 == "-6":
         q2 = 0
-        print(q2)
+        print("Q2:", q2)
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 2, corrigir ou continuar")
 
     q3 = str(lista_avaliacao_avaliador.buttonGroup_3.checkedId())
     if q3 == "-2":
         q3 = 4
-        print(q3)
+        print("Q3:", q3)
     elif q3 == "-3":
         q3 = 3
-        print(q3)
+        print("Q3:", q3)
     elif q3 == "-4":
         q3 = 2
         print(q3)
     elif q3 == "-5":
         q3 = 1
-        print(q3)
+        print("Q3:", q3)
     elif q3 == "-6":
         q3 = 0
-        print(q3)
+        print("Q3:", q3)
         # QMessageBox.about(formulario_avaliacao, "ALERTA","Valor 0 inserido na Questão 3, corrigir ou continuar")
     q4 = str(lista_avaliacao_avaliador.buttonGroup_4.checkedId())
     if q4 == "-2":
         q4 = 4
-        print(q4)
+        print("Q4:", q4)
     elif q4 == "-3":
         q4 = 3
-        print(q4)
+        print("Q4:", q4)
     elif q4 == "-4":
         q4 = 2
-        print(q4)
+        print("Q4:", q4)
     elif q4 == "-5":
         q4 = 1
-        print(q4)
+        print("Q4:", q4)
     elif q4 == "-6":
         q4 = 0
-        print(q4)
+        print("Q4:", q4)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 4, corrigir ou continuar")
     q5 = str(lista_avaliacao_avaliador.buttonGroup_5.checkedId())
     if q5 == "-2":
         q5 = 4
-        print(q5)
+        print("Q5:", q5)
     elif q5 == "-3":
         q5 = 3
-        print(q5)
+        print("Q5:", q5)
     elif q5 == "-4":
         q5 = 2
-        print(q5)
+        print("Q5:", q5)
     elif q5 == "-5":
         q5 = 1
-        print(q5)
+        print("Q5:", q5)
     elif q5 == "-6":
         q5 = 0
-        print(q5)
+        print("Q5:", q5)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 5, corrigir ou continuar")
     q6 = str(lista_avaliacao_avaliador.buttonGroup_6.checkedId())
     if q6 == "-2":
         q6 = 4
-        print(q6)
+        print("Q6:", q6)
     elif q6 == "-3":
         q6 = 3
-        print(q6)
+        print("Q6:", q6)
     elif q6 == "-4":
         q6 = 2
-        print(q6)
+        print("Q6:", q6)
     elif q6 == "-5":
         q6 = 1
-        print(q6)
+        print("Q6:", q6)
     elif q6 == "-6":
         q6 = 0
-        print(q6)
+        print("Q6:", q6)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 6, corrigir ou continuar")
     q7 = str(lista_avaliacao_avaliador.buttonGroup_7.checkedId())
     if q7 == "-2":
         q7 = 4
-        print(q7)
+        print("Q7:", q7)
     elif q7 == "-3":
         q7 = 3
-        print(q7)
+        print("Q7:", q7)
     elif q7 == "-4":
         q7 = 2
-        print(q7)
+        print("Q7:", q7)
     elif q7 == "-5":
         q7 = 1
-        print(q7)
+        print("Q7:", q7)
     elif q7 == "-6":
         q7 = 0
-        print(q7)
+        print("Q7:", q7)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 7, corrigir ou continuar")
     q8 = str(lista_avaliacao_avaliador.buttonGroup_8.checkedId())
     if q8 == "-2":
         q8 = 4
-        print(q8)
+        print("Q8:", q8)
     elif q8 == "-3":
         q8 = 3
-        print(q8)
+        print("Q8:", q8)
     elif q8 == "-4":
         q8 = 2
-        print(q8)
+        print("Q8:", q8)
     elif q8 == "-5":
         q8 = 1
-        print(q8)
+        print("Q8:", q8)
     elif q8 == "-6":
         q8 = 0
-        print(q8)
+        print("Q8:", q8)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 8, corrigir ou continuar")
     q9 = str(lista_avaliacao_avaliador.buttonGroup_9.checkedId())
     if q9 == "-2":
         q9 = 4
-        print(q9)
+        print("Q9:", q9)
     elif q9 == "-3":
         q9 = 3
-        print(q9)
+        print("Q9:", q9)
     elif q9 == "-4":
         q9 = 2
-        print(q9)
+        print("Q9:", q9)
     elif q9 == "-5":
         q9 = 1
-        print(q9)
+        print("Q9:", q9)
     elif q9 == "-6":
         q9 = 0
-        print(q9)
+        print("Q9:", q9)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 9, corrigir ou continuar")
     q10 = str(lista_avaliacao_avaliador.buttonGroup_10.checkedId())
     if q10 == "-2":
         q10 = 4
-        print(q10)
+        print("Q10:", q10)
     elif q10 == "-3":
         q10 = 3
-        print(q10)
+        print("Q10:", q10)
     elif q10 == "-4":
         q10 = 2
-        print(q10)
+        print("Q10:", q10)
     elif q10 == "-5":
         q10 = 1
-        print(q10)
+        print("Q10:", q10)
     elif q10 == "-6":
         q10 = 0
-        print(q10)
+        print("Q10:", q10)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 10, corrigir ou continuar")
     q11 = str(lista_avaliacao_avaliador.buttonGroup_11.checkedId())
     if q11 == "-2":
         q11 = 4
-        print(q11)
+        print("Q11:", q11)
     elif q11 == "-3":
         q11 = 3
-        print(q11)
+        print("Q11:", q11)
     elif q11 == "-4":
         q11 = 2
-        print(q11)
+        print("Q11:", q11)
     elif q11 == "-5":
         q11 = 1
-        print(q11)
+        print("Q11:", q11)
     elif q11 == "-6":
         q11 = 0
-        print(q11)
+        print("Q11:", q11)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 11, corrigir ou continuar")
     q12 = str(lista_avaliacao_avaliador.buttonGroup_12.checkedId())
     if q12 == "-2":
         q12 = 4
-        print(q12)
+        print("Q12:", q12)
     elif q12 == "-3":
         q12 = 3
-        print(q12)
+        print("Q12:", q12)
     elif q12 == "-4":
         q12 = 2
-        print(q12)
+        print("Q12:", q12)
     elif q12 == "-5":
         q12 = 1
-        print(q12)
+        print("Q12:", q12)
     elif q12 == "-6":
         q12 = 0
-        print(q12)
+        print("Q12:", q12)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 12, corrigir ou continuar")
     q13 = str(lista_avaliacao_avaliador.buttonGroup_13.checkedId())
     if q13 == "-2":
         q13 = 4
-        print(q13)
+        print("Q13:", q13)
     elif q13 == "-3":
         q13 = 3
-        print(q13)
+        print("Q13:", q13)
     elif q13 == "-4":
         q13 = 2
-        print(q13)
+        print("Q13:", q13)
     elif q13 == "-5":
         q13 = 1
-        print(q13)
+        print("Q13:", q13)
     elif q13 == "-6":
         q13 = 0
-        print(q13)
+        print("Q13:", q13)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 13, corrigir ou continuar")
     q14 = str(lista_avaliacao_avaliador.buttonGroup_14.checkedId())
     if q14 == "-2":
         q14 = 4
-        print(q14)
+        print("Q14:", q14)
     elif q14 == "-3":
         q14 = 3
-        print(q14)
+        print("Q14:", q14)
     elif q14 == "-4":
         q14 = 2
-        print(q14)
+        print("Q14:", q14)
     elif q14 == "-5":
         q14 = 1
-        print(q14)
+        print("Q14:", q14)
     elif q14 == "-6":
         q14 = 0
-        print(q14)
+        print("Q14:", q14)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 14, corrigir ou continuar")
     q15 = str(lista_avaliacao_avaliador.buttonGroup_15.checkedId())
     if q15 == "-2":
         q15 = 4
-        print(q15)
+        print("Q15:", q15)
     elif q15 == "-3":
         q15 = 3
-        print(q15)
+        print("Q15:", q15)
     elif q15 == "-4":
         q15 = 2
-        print(q15)
+        print("Q15:", q15)
     elif q15 == "-5":
         q15 = 1
-        print(q15)
+        print("Q15:", q15)
     elif q15 == "-6":
         q15 = 0
-        print(q15)
+        print("Q15:", q15)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 15, corrigir ou continuar")
     q16 = str(lista_avaliacao_avaliador.buttonGroup_16.checkedId())
     if q16 == "-2":
         q16 = 4
-        print(q16)
+        print("Q16:", q16)
     elif q16 == "-3":
         q16 = 3
-        print(q16)
+        print("Q16:", q16)
     elif q16 == "-4":
         q16 = 2
-        print(q16)
+        print("Q16:", q16)
     elif q16 == "-5":
         q16 = 1
-        print(q16)
+        print("Q16:", q16)
     elif q16 == "-6":
         q16 = 0
-        print(q16)
+        print("Q16:", q16)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 16, corrigir ou continuar")
     q17 = str(lista_avaliacao_avaliador.buttonGroup_17.checkedId())
     if q17 == "-2":
         q17 = 4
-        print(q17)
+        print("Q17:", q17)
     elif q17 == "-3":
         q17 = 3
-        print(q17)
+        print("Q17:", q17)
     elif q17 == "-4":
         q17 = 2
-        print(q17)
+        print("Q17:", q17)
     elif q17 == "-5":
         q17 = 1
-        print(q17)
+        print("Q17:", q17)
     elif q17 == "-6":
         q17 = 0
-        print(q17)
+        print("Q17:", q17)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 17, corrigir ou continuar")
     q18 = str(lista_avaliacao_avaliador.buttonGroup_18.checkedId())
     if q18 == "-2":
         q18 = 4
-        print(q18)
+        print("Q18:", q18)
     elif q18 == "-3":
         q18 = 3
-        print(q18)
+        print("Q18:", q18)
     elif q18 == "-4":
         q18 = 2
-        print(q18)
+        print("Q18:", q18)
     elif q18 == "-5":
         q18 = 1
-        print(q18)
+        print("Q18:", q18)
     elif q18 == "-6":
         q18 = 0
-        print(q18)
+        print("Q18:", q18)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 18, corrigir ou continuar")
     q19 = str(lista_avaliacao_avaliador.buttonGroup_19.checkedId())
     if q19 == "-2":
         q19 = 4
-        print(q19)
+        print("Q19:", q19)
     elif q19 == "-3":
         q19 = 3
-        print(q19)
+        print("Q19:", q19)
     elif q19 == "-4":
         q19 = 2
-        print(q19)
+        print("Q19:", q19)
     elif q19 == "-5":
         q19 = 1
-        print(q19)
+        print("Q19:", q19)
     elif q19 == "-6":
         q19 = 0
-        print(q19)
+        print("Q19:", q19)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 19, corrigir ou continuar")
     q20 = str(lista_avaliacao_avaliador.buttonGroup_20.checkedId())
     if q20 == "-2":
         q20 = 4
-        print(q20)
+        print("Q20:", q20)
     elif q20 == "-3":
         q20 = 3
-        print(q20)
+        print("Q20:", q20)
     elif q20 == "-4":
         q20 = 2
-        print(q20)
+        print("Q20:", q20)
     elif q20 == "-5":
         q20 = 1
-        print(q20)
+        print("Q20:", q20)
     elif q20 == "-6":
         q20 = 0
-        print(q20)
+        print("Q20:", q20)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 20, corrigir ou continuar")
     q21 = str(lista_avaliacao_avaliador.buttonGroup_21.checkedId())
     if q21 == "-2":
         q21 = 4
-        print(q21)
+        print("Q21:", q21)
     elif q21 == "-3":
         q21 = 3
-        print(q21)
+        print("Q21:", q21)
     elif q21 == "-4":
         q21 = 2
-        print(q21)
+        print("Q21:", q21)
     elif q21 == "-5":
         q21 = 1
-        print(q21)
+        print("Q21:", q21)
     elif q21 == "-6":
         q21 = 0
-        print(q21)
+        print("Q21:", q21)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 21, corrigir ou continuar")
     q22 = str(lista_avaliacao_avaliador.buttonGroup_22.checkedId())
     if q22 == "-2":
         q22 = 4
-        print(q22)
+        print("Q22:", q22)
     elif q22 == "-3":
         q22 = 3
-        print(q22)
+        print("Q22:", q22)
     elif q22 == "-4":
         q22 = 2
-        print(q22)
+        print("Q22:", q22)
     elif q22 == "-5":
         q22 = 1
-        print(q22)
+        print("Q22:", q22)
     elif q22 == "-6":
         q22 = 0
-        print(q22)
+        print("Q22:", q22)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 22, corrigir ou continuar")
     q23 = str(lista_avaliacao_avaliador.buttonGroup_23.checkedId())
     if q23 == "-2":
         q23 = 4
-        print(q23)
+        print("Q23:", q23)
     elif q23 == "-3":
         q23 = 3
-        print(q23)
+        print("Q23:", q23)
     elif q23 == "-4":
         q23 = 2
-        print(q23)
+        print("Q23:", q23)
     elif q23 == "-5":
         q23 = 1
-        print(q23)
+        print("Q23:", q23)
     elif q23 == "-6":
         q23 = 0
-        print(q23)
+        print("Q23:", q23)
         # QMessageBox.about(lista_avaliacao_avaliador, "ALERTA",
         # "Valor 0 inserido na Questão 23, corrigir ou continuar")
 
     q24 = str(lista_avaliacao_avaliador.buttonGroup_24.checkedId())
     if q24 == "-2":
         q24 = 4
-        print(q24)
+        print("Q24:", q24)
     elif q24 == "-3":
         q24 = 3
-        print(q24)
+        print("Q24:", q24)
     elif q24 == "-4":
         q24 = 2
-        print(q24)
+        print("Q24:", q24)
     elif q24 == "-5":
         q24 = 1
-        print(q24)
+        print("Q24:", q24)
     elif q24 == "-6":
         q24 = 0
-        print(q24)
+        print("Q24:", q24)
 
     if lista_avaliacao_avaliador.radioButton121.isChecked():
         print("Teve incidente neste mês")
         incidentes = 1
+        RB = 1
     elif lista_avaliacao_avaliador.radioButton122.isChecked():
         print("Não teve incidentes neste mês")
         incidentes = 0
+        RB = 1.1
 
     cursor2 = banco.cursor(buffered=True)
     avaliador = lista_avaliacao_avaliador.label.text()
@@ -3215,7 +3303,7 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     print("Tempo da avaliacao lida:", avaliacaotempo_lido)
 
     # 08/07 FAZENDO A NOVA AVALIAÇÃO DA LISTA DE DETALHES, TAMBÉM CONTAR NOVOS INDICES
-    RB = 1.1
+    #RB = 1.1
     m = incidentes
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
@@ -3284,6 +3372,8 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
 
     # banco.commit()
 
+    # banco.commit()
+
     # lista_avaliacao_avaliador.close()
     # # tela_login_sql()
     # limpar_avaliacao_detalhes()
@@ -3299,18 +3389,23 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     kn = cursor.fetchall()
     print("kn é:", kn)
     k1 = kn[0][0]
+    format(k1, '.3f')
     print("k1 é:", k1)
+
     k2 = kn[0][1]
+    format(k2, '.3f')
     print("k2 é:", k2)
+
     k3 = kn[0][2]
+    format(k3, '.3f')
     print("k3 é:", k3)
 
-    # 4,3,2,1,2,2,2
+    mes_primario = 0
     print("Mês anterior:", mes_anterior)  # GVj-1
     if mes_anterior == 0:
         mes_anterior = 12
         ano2p = ano2p-1
-
+        print("Mês passado está no ano anterior ou é mês primário")
     else:
         "Não há valor mensal"
     try:
@@ -3335,21 +3430,29 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
         GVij2 = 0
         TPij2 = 0
         SIij2 = 0
-
-    try:
-        GVij2 = avaliacao[0][7]
-        print("Indice de Governança do mês anterior do Detalhes:", GVij2)
-        TPij2 = avaliacao[0][8]
-        print("Indice de Transparência do mês anterior do Detalhes:", GVij2)
-        SIij2 = avaliacao[0][9]
-        print("Indice de Segurança da informação do mês anterior do Detalhes:", GVij2)
-    except IndexError:  # quando não há mês anterior
-        # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
-        avaliacao = "null"
-        print("Não há avaliação feita no mês anterior do Detalhes:", mes_anterior)
-        GVij2 = 0
-        TPij2 = 0
-        SIij2 = 0
+        # ou
+        mes_primario = 1
+    else:
+        print("Não está no ano passado")
+        try:
+            Comando_SQL2 = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
+                avaliador, provedor, mes_anterior, ano2p))
+            cursor2.execute(Comando_SQL2)
+            dados_lidos = cursor2.fetchall()
+            avaliacao = dados_lidos
+            GVij2 = avaliacao[0][7]
+            print("Indice de Governança do mês anterior do Detalhes:", GVij2)
+            TPij2 = avaliacao[0][8]
+            print("Indice de Transparência do mês anterior do Detalhes:", GVij2)
+            SIij2 = avaliacao[0][9]
+            print("Indice de Segurança da informação do mês anterior do Detalhes:", GVij2)
+        except IndexError:  # quando não há mês anterior
+            # se não foi feito a avaliação do mês anterior? Será tratado como?# Resolver URGENTE
+            avaliacao = "null"
+            print("Não há avaliação feita no mês anterior do Detalhes:", mes_anterior)
+            GVij2 = 0
+            TPij2 = 0
+            SIij2 = 0
 
     # floatao = 2.151212112
     # print("Floatao é:%.2f" % (floatao))
@@ -3383,7 +3486,7 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
         print("12 meses atrás é do Detalhes:", mes_anterior12)
         ano_anterior = ano - 1
 
-    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>=('%s') and ano=('%s')" %
+    comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes<=('%s') and ano=('%s') UNION select * from avaliacao_csp where avaliador = ('%s') and provedor = ('%s') and mes>('%s') and ano=('%s')" %
                    (avaliador, provedor, mes_atual, ano_atual, avaliador, provedor, mes_anterior12, ano_anterior))
 
     cursor.execute(comando_SQL)
@@ -3412,12 +3515,14 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
         print("Instâncias de Indices Segurança da Informação para fazer a média do Detalhes...:", SIij12_soma)
 
         counter = counter+1
-        print(counter)
-    # fazendo as avaliações que já teve, ele divide por quantas teve
-    #     scount=s+1
-    # GVij12=GVij12/scount
-    # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
-    GVij12 = GVij12_soma/12
+        print("Houve", counter, "avaliações nos últimos 12 meses")
+
+    try:
+        GVij12 = GVij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        GVij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", GVij12)
+
     print("A média das instâncias de Indices sobre a Governança nos 12 meses do Detalhes:", GVij12)
 
     IGVj3 = (k3*(GVij12))
@@ -3426,8 +3531,13 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
     print("Indicador de confiança Governança do Detalhes:", IGVj)
 
-    TPij12 = TPij12_soma/12
-    print("A média das instâncias de Indices sobre a Transparência nos dos 12 meses do Detalhes:", TPij12)
+    try:
+        TPij12 = TPij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        TPij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", TPij12)
+
+    print("A média das instâncias de Indices sobre a Transparência nos dos 12 meses:", TPij12)
 
     ITPj3 = (k3*(TPij12))
     print("Parcela 3 da Transparência do Detalhes:", ITPj3)
@@ -3435,8 +3545,13 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
     print("Indicador de confiança Transparência do Detalhes:", ITPj)
 
-    SIij12 = SIij12_soma/12
-    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses do Detalhes:", TPij12)
+    try:
+        SIij12 = SIij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
+    except ZeroDivisionError:
+        SIij12 = 1
+        print("Alocando valor para primeiro mês de Governança na 3ª parcela:", SIij12)
+
+    print("A média das instâncias de Indices sobre a Segurança da Informação nos dos 12 meses:", SIij12)
 
     ISIj3 = (k3*(SIij12))
     print("Parcela 3 da Segurança da Informação do Detalhes:", ISIj3)
@@ -3444,8 +3559,21 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     ISIj = (((ISIj1 + ISIj2 + ISIj3) * RB)/(2**m))
     print("Indicador de confiança Segurança da Informação do Detalhes:", ISIj)
 
+    IGVj = format(IGVj, '.3f')
+    ITPj = format(ITPj, '.3f')
+    ISIj = format(ISIj, '.3f')
+    if mes_primario == 1:
+        # IGVj = 0
+        # ITPj = 0
+        # ISIj = 0
+        #print("É mês primário, valores dos indicadores zerados")
+        print("É mês primário")
+    else:
+        print("Não é mês primário")
+
     cursor.execute("UPDATE avaliacao_csp SET IGVj=('%s'), ITPj=('%s'),ISIj=('%s') WHERE avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (
         float(IGVj), float(ITPj), float(ISIj), str(avaliador), str(provedor), int(mes), int(ano)))
+
     banco.commit()
     lista_avaliacao_avaliador.close()
     # tela_login_sql()
