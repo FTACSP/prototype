@@ -23,10 +23,3 @@ The app start to be developed with Pycharm, nowadays it is been updated and publ
 
 ![image](https://user-images.githubusercontent.com/12383980/126010865-82dded4f-bcef-4093-b24b-5032a020e799.png)
 
-
-# Reproduce 
-
-![image](https://user-images.githubusercontent.com/12383980/126011008-2c9a421d-0dd3-45d0-945d-943d7a65b0da.png)
-![image](https://user-images.githubusercontent.com/12383980/126011025-36d24a98-b9c6-4ce8-9acd-edb0d27e8e06.png)
-![image](https://user-images.githubusercontent.com/12383980/126011041-5b177dd4-3865-4aef-8ed6-6cfeb5ecd03d.png)
-
