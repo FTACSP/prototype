@@ -41,6 +41,16 @@
 # avaliadorusr pelo avaliador, cadastrado com nome completo
 # avaliador hugo
 # from _typeshed import NoneType
+
+
+# Ir fazendo relatório técnico
+# Diagrama do Banco de dados
+# Diagrama dos casos de uso do programa, descrições
+
+
+# RB no banco de dados
+# Hash na senha no banco de dados, não só na criação do novo usuário
+
 from msilib.schema import RadioButton
 from PyQt5 import QtCore, QtGui, QtWidgets, uic, Qt
 from PyQt5.QtWidgets import QApplication, QPushButton, QDialog, QVBoxLayout, QMessageBox, QDateTimeEdit, QCalendarWidget, QButtonGroup, QAbstractButton, QRadioButton, QTableWidget, QTableWidgetItem, QWidget, QListWidget, QListWidgetItem
@@ -1703,6 +1713,23 @@ def tela_login_sql():
     password = tela_login.lineEdit_2.text()
     StatusAPIUX.label_1.setText(str(username))
 
+    Comando_SQL = (
+        "select * from avaliadores where avaliadorusr=('%s')" % (username,))
+
+    cursor.execute(Comando_SQL)
+    dados_lidos = cursor.fetchall()
+    try:
+        avaliadorpw = dados_lidos[0][3]
+        salt = dados_lidos[0][6]
+        # letters = string.ascii_letters
+        # salt = (''.join(random.choice(letters) for i in range(10)))
+        # print("Salt gerado para senha:", salt)
+        password = hashlib.sha512((password+salt).encode('utf-8')).hexdigest()
+        print("Senha criptografada e com salt para usuário entrar é:", password)
+    #password = hashlib.sha512(password).encode('utf-8').hexdigest()
+    except IndexError:
+        print("senha errada")
+
     # tela_login_cadastro.label_7.setText(str(username))
     # if gestor=1
     # StatusAPIUX_avaliador.label_3.setText(d1)
@@ -1765,7 +1792,7 @@ def tela_login_sql():
     dados_lidos = cursor.fetchall()
     if(len(dados_lidos) == 0):  # ==0 NÃO TEM USUÁRIO
         QMessageBox.about(tela_login, "ALERTA",
-                          "Usuário não encontrado")
+                          "Usuário ou Senha Incorreta!")
 
         tela_login.show()
         return
@@ -2038,33 +2065,37 @@ def cadastro_inserir_avaliador():
 
         letters = string.ascii_letters
         salt = (''.join(random.choice(letters) for i in range(10)))
-        print(salt)
-        saltao = hashlib.sha512((avaliadorpw+salt).encode('utf-8')).hexdigest()
-        print(saltao)
-        # FAZENDO SEQUENCIA PRA PREENCHER BANCO DE DADOS#
-        from numpy.random import seed
-        from numpy.random import shuffle
-        from numpy.random import randint
-        i = 1
-        while i < 19:
-            values_random = randint(0, 5, 24)
-            # valores = [values]
-            values = str(values_random)
-            # print(values)
+        print("Salt gerado para senha:", salt)
+        #saltao = hashlib.sha512((avaliadorpw+salt).encode('utf-8')).hexdigest()
+        avaliadorpw = hashlib.sha512(
+            (avaliadorpw+salt).encode('utf-8')).hexdigest()
+        print("Senha criptografada e com salt:", avaliadorpw)
 
-            # print(re.findall(r'\d+', values))
+        # # FAZENDO SEQUENCIA PRA PREENCHER BANCO DE DADOS#
+        # from numpy.random import seed
+        # from numpy.random import shuffle
+        # from numpy.random import randint
+        # i = 1
+        # while i < 19:
+        #     values_random = randint(0, 5, 24)
+        #     # valores = [values]
+        #     values = str(values_random)
+        #     # print(values)
 
-            values2 = values.strip("[]").split(" ")
+        #     # print(re.findall(r'\d+', values))
 
-            # print(values)
-            print(values2)
-            i = i+1
+        #     values2 = values.strip("[]").split(" ")
 
-        cursor.execute("insert into avaliadores(avaliador, avaliadorusr, avaliadorpw, atividade,gestor)" "VALUES('%s','%s','%s','%s',0)" %
+        #     # print(values)
+        #     print(values2)
+        #     i = i+1
+
+        cursor.execute("insert into avaliadores(avaliador, avaliadorusr, avaliadorpw, atividade,gestor,salt)" "VALUES('%s','%s','%s','%s',0,'%s')" %
                        (''.join(avaliador),
                         ''.join(avaliadorusr),
                         ''.join(avaliadorpw),
-                        ''.join(atividade)))
+                        ''.join(atividade),
+                        ''.join(salt)))
 
         print("dados inseridos com sucesso! Avaliador Criado!")
         QMessageBox.about(tela_cadastro_avaliador, "ALERTA",
@@ -4546,7 +4577,7 @@ def cadastro_provedor_salvar():  # novo salvar 24/05
         print(provedor)
 
         QMessageBox.about(tela_cadastro_avaliador, "ALERTA",
-                          "Este provedor já foi criado.")
+                          "Este provedor já foi criado pra editar.")
         # QMessageBox.about(tela_cadastro_avaliador, "ALERTA",
         #                   "Este avaliador já foi criado, corrigir ou substituir:")
         # resp = QMessageBox.question(
@@ -4594,14 +4625,20 @@ def cadastro_inserir_provedor():
         print("Ativo=1 e desativado=1:", atividade)
         return
     try:
+        k1 = "0.50"
+        k2 = "0.25"
+        k3 = "0.25"
         provedor = [tela_cadastro_provedor.tableWidget_2.item(
             row, 0).text() for row in range(tela_cadastro_provedor.tableWidget_2.rowCount())]
         atividade = [tela_cadastro_provedor.tableWidget_2.item(
             row, 1).text() for row in range(tela_cadastro_provedor.tableWidget_2.rowCount())]
         cursor = banco.cursor()
-        cursor.execute("insert into provedores(provedor,atividade)" "VALUES('%s','%s')" %
+        cursor.execute("insert into provedores(provedor,atividade,k1,k2,k3)" "VALUES('%s','%s','%s','%s','%s')" %
                        (''.join(provedor),
-                        ''.join(atividade)))
+                        ''.join(atividade),
+                        ''.join(k1),
+                        ''.join(k2),
+                        ''.join(k3)))
 
         print("dados inseridos com sucesso! Provedor Criado!")
         QMessageBox.about(tela_cadastro_provedor, "ALERTA",
