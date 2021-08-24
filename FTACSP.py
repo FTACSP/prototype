@@ -1231,14 +1231,36 @@ def nova_avaliacao():
     print("nome do provedor:", provedor)
     print("mês:", mes)
     print("ano:", ano)
+    cursor = banco.cursor()
+    cursor.execute(
+        "select k1,k2,k3,rb from provedores where provedor=('%s')" % provedor)
+
+    kn = cursor.fetchall()
+    print("kn é:", kn)
+    k1 = kn[0][0]
+    format(k1, '.3f')
+    print("k1 é:", k1)
+
+    k2 = kn[0][1]
+    format(k2, '.3f')
+    print("k2 é:", k2)
+
+    k3 = kn[0][2]
+    format(k3, '.3f')
+    print("k3 é:", k3)
+
+    RB = kn[0][3]
+    format(RB, '.3f')
+    print("RB é:", RB)
+
     if formulario_avaliacao.radioButton121.isChecked():
         print("Teve incidente neste mês")
         incidentes = 1
-        RB = 1
+        RB = 1  # 13/08
     elif formulario_avaliacao.radioButton122.isChecked():
         print("Não teve incidentes neste mês")
         incidentes = 0
-        RB = 1.1
+        # RB = 1.1 #13/08
     # data_avaliacao = StatusAPIUX_avaliador.label_3.text()
     # fazer inserçao do tempo no banco de dados por no comboBox puxando do banco depois puxar combobox pra ca
     # tempo2 = StatusAPIUX.label_6.text()
@@ -1383,21 +1405,7 @@ def nova_avaliacao():
     # indicar os valores das variáveis
     # cadastrar as variáveis no BD (provedor)
 
-    cursor.execute(
-        "select k1,k2,k3 from provedores where provedor=('%s')" % provedor)
-    kn = cursor.fetchall()
-    print("kn é:", kn)
-    k1 = kn[0][0]
-    format(k1, '.3f')
-    print("k1 é:", k1)
-
-    k2 = kn[0][1]
-    format(k2, '.3f')
-    print("k2 é:", k2)
-
-    k3 = kn[0][2]
-    format(k3, '.3f')
-    print("k3 é:", k3)
+    # cursor que chamava o k1,k2,k3 estava aqui #13/08
 
     mes_primario = 0
     # 4,3,2,1,2,2,2
@@ -4628,6 +4636,7 @@ def cadastro_inserir_provedor():
         k1 = "0.50"
         k2 = "0.25"
         k3 = "0.25"
+        rb = "1.1"
         provedor = [tela_cadastro_provedor.tableWidget_2.item(
             row, 0).text() for row in range(tela_cadastro_provedor.tableWidget_2.rowCount())]
         atividade = [tela_cadastro_provedor.tableWidget_2.item(
@@ -4638,7 +4647,8 @@ def cadastro_inserir_provedor():
                         ''.join(atividade),
                         ''.join(k1),
                         ''.join(k2),
-                        ''.join(k3)))
+                        ''.join(k3),
+                        ''.join(rb)))
 
         print("dados inseridos com sucesso! Provedor Criado!")
         QMessageBox.about(tela_cadastro_provedor, "ALERTA",
