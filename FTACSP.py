@@ -2323,529 +2323,529 @@ def detalhes_avaliador():
         #incidentes = str(lista_avaliacao_avaliador.buttonGroup_25.checkedId())
 
         ###################QUESTÃO 1###############################
-        if q1 == ('4'):
+        if q1 == (4):
             lista_avaliacao_avaliador.radioButton1.setChecked(True)
             print(q1)
             q1 = 4
 
-        elif q1 == ('3'):
+        elif q1 == (3):
             lista_avaliacao_avaliador.radioButton2.setChecked(True)
             print(q1)
             q1 = 3
-        elif q1 == ('2'):
+        elif q1 == (2):
             lista_avaliacao_avaliador.radioButton3.setChecked(True)
             print(q1)
             q1 = 2
-        elif q1 == ('1'):
+        elif q1 == (1):
             lista_avaliacao_avaliador.radioButton4.setChecked(True)
             print(q1)
             q1 = 1
-        elif q1 == ('0'):
+        elif q1 == (0):
             lista_avaliacao_avaliador.radioButton5.setChecked(True)
             print(q1)
             q1 = 0
 ###################QUESTÃO 2###############################
-        if q2 == ('4'):
+        if q2 == (4):
             lista_avaliacao_avaliador.radioButton6.setChecked(True)
             print(q2)
             q2 = 4
-        elif q2 == ('3'):
+        elif q2 == (3):
             lista_avaliacao_avaliador.radioButton7.setChecked(True)
             print(q2)
             q2 = 3
-        elif q2 == ('2'):
+        elif q2 == (2):
             lista_avaliacao_avaliador.radioButton8.setChecked(True)
             print(q2)
             q2 = 2
-        elif q2 == ('1'):
+        elif q2 == (1):
             lista_avaliacao_avaliador.radioButton9.setChecked(True)
             print(q2)
             q2 = 1
-        elif q2 == ('0'):
+        elif q2 == (0):
             lista_avaliacao_avaliador.radioButton10.setChecked(True)
             print(q2)
             q1 = 0
     ###################QUESTÃO 3###############################
-        if q3 == ('4'):
+        if q3 == (4):
             lista_avaliacao_avaliador.radioButton11.setChecked(True)
             print(q3)
             q3 = 4
-        elif q3 == ('3'):
+        elif q3 == (3):
             lista_avaliacao_avaliador.radioButton12.setChecked(True)
             print(q3)
             q3 = 3
-        elif q3 == ('2'):
+        elif q3 == (2):
             lista_avaliacao_avaliador.radioButton13.setChecked(True)
             print(q3)
             q3 = 2
 
-        elif q3 == ('1'):
+        elif q3 == (1):
             lista_avaliacao_avaliador.radioButton14.setChecked(True)
             print(q3)
             q3 = 1
 
-        elif q3 == ('0'):
+        elif q3 == (0):
             lista_avaliacao_avaliador.radioButton15.setChecked(True)
             print(q3)
             q3 = 0
     ###################QUESTÃO 4###############################
-        if q4 == ('4'):
+        if q4 == (4):
             lista_avaliacao_avaliador.radioButton16.setChecked(True)
             print(q4)
             q4 = 4
-        elif q4 == ('3'):
+        elif q4 == (3):
             lista_avaliacao_avaliador.radioButton17.setChecked(True)
             print(q4)
             q4 = 3
-        elif q4 == ('2'):
+        elif q4 == (2):
             lista_avaliacao_avaliador.radioButton18.setChecked(True)
             print(q4)
             q4 = 2
 
-        elif q4 == ('1'):
+        elif q4 == (1):
             lista_avaliacao_avaliador.radioButton19.setChecked(True)
             print(q4)
             q4 = 1
 
-        elif q4 == ('0'):
+        elif q4 == (0):
             lista_avaliacao_avaliador.radioButton20.setChecked(True)
             print(q4)
             q4 = 0
 
     ###################QUESTÃO 5###############################
-        if q5 == ('4'):
+        if q5 == (4):
             lista_avaliacao_avaliador.radioButton21.setChecked(True)
             print(q5)
             q5 = 4
-        elif q5 == ('3'):
+        elif q5 == (3):
             lista_avaliacao_avaliador.radioButton22.setChecked(True)
             print(q5)
             q5 = 3
-        elif q5 == ('2'):
+        elif q5 == (2):
             lista_avaliacao_avaliador.radioButton23.setChecked(True)
             print(q5)
             q5 = 2
-        elif q5 == ('1'):
+        elif q5 == (1):
             lista_avaliacao_avaliador.radioButton24.setChecked(True)
             print(q5)
             q5 = 1
 
-        elif q5 == ('0'):
+        elif q5 == (0):
             lista_avaliacao_avaliador.radioButton25.setChecked(True)
             print(q5)
             q5 = 0
     ###################QUESTÃO 6###############################
-        if q6 == ('4'):
+        if q6 == (4):
             lista_avaliacao_avaliador.radioButton26.setChecked(True)
             print(q6)
             q6 = 4
 
-        elif q6 == ('3'):
+        elif q6 == (3):
             lista_avaliacao_avaliador.radioButton27.setChecked(True)
             print(q6)
             q6 = 3
-        elif q6 == ('2'):
+        elif q6 == (2):
             lista_avaliacao_avaliador.radioButton28.setChecked(True)
             print(q6)
             q6 = 2
 
-        elif q6 == ('1'):
+        elif q6 == (1):
             lista_avaliacao_avaliador.radioButton29.setChecked(True)
             print(q6)
             q6 = 1
-        elif q6 == ('0'):
+        elif q6 == (0):
             lista_avaliacao_avaliador.radioButton30.setChecked(True)
             print(q6)
             q6 = 0
     ###################QUESTÃO 7###############################
-        if q7 == ('4'):
+        if q7 == (4):
             lista_avaliacao_avaliador.radioButton31.setChecked(True)
             print(q7)
             q7 = 4
-        elif q7 == ('3'):
+        elif q7 == (3):
             lista_avaliacao_avaliador.radioButton32.setChecked(True)
             print(q7)
             q7 = 3
-        elif q7 == ('2'):
+        elif q7 == (2):
             lista_avaliacao_avaliador.radioButton33.setChecked(True)
             print(q7)
             q7 = 2
-        elif q7 == ('1'):
+        elif q7 == (1):
             lista_avaliacao_avaliador.radioButton34.setChecked(True)
             print(q7)
             q7 = 1
-        elif q7 == ('0'):
+        elif q7 == (0):
             lista_avaliacao_avaliador.radioButton35.setChecked(True)
             print(q7)
             q7 = 0
 
     ###################QUESTÃO 8###############################
-        if q8 == ('4'):
+        if q8 == (4):
             lista_avaliacao_avaliador.radioButton36.setChecked(True)
             print(q8)
             q8 = 4
 
-        elif q8 == ('3'):
+        elif q8 == (3):
             lista_avaliacao_avaliador.radioButton37.setChecked(True)
             print(q8)
             q8 = 3
-        elif q8 == ('2'):
+        elif q8 == (2):
             lista_avaliacao_avaliador.radioButton38.setChecked(True)
             print(q8)
             q8 = 2
-        elif q8 == ('1'):
+        elif q8 == (1):
             lista_avaliacao_avaliador.radioButton39.setChecked(True)
             print(q8)
             q8 = 1
-        elif q8 == ('0'):
+        elif q8 == (0):
             lista_avaliacao_avaliador.radioButton40.setChecked(True)
             print(q8)
             q8 = 0
     ###################QUESTÃO 9###############################
-        if q9 == ('4'):
+        if q9 == (4):
             lista_avaliacao_avaliador.radioButton41.setChecked(True)
             print(q9)
             q9 = 4
-        elif q9 == ('3'):
+        elif q9 == (3):
             lista_avaliacao_avaliador.radioButton42.setChecked(True)
             print(q9)
             q9 = 3
-        elif q9 == ('2'):
+        elif q9 == (2):
             lista_avaliacao_avaliador.radioButton43.setChecked(True)
             print(q9)
             q9 = 2
-        elif q9 == ('1'):
+        elif q9 == (1):
             lista_avaliacao_avaliador.radioButton44.setChecked(True)
             print(q9)
             q9 = 1
-        elif q9 == ('0'):
+        elif q9 == (0):
             lista_avaliacao_avaliador.radioButton45.setChecked(True)
             print(q9)
             q9 = 0
 
     ###################QUESTÃO 10###############################
-        if q10 == ('4'):
+        if q10 == (4):
             lista_avaliacao_avaliador.radioButton46.setChecked(True)
             print(q10)
             q10 = 4
-        elif q10 == ('3'):
+        elif q10 == (3):
             lista_avaliacao_avaliador.radioButton47.setChecked(True)
             print(q10)
             q10 = 3
-        elif q10 == ('2'):
+        elif q10 == (2):
             lista_avaliacao_avaliador.radioButton48.setChecked(True)
             print(q10)
             q10 = 2
-        elif q10 == ('1'):
+        elif q10 == (1):
             lista_avaliacao_avaliador.radioButton49.setChecked(True)
             print(q10)
             q10 = 1
-        elif q10 == ('0'):
+        elif q10 == (0):
             lista_avaliacao_avaliador.radioButton50.setChecked(True)
             print(q10)
             q10 = 0
     ###################QUESTÃO 11###############################
-        if q11 == ('4'):
+        if q11 == (4):
             lista_avaliacao_avaliador.radioButton51.setChecked(True)
             print(q11)
             q11 = 4
-        elif q11 == ('3'):
+        elif q11 == (3):
             lista_avaliacao_avaliador.radioButton52.setChecked(True)
             print(q11)
             q11 = 3
-        elif q11 == ('2'):
+        elif q11 == (2):
             lista_avaliacao_avaliador.radioButton53.setChecked(True)
             print(q11)
             q11 = 2
-        elif q11 == ('1'):
+        elif q11 == (1):
             lista_avaliacao_avaliador.radioButton54.setChecked(True)
             print(q11)
             q11 = 1
-        elif q11 == ('0'):
+        elif q11 == (0):
             lista_avaliacao_avaliador.radioButton55.setChecked(True)
             print(q11)
             q11 = 0
     ###################QUESTÃO 12###############################
-        if q12 == ('4'):
+        if q12 == (4):
             lista_avaliacao_avaliador.radioButton56.setChecked(True)
             print(q12)
             q12 = 4
-        elif q12 == ('3'):
+        elif q12 == (3):
             lista_avaliacao_avaliador.radioButton57.setChecked(True)
             print(q12)
             q12 = 3
-        elif q12 == ('2'):
+        elif q12 == (2):
             lista_avaliacao_avaliador.radioButton58.setChecked(True)
             print(q12)
             q12 = 2
-        elif q12 == ('1'):
+        elif q12 == (1):
             lista_avaliacao_avaliador.radioButton59.setChecked(True)
             print(q12)
             q12 = 1
-        elif q12 == ('0'):
+        elif q12 == (0):
             lista_avaliacao_avaliador.radioButton60.setChecked(True)
             print(q12)
             q12 = 0
     ###################QUESTÃO 13###############################
-        if q13 == ('4'):
+        if q13 == (4):
             lista_avaliacao_avaliador.radioButton61.setChecked(True)
             print(q13)
             q13 = 4
-        elif q13 == ('3'):
+        elif q13 == (3):
             lista_avaliacao_avaliador.radioButton62.setChecked(True)
             print(q13)
             q13 = 3
-        elif q13 == ('2'):
+        elif q13 == (2):
             lista_avaliacao_avaliador.radioButton63.setChecked(True)
             print(q13)
             q13 = 2
-        elif q13 == ('1'):
+        elif q13 == (1):
             lista_avaliacao_avaliador.radioButton64.setChecked(True)
             print(q13)
             q13 = 1
-        elif q13 == ('0'):
+        elif q13 == (0):
             lista_avaliacao_avaliador.radioButton65.setChecked(True)
             print(q13)
             q13 = 0
 
     ###################QUESTÃO 14###############################
-        if q14 == ('4'):
+        if q14 == (4):
             lista_avaliacao_avaliador.radioButton66.setChecked(True)
             print(q14)
             q14 = 4
-        elif q14 == ('3'):
+        elif q14 == (3):
             lista_avaliacao_avaliador.radioButton67.setChecked(True)
             print(q14)
             q14 = 3
-        elif q14 == ('2'):
+        elif q14 == (2):
             lista_avaliacao_avaliador.radioButton68.setChecked(True)
             print(q14)
             q14 = 2
-        elif q14 == ('1'):
+        elif q14 == (1):
             lista_avaliacao_avaliador.radioButton69.setChecked(True)
             print(q14)
             q14 = 1
-        elif q14 == ('0'):
+        elif q14 == (0):
             lista_avaliacao_avaliador.radioButton70.setChecked(True)
             print(q14)
             q14 = 0
 
     ###################QUESTÃO 15###############################
-        if q15 == ('4'):
+        if q15 == (4):
             lista_avaliacao_avaliador.radioButton71.setChecked(True)
             print(q15)
             q15 = 4
-        elif q15 == ('3'):
+        elif q15 == (3):
             lista_avaliacao_avaliador.radioButton72.setChecked(True)
             print(q15)
             q15 = 3
-        elif q15 == ('2'):
+        elif q15 == (2):
             lista_avaliacao_avaliador.radioButton73.setChecked(True)
             print(q15)
             q15 = 2
-        elif q15 == ('1'):
+        elif q15 == (1):
             lista_avaliacao_avaliador.radioButton74.setChecked(True)
             print(q15)
             q15 = 1
-        elif q15 == ('0'):
+        elif q15 == (0):
             lista_avaliacao_avaliador.radioButton75.setChecked(True)
             print(q15)
             q15 = 0
 
     ###################QUESTÃO 16###############################
-        if q16 == ('4'):
+        if q16 == (4):
             lista_avaliacao_avaliador.radioButton76.setChecked(True)
             print(q16)
             q16 = 4
-        elif q16 == ('3'):
+        elif q16 == (3):
             lista_avaliacao_avaliador.radioButton77.setChecked(True)
             print(q16)
             q16 = 3
-        elif q16 == ('2'):
+        elif q16 == (2):
             lista_avaliacao_avaliador.radioButton78.setChecked(True)
             print(q16)
             q16 = 2
-        elif q16 == ('1'):
+        elif q16 == (1):
             lista_avaliacao_avaliador.radioButton79.setChecked(True)
             print(q16)
             q16 = 1
-        elif q16 == ('0'):
+        elif q16 == (0):
             lista_avaliacao_avaliador.radioButton80.setChecked(True)
             print(q16)
             q16 = 0
 
     ###################QUESTÃO 17###############################
-        if q17 == ('4'):
+        if q17 == (4):
             lista_avaliacao_avaliador.radioButton81.setChecked(True)
             print(q17)
             q17 = 4
-        elif q17 == ('3'):
+        elif q17 == (3):
             lista_avaliacao_avaliador.radioButton82.setChecked(True)
             print(q17)
             q17 = 3
-        elif q17 == ('2'):
+        elif q17 == (2):
             lista_avaliacao_avaliador.radioButton83.setChecked(True)
             print(q17)
             q17 = 2
-        elif q17 == ('1'):
+        elif q17 == (1):
             lista_avaliacao_avaliador.radioButton84.setChecked(True)
             print(q17)
             q17 = 1
-        elif q17 == ('0'):
+        elif q17 == (0):
             lista_avaliacao_avaliador.radioButton85.setChecked(True)
             print(q17)
             q17 = 0
 
     # ###################QUESTÃO q18###############################
-        if q18 == ('4'):
+        if q18 == (4):
             lista_avaliacao_avaliador.radioButton86.setChecked(True)
             print(q18)
             q18 = 4
-        elif q18 == ('3'):
+        elif q18 == (3):
             lista_avaliacao_avaliador.radioButton87.setChecked(True)
             print(q18)
             q18 = 3
-        elif q18 == ('2'):
+        elif q18 == (2):
             lista_avaliacao_avaliador.radioButton88.setChecked(True)
             print(q18)
             q18 = 2
-        elif q18 == ('1'):
+        elif q18 == (1):
             lista_avaliacao_avaliador.radioButton89.setChecked(True)
             print(q18)
             q18 = 1
-        elif q18 == ('0'):
+        elif q18 == (0):
             lista_avaliacao_avaliador.radioButton90.setChecked(True)
             print(q18)
             q18 = 0
 
     ###################QUESTÃO 19###############################
-        if q19 == ('4'):
+        if q19 == (4):
             lista_avaliacao_avaliador.radioButton91.setChecked(True)
             print(q19)
             q19 = 4
-        elif q19 == ('3'):
+        elif q19 == (3):
             lista_avaliacao_avaliador.radioButton92.setChecked(True)
             print(q19)
             q19 = 3
-        elif q19 == ('2'):
+        elif q19 == (2):
             lista_avaliacao_avaliador.radioButton93.setChecked(True)
             print(q19)
             q19 = 2
-        elif q19 == ('1'):
+        elif q19 == (1):
             lista_avaliacao_avaliador.radioButton94.setChecked(True)
             print(q19)
             q19 = 1
-        elif q19 == ('0'):
+        elif q19 == (0):
             lista_avaliacao_avaliador.radioButton95.setChecked(True)
             print(q19)
             q19 = 0
 
     ###################QUESTÃO q20###############################
-        if q20 == ('4'):
+        if q20 == (4):
             lista_avaliacao_avaliador.radioButton96.setChecked(True)
             print(q20)
             q20 = 4
-        elif q20 == ('3'):
+        elif q20 == (3):
             lista_avaliacao_avaliador.radioButton97.setChecked(True)
             print(q20)
             q20 = 3
-        elif q20 == ('2'):
+        elif q20 == (2):
             lista_avaliacao_avaliador.radioButton98.setChecked(True)
             print(q20)
             q20 = 2
-        elif q20 == ('1'):
+        elif q20 == (1):
             lista_avaliacao_avaliador.radioButton99.setChecked(True)
             print(q20)
             q20 = 1
-        elif q20 == ('0'):
+        elif q20 == (0):
             lista_avaliacao_avaliador.radioButton100.setChecked(True)
             print(q20)
             q20 = 0
 
     ###################QUESTÃO q21###############################
-        if q21 == ('4'):
+        if q21 == (4):
             lista_avaliacao_avaliador.radioButton101.setChecked(True)
             print(q21)
             q21 = 4
-        elif q21 == ('3'):
+        elif q21 == (3):
             lista_avaliacao_avaliador.radioButton102.setChecked(True)
             print(q21)
             q21 = 3
-        elif q21 == ('2'):
+        elif q21 == (2):
             lista_avaliacao_avaliador.radioButton103.setChecked(True)
             print(q21)
             q21 = 2
-        elif q21 == ('1'):
+        elif q21 == (1):
             lista_avaliacao_avaliador.radioButton104.setChecked(True)
             print(q21)
             q21 = 1
-        elif q21 == ('0'):
+        elif q21 == (0):
             lista_avaliacao_avaliador.radioButton105.setChecked(True)
             print(q21)
             q21 = 0
 
     ###################QUESTÃO q22###############################
-        if q22 == ('4'):
+        if q22 == (4):
             lista_avaliacao_avaliador.radioButton106.setChecked(True)
             print(q22)
             q22 = 4
-        elif q22 == ('3'):
+        elif q22 == (3):
             lista_avaliacao_avaliador.radioButton107.setChecked(True)
             print(q22)
             q22 = 3
-        elif q22 == ('2'):
+        elif q22 == (2):
             lista_avaliacao_avaliador.radioButton108.setChecked(True)
             print(q22)
             q22 = 2
-        elif q22 == ('1'):
+        elif q22 == (1):
             lista_avaliacao_avaliador.radioButton109.setChecked(True)
             print(q22)
             q22 = 1
-        elif q22 == ('0'):
+        elif q22 == (0):
             lista_avaliacao_avaliador.radioButton110.setChecked(True)
             print(q22)
             q22 = 0
 
     ###################QUESTÃO q23###############################
-        if q23 == ('4'):
+        if q23 == (4):
             lista_avaliacao_avaliador.radioButton111.setChecked(True)
             print(q23)
             q23 = 4
-        elif q23 == ('3'):
+        elif q23 == (3):
             lista_avaliacao_avaliador.radioButton112.setChecked(True)
             print(q23)
             q23 = 3
-        elif q23 == ('2'):
+        elif q23 == (2):
             lista_avaliacao_avaliador.radioButton113.setChecked(True)
             print(q23)
             q23 = 2
-        elif q23 == ('1'):
+        elif q23 == (1):
             lista_avaliacao_avaliador.radioButton114.setChecked(True)
             print(q23)
             q23 = 1
-        elif q23 == ('0'):
+        elif q23 == (0):
             lista_avaliacao_avaliador.radioButton115.setChecked(True)
             print(q23)
             q23 = 0
 
     ###################QUESTÃO q24###############################
-        if q24 == ('4'):
+        if q24 == (4):
             lista_avaliacao_avaliador.radioButton116.setChecked(True)
             print(q24)
             q24 = 4
-        elif q24 == ('3'):
+        elif q24 == (3):
             lista_avaliacao_avaliador.radioButton117.setChecked(True)
             print(q24)
             q24 = 3
-        elif q24 == ('2'):
+        elif q24 == (2):
             lista_avaliacao_avaliador.radioButton118.setChecked(True)
             print(q24)
             q24 = 2
-        elif q24 == ('1'):
+        elif q24 == (1):
             lista_avaliacao_avaliador.radioButton119.setChecked(True)
             print(q24)
             q24 = 1
-        elif q24 == ('0'):
+        elif q24 == (0):
             lista_avaliacao_avaliador.radioButton120.setChecked(True)
             print(q24)
             q24 = 0
@@ -3882,529 +3882,529 @@ def detalhes():
         lista_avaliacao.radioButton122.setEnabled(False)
         ###################QUESTÃO 1###############################
 
-        if q1 == ('4'):
+        if q1 == (4):
             lista_avaliacao.radioButton1.setChecked(True)
             print(q1)
             q1 = 4
 
-        elif q1 == ('3'):
+        elif q1 == (3):
             lista_avaliacao.radioButton2.setChecked(True)
             print(q1)
             q1 = 3
-        elif q1 == ('2'):
+        elif q1 == (2):
             lista_avaliacao.radioButton3.setChecked(True)
             print(q1)
             q1 = 2
-        elif q1 == ('1'):
+        elif q1 == (1):
             lista_avaliacao.radioButton4.setChecked(True)
             print(q1)
             q1 = 1
-        elif q1 == ('0'):
+        elif q1 == (0):
             lista_avaliacao.radioButton5.setChecked(True)
             print(q1)
             q1 = 0
 ###################QUESTÃO 2###############################
-        if q2 == ('4'):
+        if q2 == (4):
             lista_avaliacao.radioButton6.setChecked(True)
             print(q2)
             q2 = 4
-        elif q2 == ('3'):
+        elif q2 == (3):
             lista_avaliacao.radioButton7.setChecked(True)
             print(q2)
             q2 = 3
-        elif q2 == ('2'):
+        elif q2 == (2):
             lista_avaliacao.radioButton8.setChecked(True)
             print(q2)
             q2 = 2
-        elif q2 == ('1'):
+        elif q2 == (1):
             lista_avaliacao.radioButton9.setChecked(True)
             print(q2)
             q2 = 1
-        elif q2 == ('0'):
+        elif q2 == (0):
             lista_avaliacao.radioButton10.setChecked(True)
             print(q2)
             q1 = 0
     ###################QUESTÃO 3###############################
-        if q3 == ('4'):
+        if q3 == (4):
             lista_avaliacao.radioButton11.setChecked(True)
             print(q3)
             q3 = 4
-        elif q3 == ('3'):
+        elif q3 == (3):
             lista_avaliacao.radioButton12.setChecked(True)
             print(q3)
             q3 = 3
-        elif q3 == ('2'):
+        elif q3 == (2):
             lista_avaliacao.radioButton13.setChecked(True)
             print(q3)
             q3 = 2
 
-        elif q3 == ('1'):
+        elif q3 == (1):
             lista_avaliacao.radioButton14.setChecked(True)
             print(q3)
             q3 = 1
 
-        elif q3 == ('0'):
+        elif q3 == (0):
             lista_avaliacao.radioButton15.setChecked(True)
             print(q3)
             q3 = 0
     ###################QUESTÃO 4###############################
-        if q4 == ('4'):
+        if q4 == (4):
             lista_avaliacao.radioButton16.setChecked(True)
             print(q4)
             q4 = 4
-        elif q4 == ('3'):
+        elif q4 == (3):
             lista_avaliacao.radioButton17.setChecked(True)
             print(q4)
             q4 = 3
-        elif q4 == ('2'):
+        elif q4 == (2):
             lista_avaliacao.radioButton18.setChecked(True)
             print(q4)
             q4 = 2
 
-        elif q4 == ('1'):
+        elif q4 == (1):
             lista_avaliacao.radioButton19.setChecked(True)
             print(q4)
             q4 = 1
 
-        elif q4 == ('0'):
+        elif q4 == (0):
             lista_avaliacao.radioButton20.setChecked(True)
             print(q4)
             q4 = 0
 
     ###################QUESTÃO 5###############################
-        if q5 == ('4'):
+        if q5 == (4):
             lista_avaliacao.radioButton21.setChecked(True)
             print(q5)
             q5 = 4
-        elif q5 == ('3'):
+        elif q5 == (3):
             lista_avaliacao.radioButton22.setChecked(True)
             print(q5)
             q5 = 3
-        elif q5 == ('2'):
+        elif q5 == (2):
             lista_avaliacao.radioButton23.setChecked(True)
             print(q5)
             q5 = 2
-        elif q5 == ('1'):
+        elif q5 == (1):
             lista_avaliacao.radioButton24.setChecked(True)
             print(q5)
             q5 = 1
 
-        elif q5 == ('0'):
+        elif q5 == (0):
             lista_avaliacao.radioButton25.setChecked(True)
             print(q5)
             q5 = 0
     ###################QUESTÃO 6###############################
-        if q6 == ('4'):
+        if q6 == (4):
             lista_avaliacao.radioButton26.setChecked(True)
             print(q6)
             q6 = 4
 
-        elif q6 == ('3'):
+        elif q6 == (3):
             lista_avaliacao.radioButton27.setChecked(True)
             print(q6)
             q6 = 3
-        elif q6 == ('2'):
+        elif q6 == (2):
             lista_avaliacao.radioButton28.setChecked(True)
             print(q6)
             q6 = 2
 
-        elif q6 == ('1'):
+        elif q6 == (1):
             lista_avaliacao.radioButton29.setChecked(True)
             print(q6)
             q6 = 1
-        elif q6 == ('0'):
+        elif q6 == (0):
             lista_avaliacao.radioButton30.setChecked(True)
             print(q6)
             q6 = 0
     ###################QUESTÃO 7###############################
-        if q7 == ('4'):
+        if q7 == (4):
             lista_avaliacao.radioButton31.setChecked(True)
             print(q7)
             q7 = 4
-        elif q7 == ('3'):
+        elif q7 == (3):
             lista_avaliacao.radioButton32.setChecked(True)
             print(q7)
             q7 = 3
-        elif q7 == ('2'):
+        elif q7 == (2):
             lista_avaliacao.radioButton33.setChecked(True)
             print(q7)
             q7 = 2
-        elif q7 == ('1'):
+        elif q7 == (1):
             lista_avaliacao.radioButton34.setChecked(True)
             print(q7)
             q7 = 1
-        elif q7 == ('0'):
+        elif q7 == (0):
             lista_avaliacao.radioButton35.setChecked(True)
             print(q7)
             q7 = 0
 
     ###################QUESTÃO 8###############################
-        if q8 == ('4'):
+        if q8 == (4):
             lista_avaliacao.radioButton36.setChecked(True)
             print(q8)
             q8 = 4
 
-        elif q8 == ('3'):
+        elif q8 == (3):
             lista_avaliacao.radioButton37.setChecked(True)
             print(q8)
             q8 = 3
-        elif q8 == ('2'):
+        elif q8 == (2):
             lista_avaliacao.radioButton38.setChecked(True)
             print(q8)
             q8 = 2
-        elif q8 == ('1'):
+        elif q8 == (1):
             lista_avaliacao.radioButton39.setChecked(True)
             print(q8)
             q8 = 1
-        elif q8 == ('0'):
+        elif q8 == (0):
             lista_avaliacao.radioButton40.setChecked(True)
             print(q8)
             q8 = 0
     ###################QUESTÃO 9###############################
-        if q9 == ('4'):
+        if q9 == (4):
             lista_avaliacao.radioButton41.setChecked(True)
             print(q9)
             q9 = 4
-        elif q9 == ('3'):
+        elif q9 == (3):
             lista_avaliacao.radioButton42.setChecked(True)
             print(q9)
             q9 = 3
-        elif q9 == ('2'):
+        elif q9 == (2):
             lista_avaliacao.radioButton43.setChecked(True)
             print(q9)
             q9 = 2
-        elif q9 == ('1'):
+        elif q9 == (1):
             lista_avaliacao.radioButton44.setChecked(True)
             print(q9)
             q9 = 1
-        elif q9 == ('0'):
+        elif q9 == (0):
             lista_avaliacao.radioButton45.setChecked(True)
             print(q9)
             q9 = 0
 
     ###################QUESTÃO 10###############################
-        if q10 == ('4'):
+        if q10 == (4):
             lista_avaliacao.radioButton46.setChecked(True)
             print(q10)
             q10 = 4
-        elif q10 == ('3'):
+        elif q10 == (3):
             lista_avaliacao.radioButton47.setChecked(True)
             print(q10)
             q10 = 3
-        elif q10 == ('2'):
+        elif q10 == (2):
             lista_avaliacao.radioButton48.setChecked(True)
             print(q10)
             q10 = 2
-        elif q10 == ('1'):
+        elif q10 == (1):
             lista_avaliacao.radioButton49.setChecked(True)
             print(q10)
             q10 = 1
-        elif q10 == ('0'):
+        elif q10 == (0):
             lista_avaliacao.radioButton50.setChecked(True)
             print(q10)
             q10 = 0
     ###################QUESTÃO 11###############################
-        if q11 == ('4'):
+        if q11 == (4):
             lista_avaliacao.radioButton51.setChecked(True)
             print(q11)
             q11 = 4
-        elif q11 == ('3'):
+        elif q11 == (3):
             lista_avaliacao.radioButton52.setChecked(True)
             print(q11)
             q11 = 3
-        elif q11 == ('2'):
+        elif q11 == (2):
             lista_avaliacao.radioButton53.setChecked(True)
             print(q11)
             q11 = 2
-        elif q11 == ('1'):
+        elif q11 == (1):
             lista_avaliacao.radioButton54.setChecked(True)
             print(q11)
             q11 = 1
-        elif q11 == ('0'):
+        elif q11 == (0):
             lista_avaliacao.radioButton55.setChecked(True)
             print(q11)
             q11 = 0
     ###################QUESTÃO 12###############################
-        if q12 == ('4'):
+        if q12 == (4):
             lista_avaliacao.radioButton56.setChecked(True)
             print(q12)
             q12 = 4
-        elif q12 == ('3'):
+        elif q12 == (3):
             lista_avaliacao.radioButton57.setChecked(True)
             print(q12)
             q12 = 3
-        elif q12 == ('2'):
+        elif q12 == (2):
             lista_avaliacao.radioButton58.setChecked(True)
             print(q12)
             q12 = 2
-        elif q12 == ('1'):
+        elif q12 == (1):
             lista_avaliacao.radioButton59.setChecked(True)
             print(q12)
             q12 = 1
-        elif q12 == ('0'):
+        elif q12 == (0):
             lista_avaliacao.radioButton60.setChecked(True)
             print(q12)
             q12 = 0
     ###################QUESTÃO 13###############################
-        if q13 == ('4'):
+        if q13 == (4):
             lista_avaliacao.radioButton61.setChecked(True)
             print(q13)
             q13 = 4
-        elif q13 == ('3'):
+        elif q13 == (3):
             lista_avaliacao.radioButton62.setChecked(True)
             print(q13)
             q13 = 3
-        elif q13 == ('2'):
+        elif q13 == (2):
             lista_avaliacao.radioButton63.setChecked(True)
             print(q13)
             q13 = 2
-        elif q13 == ('1'):
+        elif q13 == (1):
             lista_avaliacao.radioButton64.setChecked(True)
             print(q13)
             q13 = 1
-        elif q13 == ('0'):
+        elif q13 == (0):
             lista_avaliacao.radioButton65.setChecked(True)
             print(q13)
             q13 = 0
 
     ###################QUESTÃO 14###############################
-        if q14 == ('4'):
+        if q14 == (4):
             lista_avaliacao.radioButton66.setChecked(True)
             print(q14)
             q14 = 4
-        elif q14 == ('3'):
+        elif q14 == (3):
             lista_avaliacao.radioButton67.setChecked(True)
             print(q14)
             q14 = 3
-        elif q14 == ('2'):
+        elif q14 == (2):
             lista_avaliacao.radioButton68.setChecked(True)
             print(q14)
             q14 = 2
-        elif q14 == ('1'):
+        elif q14 == (1):
             lista_avaliacao.radioButton69.setChecked(True)
             print(q14)
             q14 = 1
-        elif q14 == ('0'):
+        elif q14 == (0):
             lista_avaliacao.radioButton70.setChecked(True)
             print(q14)
             q14 = 0
 
     ###################QUESTÃO 15###############################
-        if q15 == ('4'):
+        if q15 == (4):
             lista_avaliacao.radioButton71.setChecked(True)
             print(q15)
             q15 = 4
-        elif q15 == ('3'):
+        elif q15 == (3):
             lista_avaliacao.radioButton72.setChecked(True)
             print(q15)
             q15 = 3
-        elif q15 == ('2'):
+        elif q15 == (2):
             lista_avaliacao.radioButton73.setChecked(True)
             print(q15)
             q15 = 2
-        elif q15 == ('1'):
+        elif q15 == (1):
             lista_avaliacao.radioButton74.setChecked(True)
             print(q15)
             q15 = 1
-        elif q15 == ('0'):
+        elif q15 == (0):
             lista_avaliacao.radioButton75.setChecked(True)
             print(q15)
             q15 = 0
 
     ###################QUESTÃO 16###############################
-        if q16 == ('4'):
+        if q16 == (4):
             lista_avaliacao.radioButton76.setChecked(True)
             print(q16)
             q16 = 4
-        elif q16 == ('3'):
+        elif q16 == (3):
             lista_avaliacao.radioButton77.setChecked(True)
             print(q16)
             q16 = 3
-        elif q16 == ('2'):
+        elif q16 == (2):
             lista_avaliacao.radioButton78.setChecked(True)
             print(q16)
             q16 = 2
-        elif q16 == ('1'):
+        elif q16 == (1):
             lista_avaliacao.radioButton79.setChecked(True)
             print(q16)
             q16 = 1
-        elif q16 == ('0'):
+        elif q16 == (0):
             lista_avaliacao.radioButton80.setChecked(True)
             print(q16)
             q16 = 0
 
     ###################QUESTÃO 17###############################
-        if q17 == ('4'):
+        if q17 == (4):
             lista_avaliacao.radioButton81.setChecked(True)
             print(q17)
             q17 = 4
-        elif q17 == ('3'):
+        elif q17 == (3):
             lista_avaliacao.radioButton82.setChecked(True)
             print(q17)
             q17 = 3
-        elif q17 == ('2'):
+        elif q17 == (2):
             lista_avaliacao.radioButton83.setChecked(True)
             print(q17)
             q17 = 2
-        elif q17 == ('1'):
+        elif q17 == (1):
             lista_avaliacao.radioButton84.setChecked(True)
             print(q17)
             q17 = 1
-        elif q17 == ('0'):
+        elif q17 == (0):
             lista_avaliacao.radioButton85.setChecked(True)
             print(q17)
             q17 = 0
 
     # ###################QUESTÃO q18###############################
-        if q18 == ('4'):
+        if q18 == (4):
             lista_avaliacao.radioButton86.setChecked(True)
             print(q18)
             q18 = 4
-        elif q18 == ('3'):
+        elif q18 == (3):
             lista_avaliacao.radioButton87.setChecked(True)
             print(q18)
             q18 = 3
-        elif q18 == ('2'):
+        elif q18 == (2):
             lista_avaliacao.radioButton88.setChecked(True)
             print(q18)
             q18 = 2
-        elif q18 == ('1'):
+        elif q18 == (1):
             lista_avaliacao.radioButton89.setChecked(True)
             print(q18)
             q18 = 1
-        elif q18 == ('0'):
+        elif q18 == (0):
             lista_avaliacao.radioButton90.setChecked(True)
             print(q18)
             q18 = 0
 
     ###################QUESTÃO 19###############################
-        if q19 == ('4'):
+        if q19 == (4):
             lista_avaliacao.radioButton91.setChecked(True)
             print(q19)
             q19 = 4
-        elif q19 == ('3'):
+        elif q19 == (3):
             lista_avaliacao.radioButton92.setChecked(True)
             print(q19)
             q19 = 3
-        elif q19 == ('2'):
+        elif q19 == (2):
             lista_avaliacao.radioButton93.setChecked(True)
             print(q19)
             q19 = 2
-        elif q19 == ('1'):
+        elif q19 == (1):
             lista_avaliacao.radioButton94.setChecked(True)
             print(q19)
             q19 = 1
-        elif q19 == ('0'):
+        elif q19 == (0):
             lista_avaliacao.radioButton95.setChecked(True)
             print(q19)
             q19 = 0
 
     ###################QUESTÃO q20###############################
-        if q20 == ('4'):
+        if q20 == (4):
             lista_avaliacao.radioButton96.setChecked(True)
             print(q20)
             q20 = 4
-        elif q20 == ('3'):
+        elif q20 == (3):
             lista_avaliacao.radioButton97.setChecked(True)
             print(q20)
             q20 = 3
-        elif q20 == ('2'):
+        elif q20 == (2):
             lista_avaliacao.radioButton98.setChecked(True)
             print(q20)
             q20 = 2
-        elif q20 == ('1'):
+        elif q20 == (1):
             lista_avaliacao.radioButton99.setChecked(True)
             print(q20)
             q20 = 1
-        elif q20 == ('0'):
+        elif q20 == (0):
             lista_avaliacao.radioButton100.setChecked(True)
             print(q20)
             q20 = 0
 
     ###################QUESTÃO q21###############################
-        if q21 == ('4'):
+        if q21 == (4):
             lista_avaliacao.radioButton101.setChecked(True)
             print(q21)
             q21 = 4
-        elif q21 == ('3'):
+        elif q21 == (3):
             lista_avaliacao.radioButton102.setChecked(True)
             print(q21)
             q21 = 3
-        elif q21 == ('2'):
+        elif q21 == (2):
             lista_avaliacao.radioButton103.setChecked(True)
             print(q21)
             q21 = 2
-        elif q21 == ('1'):
+        elif q21 == (1):
             lista_avaliacao.radioButton104.setChecked(True)
             print(q21)
             q21 = 1
-        elif q21 == ('0'):
+        elif q21 == (0):
             lista_avaliacao.radioButton105.setChecked(True)
             print(q21)
             q21 = 0
 
     ###################QUESTÃO q22###############################
-        if q22 == ('4'):
+        if q22 == (4):
             lista_avaliacao.radioButton106.setChecked(True)
             print(q22)
             q22 = 4
-        elif q22 == ('3'):
+        elif q22 == (3):
             lista_avaliacao.radioButton107.setChecked(True)
             print(q22)
             q22 = 3
-        elif q22 == ('2'):
+        elif q22 == (2):
             lista_avaliacao.radioButton108.setChecked(True)
             print(q22)
             q22 = 2
-        elif q22 == ('1'):
+        elif q22 == (1):
             lista_avaliacao.radioButton109.setChecked(True)
             print(q22)
             q22 = 1
-        elif q22 == ('0'):
+        elif q22 == (0):
             lista_avaliacao.radioButton110.setChecked(True)
             print(q22)
             q22 = 0
 
     ###################QUESTÃO q23###############################
-        if q23 == ('4'):
+        if q23 == (4):
             lista_avaliacao.radioButton111.setChecked(True)
             print(q23)
             q23 = 4
-        elif q23 == ('3'):
+        elif q23 == (3):
             lista_avaliacao.radioButton112.setChecked(True)
             print(q23)
             q23 = 3
-        elif q23 == ('2'):
+        elif q23 == (2):
             lista_avaliacao.radioButton113.setChecked(True)
             print(q23)
             q23 = 2
-        elif q23 == ('1'):
+        elif q23 == (1):
             lista_avaliacao.radioButton114.setChecked(True)
             print(q23)
             q23 = 1
-        elif q23 == ('0'):
+        elif q23 == (0):
             lista_avaliacao.radioButton115.setChecked(True)
             print(q23)
             q23 = 0
 
     ###################QUESTÃO q24###############################
-        if q24 == ('4'):
+        if q24 == (4):
             lista_avaliacao.radioButton116.setChecked(True)
             print(q24)
             q24 = 4
-        elif q24 == ('3'):
+        elif q24 == (3):
             lista_avaliacao.radioButton117.setChecked(True)
             print(q24)
             q24 = 3
-        elif q24 == ('2'):
+        elif q24 == (2):
             lista_avaliacao.radioButton118.setChecked(True)
             print(q24)
             q24 = 2
-        elif q24 == ('1'):
+        elif q24 == (1):
             lista_avaliacao.radioButton119.setChecked(True)
             print(q24)
             q24 = 1
-        elif q24 == ('0'):
+        elif q24 == (0):
             lista_avaliacao.radioButton120.setChecked(True)
             print(q24)
             q24 = 0
