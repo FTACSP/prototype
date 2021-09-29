@@ -26,7 +26,7 @@
 # M= nº incidentes
 
 # FTACSP V1.00 *
-#Avaliador: Joaquim
+# Avaliador: Joaquim
 # Traduzindo
 
 # Incluir as 3 colunas do GVJ,TPJ, SIJ
@@ -51,20 +51,30 @@
 # RB no banco de dados
 # Hash na senha no banco de dados, não só na criação do novo usuário
 
-from msilib.schema import RadioButton
-from PyQt5 import QtCore, QtGui, QtWidgets, uic, Qt
-from PyQt5.QtWidgets import QApplication, QPushButton, QDialog, QVBoxLayout, QMessageBox, QDateTimeEdit, QCalendarWidget, QButtonGroup, QAbstractButton, QRadioButton, QTableWidget, QTableWidgetItem, QWidget, QListWidget, QListWidgetItem
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from natsort import natsorted
-import mysql.connector
-import pandas as pd
-from datetime import datetime
-from datetime import date
-import hashlib
-import uuid
-import random
 import string
+import random
+import uuid
+import hashlib
+from datetime import date
+from datetime import datetime
+import pandas as pd
+import numpy as np
+import mysql.connector
+from natsort import natsorted
+import matplotlib
+from PyQt5 import QtCore, QtGui, QtWidgets, uic, Qt, QtChart
+from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QDialog, QVBoxLayout, QMessageBox, QButtonGroup, QAbstractButton, QRadioButton, QTableWidget, QTableWidgetItem, QWidget, QListWidget, QListWidgetItem
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from msilib.schema import RadioButton
+
+# from PyQt5 import QChart, QChartView, QValueAxis, QBarCategoryAxis, QBarSet, QBarSeries
+# from PyQt5.QtChart import QChart, QChartView, QValueAxis, QBarCategoryAxis, QBarSet, QBarSeries
+# print(dir(QGradient))
+from pyqtgraph import PlotWidget, plot
+import pyqtgraph as pg
+
+
 numero_id = 0
 
 banco = mysql.connector.connect(host='localhost',
@@ -1297,20 +1307,20 @@ def nova_avaliacao():
     #     globals()["q%i" % i] = i
     # print(q1, q2, q3, q4)
 
-    #RB = 1.1
+    # RB = 1.1
     m = incidentes
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
     print("Indíce de Governança:", GVij)
-    #GVij = format(GVij, '.2f')
+    # GVij = format(GVij, '.2f')
 
     TPij = (q8+q9+q10+q11+q12+q13+q14)/7
     print("Indíce de Transparência:", TPij)
-    #TPij = format(TPij, '.2f')
+    # TPij = format(TPij, '.2f')
 
     SIij = (q15+q16+q17+q18+q19+q20+q21+q22+q23+q24)/10
     print("Indíce de Segurança da Informação:", SIij)
-    #SIij = format(SIij, '.2f')
+    # SIij = format(SIij, '.2f')
 
     # dados_lidos = cursor2.fetchone()
     # avaliacaoid_lido = dados_lidos
@@ -1490,10 +1500,10 @@ def nova_avaliacao():
 
     ###Terceira parcela precisa da média dos últimos 12 indices###
     #O limite do mês é o mês atual, o ínicio são 11 meses atras#
-    #GVij12 = (GVij + GVij2 + GVij3 + GVij4 + GVij4 + GVij5 + GVij6 + GVij7 + GVij8 + GVij9 + GVij10 + GVij11 + GVij12) / 12
+    # GVij12 = (GVij + GVij2 + GVij3 + GVij4 + GVij4 + GVij5 + GVij6 + GVij7 + GVij8 + GVij9 + GVij10 + GVij11 + GVij12) / 12
     # # # atual - média dos últimos 12 meses = expectativa
     mes_ano = 12
-    #comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (avaliador, provedor, mes_atual, ano))
+    # comando_SQL = ("select * from avaliacao_csp where avaliador=('%s') and provedor=('%s') and mes=('%s') and ano=('%s')" % (avaliador, provedor, mes_atual, ano))
     mes_atual = mes
     mes_anterior12 = mes_atual-12
     ano_atual = ano
@@ -1549,18 +1559,18 @@ def nova_avaliacao():
         GVij12 = 1
         print("Alocando valor para primeiro mês de Governança na 3ª parcela:", GVij12)
     # o 12 poderia ser substuído pela quantidade de meses que realmente foi realizada até agora, como na counter
-    #GVij12 = GVij12_soma/12
+    # GVij12 = GVij12_soma/12
     # GVij12 = format(GVij12, '.2f')  # 12/07
     print("A média das instâncias de Indices sobre a Governança nos 12 meses:", GVij12)
 
-    #IGVj3 = float(k3*(GVij12))
+    # IGVj3 = float(k3*(GVij12))
     IGVj3 = (k3*(GVij12))
     print("Parcela 3 da Governança:", IGVj3)
 
     IGVj = (((IGVj1 + IGVj2 + IGVj3) * RB)/(2**m))
     print("Indicador de confiança Governança:", IGVj)
 
-    #TPij12 = TPij12_soma/12
+    # TPij12 = TPij12_soma/12
     try:
         TPij12 = TPij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
     except ZeroDivisionError:
@@ -1575,7 +1585,7 @@ def nova_avaliacao():
     ITPj = (((ITPj1 + ITPj2 + ITPj3) * RB)/(2**m))
     print("Indicador de confiança Transparência:", ITPj)
 
-    #SIij12 = SIij12_soma/12
+    # SIij12 = SIij12_soma/12
     try:
         SIij12 = SIij12_soma/counter  # se for o primeiro mês como não teve nenhuma avaliação
     except ZeroDivisionError:
@@ -1597,7 +1607,7 @@ def nova_avaliacao():
         # IGVj = 0
         # ITPj = 0
         # ISIj = 0
-        #print("É mês primário, valores dos indicadores zerados")
+        # print("É mês primário, valores dos indicadores zerados")
         print("É mês primário")
     else:
         print("Não é mês primário")
@@ -1611,12 +1621,12 @@ def nova_avaliacao():
     limpar_avaliacao()
     tela_login_dados_avaliador()
 
-#Mês: 1
+# Mês: 1
 # 4321222 = 16
 # 1234333 = 19
 # 4321123411 = 22
 # incidentes=1
-#Mês: 2
+# Mês: 2
 # 2221234 = 16
 # 3334321 = 19
 # 1143211234 = 22
@@ -1625,7 +1635,7 @@ def nova_avaliacao():
 # Mês ímpares tem incidentes
 # De um mês para o outro inverte a repetição
 
-#Mês: 1
+# Mês: 1
 # 4321222 = 16
 # 1234333 = 19
 # 4321123411 = 22
@@ -1734,7 +1744,7 @@ def tela_login_sql():
         # print("Salt gerado para senha:", salt)
         password = hashlib.sha512((password+salt).encode('utf-8')).hexdigest()
         print("Senha criptografada e com salt para usuário entrar é:", password)
-    #password = hashlib.sha512(password).encode('utf-8').hexdigest()
+    # password = hashlib.sha512(password).encode('utf-8').hexdigest()
     except IndexError:
         print("senha errada")
 
@@ -1752,7 +1762,7 @@ def tela_login_sql():
         QMessageBox.about(tela_login, "ALERTA",
                           "Usuário encontrado!")
         avaliadorid = (str(dados_lidos[0][0]))
-        print("avaliador id é::", avaliadorid)
+        print("avaliador id é:", avaliadorid)
         formulario_avaliacao.label_2.setText(avaliadorid)
         # 5 no banco de dados é pra verificar se é gestor
         atividade = (str(dados_lidos[0][4]))
@@ -1851,17 +1861,17 @@ def tela_login_dados():
     StatusAPIUX.tableWidget.setSortingEnabled(False)
     StatusAPIUX.tableWidget.setRowCount(len(dados_lidos2))
     StatusAPIUX.tableWidget.setColumnCount(5)
-    #sorted(dados_lidos2, key=int)
-    #dados_lidos2 = [int(x) for x in dados_lidos2]
-    #dados_lidos2 = dados_lidos2(map(int, dados_lidos2))
+    # sorted(dados_lidos2, key=int)
+    # dados_lidos2 = [int(x) for x in dados_lidos2]
+    # dados_lidos2 = dados_lidos2(map(int, dados_lidos2))
     print("Foi aqui!!!!")
     # dados_lidos2.sorted()
-    #print("Foi até aqui!!!!")
+    # print("Foi até aqui!!!!")
 
     # dados_lidos2 = natsorted(dados_lidos2)
     # print("ÉEEEEEEEEEEEOQQQQQQQQQQQQQQQQQQ", natsorted(dados_lidos2))
-    #dados_lidos2 = sorted(dados_lidos2)
-    #edados_lidos2 = natsorted(dados_lidos2)
+    # dados_lidos2 = sorted(dados_lidos2)
+    # edados_lidos2 = natsorted(dados_lidos2)
     x = 0
     y = 3
     z = 4
@@ -1885,7 +1895,7 @@ def tela_login_dados():
             # print("Ano:", int(dados_lidos2[2][4]))
 
     # StatusAPIUX.tableWidget.setSortingEnabled(True)
-    #StatusAPIUX.tableWidget.sortByColumn(3, Qt.AscendingOrder)
+    # StatusAPIUX.tableWidget.sortByColumn(3, Qt.AscendingOrder)
 
     # ui.tableWidget->sortByColumn(2, Qt::AscendingOrder);
 
@@ -1914,19 +1924,110 @@ def tela_login_dados_avaliador():
             "SELECT provedor,mes,ano,IGVj,ITPj,ISIj FROM avaliacao_csp where avaliador=('%s') order by provedor,ano,mes" % (avaliador,))
         cursor.execute(comando_SQL)
         dados_listados = cursor.fetchall()
-        print(dados_listados)
+        print("Dados listados que são apresentados na tabela:", dados_listados)
         StatusAPIUX_avaliador.tableWidget.setRowCount(len(dados_listados))
         StatusAPIUX_avaliador.tableWidget.setColumnCount(6)
+        x = []
+        y = []
+        z = []
+        a = []
+        StatusAPIUX_avaliador.graphicsView.setTitle("Assessment")
+        StatusAPIUX_avaliador.graphicsView.setLabel(
+            'bottom', 'Month')
+        StatusAPIUX_avaliador.graphicsView.setLabel(
+            'left', 'Indicators')
         for i in range(0, len(dados_listados)):
             for j in range(0, 6):
                 StatusAPIUX_avaliador.tableWidget.setItem(
                     i, j, QtWidgets.QTableWidgetItem(str(dados_listados[i][j])))
-    # tela_login_cadastro.comboBox.
+
+            provedor = dados_listados[i][0]
+            mes = dados_listados[i][1]
+            ano = dados_listados[i][2]
+            IGVj = dados_listados[i][3]
+            ITPj = dados_listados[i][4]
+            ISIj = dados_listados[i][5]
+            print("i é", i)
+            print("provedor da tabela:", provedor)
+            print("mês da tabela:", mes)
+            print("ano da tabela:", ano)
+            print("IGVj da tabela:", IGVj)
+            print("ITPj da tabela:", ITPj)
+            print("ISIj da tabela:", ISIj)
+            #mes = [1, 2, 3, 4]
+            #IGVj = [2.2, 3.1, 3.5, 2.1]
+            xx = mes
+            yy = IGVj
+            zz = ITPj
+            aa = ISIj
+            #x = mes
+
+            x.append(xx)
+
+            y.append(yy)
+
+            z.append(zz)
+
+            a.append(aa)
+
+            #y = IGVj
+            #x = x[i]
+            #y = y[i]
+            #n = IGVj
+            #y = y[k]
+            # y.append(n)
+            #x = float(xx)
+            #y = float(y)
+            print("X é:", x)
+            print("Y é:", y)
+            print("Z é:", z)
+            print("A é:", a)
+            #print("N é: ", n)
+        StatusAPIUX_avaliador.graphicsView.addLegend(offset=-90)
+        StatusAPIUX_avaliador.graphicsView.addLegend()
+        StatusAPIUX_avaliador.graphicsView.addLegend()
+        pen = pg.mkPen(color=(255, 0, 0))
+        StatusAPIUX_avaliador.graphicsView.plot(
+            x, y, name="IGVj", pen=pen, symbol='+')
+
+        pen2 = pg.mkPen(color=(0, 255, 0))
+        StatusAPIUX_avaliador.graphicsView.plot(
+            x, z, name="ITPj", pen=pen2, symbol='+')
+
+        pen3 = pg.mkPen(color=(0, 0, 255))
+        StatusAPIUX_avaliador.graphicsView.plot(
+            x, a, name="ISIj", pen=pen3, symbol='+')
+
         banco.commit()
-    # cursor.close()
 
         StatusAPIUX_avaliador.label_4.setText("Evaluator:")
         StatusAPIUX_avaliador.show()
+
+        # Graph externo
+        # plt = pg.plot()
+        # plt.setLabel('bottom', 'Sequentially Generated Values')
+        # plt.setLabel('left', 'Randomly Generated Values')
+        # #teste = [1, 2, 3, 4, 5]
+        # for i in range(0, 4):
+        #     n = random.uniform(0, 4)
+        # plt.setXRange(0, 12)
+        # plt.setYRange(0, 4)
+        # plt.setTitle("Simple Line Graph")
+        # line = plt.plot(x, y)
+
+        # x = np.arange(1000)
+        # y = np.random.normal(size=(3, 1000))
+        # fim graph externo
+
+        # for i in range(3):
+        # StatusAPIUX_avaliador.graphicsView.plot(x, y)
+        #     #StatusAPIUX_avaliador.graphicsView.plot(x, y[i], pen=(i, 3))
+
+        StatusAPIUX_avaliador.graphicsView.showGrid(x=True, y=True)
+        #StatusAPIUX_avaliador.graphicsView.setXRange(0, 12, padding=0)
+        #StatusAPIUX_avaliador.graphicsView.setYRange(0, 4)
+
+       # StatusAPIUX_avaliador.graphicsView.plot(x, y, pen=(i, 3))
 
 
 def cadastro_avaliador():
@@ -2074,7 +2175,7 @@ def cadastro_inserir_avaliador():
         letters = string.ascii_letters
         salt = (''.join(random.choice(letters) for i in range(10)))
         print("Salt gerado para senha:", salt)
-        #saltao = hashlib.sha512((avaliadorpw+salt).encode('utf-8')).hexdigest()
+        # saltao = hashlib.sha512((avaliadorpw+salt).encode('utf-8')).hexdigest()
         avaliadorpw = hashlib.sha512(
             (avaliadorpw+salt).encode('utf-8')).hexdigest()
         print("Senha criptografada e com salt:", avaliadorpw)
@@ -2320,7 +2421,7 @@ def detalhes_avaliador():
         # elif qum == "-3":
         #     qum = 3
         #     print(qum)
-        #incidentes = str(lista_avaliacao_avaliador.buttonGroup_25.checkedId())
+        # incidentes = str(lista_avaliacao_avaliador.buttonGroup_25.checkedId())
 
         ###################QUESTÃO 1###############################
         if q1 == (4):
@@ -3342,7 +3443,7 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
     print("Tempo da avaliacao lida:", avaliacaotempo_lido)
 
     # 08/07 FAZENDO A NOVA AVALIAÇÃO DA LISTA DE DETALHES, TAMBÉM CONTAR NOVOS INDICES
-    #RB = 1.1
+    # RB = 1.1
     m = incidentes
 
     GVij = (q1+q2+q3+q4+q5+q6+q7)/7  # índice para o mês atual
@@ -3605,7 +3706,7 @@ def detalhes_avaliador_nova_avaliacao():  # nova avaliacao do formulario preench
         # IGVj = 0
         # ITPj = 0
         # ISIj = 0
-        #print("É mês primário, valores dos indicadores zerados")
+        # print("É mês primário, valores dos indicadores zerados")
         print("É mês primário")
     else:
         print("Não é mês primário")
