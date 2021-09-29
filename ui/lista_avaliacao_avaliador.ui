@@ -3645,7 +3645,7 @@ Note: Assess whether there is an energy efficient IT clause and how it is met</s
     </size>
    </property>
    <property name="text">
-    <string>Voltar</string>
+    <string>Back</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
@@ -4009,7 +4009,7 @@ Note: Assess whether there is an energy efficient IT clause and how it is met</s
     </size>
    </property>
    <property name="text">
-    <string>Cancelar a avaliação</string>
+    <string>Cancel Assesment</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botao1">
@@ -4034,41 +4034,41 @@ Note: Assess whether there is an energy efficient IT clause and how it is met</s
     </size>
    </property>
    <property name="text">
-    <string>Enviar a avaliação</string>
+    <string>Send Assessment</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_21"/>
-  <buttongroup name="buttonGroup_22"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_13"/>
-  <buttongroup name="buttonGroup_24"/>
-  <buttongroup name="buttonGroup_18"/>
-  <buttongroup name="buttonGroup_12"/>
   <buttongroup name="buttonGroup_20"/>
-  <buttongroup name="buttonGroup_15"/>
-  <buttongroup name="buttonGroup_17"/>
   <buttongroup name="buttonGroup_6"/>
-  <buttongroup name="buttonGroup_25"/>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup_21"/>
+  <buttongroup name="buttonGroup_13"/>
+  <buttongroup name="buttonGroup_14"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_18"/>
+  <buttongroup name="buttonGroup_11"/>
+  <buttongroup name="buttonGroup_10"/>
+  <buttongroup name="buttonGroup_7"/>
+  <buttongroup name="buttonGroup_16"/>
+  <buttongroup name="buttonGroup_8"/>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup_19"/>
+  <buttongroup name="buttonGroup_25"/>
+  <buttongroup name="buttonGroup_12"/>
+  <buttongroup name="buttonGroup_9"/>
+  <buttongroup name="buttonGroup_22"/>
   <buttongroup name="buttonGroup">
    <property name="exclusive">
     <bool>true</bool>
    </property>
   </buttongroup>
   <buttongroup name="buttonGroup_23"/>
-  <buttongroup name="buttonGroup_8"/>
-  <buttongroup name="buttonGroup_7"/>
-  <buttongroup name="buttonGroup_14"/>
-  <buttongroup name="buttonGroup_10"/>
-  <buttongroup name="buttonGroup_11"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_16"/>
-  <buttongroup name="buttonGroup_9"/>
-  <buttongroup name="buttonGroup_19"/>
+  <buttongroup name="buttonGroup_24"/>
+  <buttongroup name="buttonGroup_15"/>
+  <buttongroup name="buttonGroup_17"/>
  </buttongroups>
 </ui>
