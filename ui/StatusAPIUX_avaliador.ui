@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>830</width>
+    <width>597</width>
     <height>400</height>
    </rect>
   </property>
@@ -44,7 +44,7 @@
    <widget class="QPushButton" name="botao_1">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>330</x>
       <y>310</y>
       <width>141</width>
       <height>21</height>
@@ -67,7 +67,7 @@
    <widget class="QPushButton" name="botao_3">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>490</x>
       <y>310</y>
       <width>81</width>
       <height>21</height>
@@ -90,7 +90,7 @@
    <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>190</x>
       <y>0</y>
       <width>231</width>
       <height>51</height>
@@ -157,7 +157,7 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>521</width>
+      <width>551</width>
       <height>251</height>
      </rect>
     </property>
@@ -279,7 +279,7 @@
    <widget class="QPushButton" name="botao_4">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>390</x>
       <y>360</y>
       <width>81</width>
       <height>31</height>
@@ -302,7 +302,7 @@
    <widget class="QPushButton" name="botao_5">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>490</x>
       <y>360</y>
       <width>81</width>
       <height>31</height>
@@ -322,64 +322,28 @@
      <string>Quit</string>
     </property>
    </widget>
-   <widget class="PlotWidget" name="graphicsView">
+   <widget class="QPushButton" name="botao_8">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>60</y>
-      <width>256</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>500</width>
-      <height>500</height>
-     </size>
-    </property>
-    <property name="backgroundBrush">
-     <brush brushstyle="SolidPattern">
-      <color alpha="255">
-       <red>255</red>
-       <green>255</green>
-       <blue>255</blue>
-      </color>
-     </brush>
-    </property>
-   </widget>
-   <widget class="QSplitter" name="splitter">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
+      <x>20</x>
       <y>310</y>
-      <width>81</width>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
-    <widget class="QPushButton" name="botao_7">
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Clear</string>
-     </property>
-    </widget>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Show Graphs</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -387,19 +351,12 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>830</width>
+     <width>597</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>PlotWidget</class>
-   <extends>QGraphicsView</extends>
-   <header>pyqtgraph</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
